@@ -1,7 +1,8 @@
 "use client";
 
 import AnimatedSection from "./AnimatedSection";
-import { Camera, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { SiInstagram } from "react-icons/si";
 import type { InstagramPost } from "@/lib/instagram";
 import Image from "next/image";
 
@@ -34,7 +35,7 @@ export default function InstagramFeed({ posts }: Props) {
                   rel="noopener noreferrer"
                   className="group inline-flex items-center gap-2 px-5 py-3 rounded border border-[var(--border)] text-[var(--text-secondary)] text-sm hover:border-[#d97706]/30 hover:text-[var(--text-primary)] transition-all duration-300"
                 >
-                  <Camera className="w-4 h-4" />
+                  <SiInstagram className="w-4 h-4" />
                   {handle}
                   <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                 </a>
@@ -82,7 +83,7 @@ export default function InstagramFeed({ posts }: Props) {
                   />
                 ) : (
                   <div className="absolute inset-0 bg-[var(--bg-secondary)] flex items-center justify-center">
-                    <Camera className="w-6 h-6 text-[var(--text-faint)]" />
+                    <SiInstagram className="w-6 h-6 text-[var(--text-faint)]" />
                   </div>
                 )}
                 {/* Overlay */}
@@ -110,7 +111,7 @@ export default function InstagramFeed({ posts }: Props) {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 text-xs font-mono text-[var(--text-muted)] hover:text-[#d97706] transition-colors"
             >
-              <Camera className="w-3 h-3" />
+              <SiInstagram className="w-3 h-3" />
               @{handle}
               <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>

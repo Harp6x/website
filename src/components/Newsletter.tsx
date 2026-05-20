@@ -1,7 +1,7 @@
 "use client";
 
 import AnimatedSection from "./AnimatedSection";
-import { Mail } from "lucide-react";
+import { SiSubstack } from "react-icons/si";
 
 interface Props {
   variant?: "professional" | "personal";
@@ -12,7 +12,7 @@ export default function Newsletter({ variant = "personal" }: Props) {
     <section id="newsletter" className="section-padding px-6 md:px-10">
       <div className="max-w-3xl mx-auto text-center">
         <AnimatedSection>
-          <Mail className="w-6 h-6 text-[#d97706] mx-auto mb-6" />
+          <SiSubstack className="w-6 h-6 text-[#d97706] mx-auto mb-6" />
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4">
             {variant === "professional"
               ? "Stay in the loop."

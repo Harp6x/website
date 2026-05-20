@@ -1,7 +1,7 @@
 "use client";
 
 import AnimatedSection from "./AnimatedSection";
-import { Play, Film } from "lucide-react";
+import { SiYoutube } from "react-icons/si";
 import type { YouTubeVideo } from "@/lib/youtube";
 import placeholderVideos from "@/data/youtube";
 
@@ -50,7 +50,7 @@ export default function YouTubeFeed({ videos }: Props) {
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-2">
-                      <Film className="w-3 h-3 text-[var(--text-muted)]" />
+                      <SiYoutube className="w-3 h-3 text-[var(--text-muted)]" />
                       <span className="text-[10px] font-mono text-[var(--text-muted)] tracking-wider uppercase">
                         {video.channelTitle}
                       </span>
@@ -76,7 +76,7 @@ export default function YouTubeFeed({ videos }: Props) {
                     <div className="absolute inset-0 bg-gradient-to-br from-[var(--bg-secondary)] via-[var(--border-subtle)] to-[var(--bg-secondary)]" />
                     <div className="relative z-10 flex flex-col items-center gap-3">
                       <div className="w-12 h-12 rounded-full border border-[var(--border)] flex items-center justify-center group-hover:border-[#d97706]/40 group-hover:bg-[#d97706]/5 transition-all duration-500">
-                        <Play className="w-5 h-5 text-[var(--text-faint)] group-hover:text-[#d97706] transition-colors ml-0.5" />
+                        <SiYoutube className="w-5 h-5 text-[var(--text-faint)] group-hover:text-[#d97706] transition-colors" />
                       </div>
                       <span className="text-[var(--text-faint)] text-[10px] font-mono tracking-wider">
                         {video.thumbnailPlaceholder}
@@ -85,7 +85,7 @@ export default function YouTubeFeed({ videos }: Props) {
                   </div>
                   <div className="p-5">
                     <div className="flex items-center gap-2 mb-2">
-                      <Film className="w-3 h-3 text-[var(--text-muted)]" />
+                      <SiYoutube className="w-3 h-3 text-[var(--text-muted)]" />
                       <span className="text-[10px] font-mono text-[var(--text-muted)] tracking-wider uppercase">
                         {video.category}
                       </span>
@@ -110,7 +110,7 @@ export default function YouTubeFeed({ videos }: Props) {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium border border-[var(--border)] text-[var(--text-secondary)] rounded hover:border-[#d97706]/30 hover:text-[var(--text-primary)] transition-all duration-300"
           >
-            <Play className="w-4 h-4" />
+            <SiYoutube className="w-4 h-4" />
             Watch on YouTube
           </a>
         </AnimatedSection>

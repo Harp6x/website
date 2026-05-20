@@ -3,24 +3,17 @@
 import { motion } from "framer-motion";
 import AnimatedSection from "./AnimatedSection";
 import profile from "@/data/profile";
-import {
-  Camera,
-  Play,
-  Briefcase,
-  Code2,
-  AtSign,
-  Mail,
-  BookOpen,
-  ArrowUpRight,
-} from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { SiInstagram, SiYoutube, SiGithub, SiSubstack, SiX, SiGmail } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
-  Instagram: Camera,
-  YouTube: Play,
-  LinkedIn: Briefcase,
-  GitHub: Code2,
-  "Twitter / X": AtSign,
-  "Blog": BookOpen,
+  Instagram: SiInstagram,
+  YouTube: SiYoutube,
+  LinkedIn: FaLinkedinIn,
+  GitHub: SiGithub,
+  "Twitter / X": SiX,
+  "Blog": SiSubstack,
 };
 
 export default function SocialLinks() {
@@ -73,7 +66,7 @@ export default function SocialLinks() {
             >
               <div className="absolute inset-0 bg-gradient-to-r from-[#d97706]/[0.03] to-transparent group-hover:from-[#d97706]/[0.06] transition-all duration-500" />
               <div className="relative z-10 flex items-center gap-3 w-full">
-                <Mail className="w-4 h-4 text-[#d97706]/60 group-hover:text-[#d97706] transition-colors duration-300" />
+                <SiGmail className="w-4 h-4 text-[#d97706]/60 group-hover:text-[#d97706] transition-colors duration-300" />
                 <span className="text-[var(--text-secondary)] text-sm group-hover:text-[var(--text-primary)] transition-colors duration-300">
                   Email
                 </span>

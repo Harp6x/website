@@ -1,7 +1,9 @@
 "use client";
 
 import AnimatedSection from "./AnimatedSection";
-import { Mail, MapPin, ArrowUpRight, Briefcase, Code2, BookOpen, Camera, Play } from "lucide-react";
+import { MapPin, ArrowUpRight } from "lucide-react";
+import { SiInstagram, SiYoutube, SiGithub, SiSubstack, SiGmail } from "react-icons/si";
+import { FaLinkedinIn } from "react-icons/fa";
 import profileFallback from "@/data/profile";
 import type { Profile } from "@/data/types";
 
@@ -25,13 +27,13 @@ export default function Contact({ variant = "professional", profile: profileProp
             {isPro ? (
               <>Let&apos;s build<br /><span className="text-[var(--text-secondary)]">something together.</span></>
             ) : (
-              <>Say hello.<br /><span className="text-[var(--text-secondary)]">Or don&apos;t. Either way.</span></>
+              <>Let&apos;s start<br /><span className="text-[var(--text-secondary)]">a conversation worth having.</span></>
             )}
           </h2>
           <p className="text-[var(--text-muted)] text-base max-w-xl mb-16 leading-relaxed">
             {isPro
               ? "Open to conversations about product security, threat intelligence, security automation, or anything at the intersection of technology and meaningful work."
-              : "Reach out through any of the brands below. or just follow along."}
+              : "Whether it\u2019s a question, a collaboration, or just something you wanted to share \u2014 I\u2019d genuinely like to hear from you."}
           </p>
         </AnimatedSection>
 
@@ -45,7 +47,7 @@ export default function Contact({ variant = "professional", profile: profileProp
                     href={`mailto:${email}`}
                     className="group flex items-center gap-4 p-6 rounded-lg border border-[var(--border)] hover:border-[#d97706]/30 transition-all duration-300"
                   >
-                    <Mail className="w-5 h-5 text-[var(--text-muted)] group-hover:text-[#d97706] transition-colors" />
+                    <SiGmail className="w-5 h-5 text-[var(--text-muted)] group-hover:text-[#d97706] transition-colors" />
                     <div>
                       <p className="text-[var(--text-primary)] text-sm font-medium">Email</p>
                       <p className="text-[var(--text-muted)] text-sm">{email}</p>
@@ -67,7 +69,7 @@ export default function Contact({ variant = "professional", profile: profileProp
               <div className="space-y-4">
                 <p className="text-[var(--text-muted)] text-sm mb-6">Find me elsewhere</p>
                 {profile.socials.map(({ label, href }) => {
-                  const Icon = label === "LinkedIn" ? Briefcase : label === "GitHub" ? Code2 : label === "YouTube" ? Play : BookOpen;
+                  const Icon = label === "LinkedIn" ? FaLinkedinIn : label === "GitHub" ? SiGithub : label === "YouTube" ? SiYoutube : SiSubstack;
                   return (
                     <a
                       key={label}
@@ -99,25 +101,25 @@ export default function Contact({ variant = "professional", profile: profileProp
                     {links.instagram && (
                       <a href={links.instagram} target="_blank" rel="noopener noreferrer"
                         className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-border-subtle)] text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/30 hover:text-[var(--text-primary)] transition-all">
-                        <Camera className="w-4 h-4" /> Instagram <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <SiInstagram className="w-4 h-4" /> Instagram <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     )}
                     {links.youtube && (
                       <a href={links.youtube} target="_blank" rel="noopener noreferrer"
                         className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-border-subtle)] text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/30 hover:text-[var(--text-primary)] transition-all">
-                        <Play className="w-4 h-4" /> YouTube <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <SiYoutube className="w-4 h-4" /> YouTube <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     )}
                     {links.substack && (
                       <a href={links.substack} target="_blank" rel="noopener noreferrer"
                         className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-border-subtle)] text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/30 hover:text-[var(--text-primary)] transition-all">
-                        <BookOpen className="w-4 h-4" /> Substack <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <SiSubstack className="w-4 h-4" /> Substack <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     )}
                     {links.email && (
                       <a href={`mailto:${links.email}`}
                         className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-accent)]/20 text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/40 hover:text-[var(--text-primary)] transition-all">
-                        <Mail className="w-4 h-4" /> {links.email} <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <SiGmail className="w-4 h-4" /> {links.email} <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     )}
                   </div>

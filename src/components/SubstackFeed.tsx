@@ -1,7 +1,8 @@
 "use client";
 
 import AnimatedSection from "./AnimatedSection";
-import { BookOpen, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
+import { SiSubstack } from "react-icons/si";
 import type { SubstackPost } from "@/lib/substack";
 
 interface Props {
@@ -38,7 +39,7 @@ export default function SubstackFeed({ posts }: Props) {
               >
                 <div className="flex items-start gap-6">
                   <div className="hidden sm:flex items-center gap-2 min-w-[100px] pt-1">
-                    <BookOpen className="w-3 h-3 text-[var(--text-faint)]" />
+                    <SiSubstack className="w-3 h-3 text-[var(--text-faint)]" />
                     <span className="text-[10px] font-mono text-[var(--text-faint)] tracking-wider uppercase">
                       {post.source}
                     </span>
