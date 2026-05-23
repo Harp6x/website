@@ -69,7 +69,18 @@ export default defineType({
         ],
       }],
     }),
-    defineField({ name: "resumePath", title: "Resume Path", type: "string" }),
+    defineField({
+      name: "professionalResume",
+      title: "Professional / Career Resume",
+      type: "file",
+      options: { accept: "application/pdf" },
+    }),
+    defineField({
+      name: "personalResume",
+      title: "Creative / Travel Resume",
+      type: "file",
+      options: { accept: "application/pdf" },
+    }),
   ],
   preview: { prepare: () => ({ title: "Profile" }) },
 });

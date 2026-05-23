@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import profile from "@/data/profile";
+import type { Profile } from "@/data/types";
 
 const proLinks = [
   { label: "About", href: "#about" },
@@ -25,9 +25,10 @@ const personalLinks = [
 
 interface Props {
   variant?: "professional" | "personal";
+  profile: Profile;
 }
 
-export default function Navbar({ variant = "professional" }: Props) {
+export default function Navbar({ variant = "professional", profile }: Props) {
   const navLinks = variant === "professional" ? proLinks : personalLinks;
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -75,21 +76,36 @@ export default function Navbar({ variant = "professional" }: Props) {
               >
                 Personal
               </Link>
-              <a
-                href={profile.resumePath}
-                target="_blank"
-                className="text-sm px-4 py-1.5 rounded border border-[#d97706]/30 text-[#d97706] hover:bg-[#d97706]/10 transition-all duration-300"
-              >
-                Resume
-              </a>
+              {profile.professionalResumeUrl && (
+                <a
+                  href={profile.professionalResumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm px-4 py-1.5 rounded border border-[#d97706]/30 text-[#d97706] hover:bg-[#d97706]/10 transition-all duration-300"
+                >
+                  Career Resume
+                </a>
+              )}
             </>
           ) : (
-            <Link
-              href="/professional"
-              className="text-sm px-4 py-1.5 rounded border border-[#d97706]/30 text-[#d97706] hover:bg-[#d97706]/10 transition-all duration-300"
-            >
-              Professional
-            </Link>
+            <>
+              <Link
+                href="/professional"
+                className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-300 tracking-wide"
+              >
+                Professional
+              </Link>
+              {profile.personalResumeUrl && (
+                <a
+                  href={profile.personalResumeUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm px-4 py-1.5 rounded border border-[#d97706]/30 text-[#d97706] hover:bg-[#d97706]/10 transition-all duration-300"
+                >
+                  Creative Resume
+                </a>
+              )}
+            </>
           )}
         </div>
 
@@ -131,22 +147,37 @@ export default function Navbar({ variant = "professional" }: Props) {
                   >
                     Personal
                   </Link>
-                  <a
-                    href={profile.resumePath}
-                    target="_blank"
-                    className="text-base px-4 py-2 rounded border border-[#d97706]/30 text-[#d97706] hover:bg-[#d97706]/10 transition-all w-fit"
-                  >
-                    Resume
-                  </a>
+                  {profile.professionalResumeUrl && (
+                    <a
+                      href={profile.professionalResumeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base px-4 py-2 rounded border border-[#d97706]/30 text-[#d97706] hover:bg-[#d97706]/10 transition-all w-fit"
+                    >
+                      Career Resume
+                    </a>
+                  )}
                 </>
               ) : (
-                <Link
-                  href="/professional"
-                  onClick={() => setMobileOpen(false)}
-                  className="text-base px-4 py-2 rounded border border-[#d97706]/30 text-[#d97706] hover:bg-[#d97706]/10 transition-all w-fit"
-                >
-                  Professional
-                </Link>
+                <>
+                  <Link
+                    href="/professional"
+                    onClick={() => setMobileOpen(false)}
+                    className="text-base text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                  >
+                    Professional
+                  </Link>
+                  {profile.personalResumeUrl && (
+                    <a
+                      href={profile.personalResumeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-base px-4 py-2 rounded border border-[#d97706]/30 text-[#d97706] hover:bg-[#d97706]/10 transition-all w-fit"
+                    >
+                      Creative Resume
+                    </a>
+                  )}
+                </>
               )}
             </div>
           </motion.div>

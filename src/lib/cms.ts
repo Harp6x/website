@@ -43,7 +43,8 @@ export async function fetchProfile(): Promise<Profile> {
     socials: cms.socials?.length ? cms.socials : profileFallback.socials,
     professionalEmails: cms.professionalEmails?.length ? cms.professionalEmails : profileFallback.professionalEmails,
     personalBrands: Object.keys(personalBrands).length ? personalBrands : profileFallback.personalBrands,
-    resumePath: cms.resumePath ?? profileFallback.resumePath,
+    professionalResumeUrl: cms.professionalResumeUrl ?? profileFallback.professionalResumeUrl,
+    personalResumeUrl: cms.personalResumeUrl ?? profileFallback.personalResumeUrl,
   };
 }
 

@@ -48,11 +48,16 @@ export interface SanityProfile {
   socials?: { label: string; href: string }[];
   professionalEmails?: string[];
   personalBrands?: { key: string; instagram?: string; youtube?: string; substack?: string; email?: string }[];
-  resumePath?: string;
+  professionalResumeUrl?: string;
+  personalResumeUrl?: string;
 }
 
 export async function getProfile(): Promise<SanityProfile | null> {
-  return client.fetch(`*[_type == "profile"][0]`);
+  return client.fetch(`*[_type == "profile"][0] {
+    ...,
+    "professionalResumeUrl": professionalResume.asset->url,
+    "personalResumeUrl": personalResume.asset->url
+  }`);
 }
 
 // ─── Experience ───

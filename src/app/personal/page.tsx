@@ -29,7 +29,7 @@ export default async function PersonalPage() {
 
   return (
     <div className="personal-warm">
-      <Navbar variant="personal" />
+      <Navbar variant="personal" profile={profile} />
       <main>
         <Hero variant="personal" profile={profile} />
         <PersonalAbout data={personalAbout} />

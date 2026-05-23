@@ -58,7 +58,8 @@ const profile: Profile = {
     },
   },
 
-  resumePath: "/Uddip_Ranjan_Das_CV.pdf",
+  professionalResumeUrl: "",
+  personalResumeUrl: "",
 };
 
 export default profile;

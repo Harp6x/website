@@ -34,7 +34,8 @@ export interface Profile {
   socials: SocialLink[];
   professionalEmails: string[];
   personalBrands: Record<string, BrandLinks>;
-  resumePath: string;
+  professionalResumeUrl: string;
+  personalResumeUrl: string;
 }
 
 export interface Chapter {

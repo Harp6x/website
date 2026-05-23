@@ -1,4 +1,5 @@
 import { getBlogPost, getBlogPosts } from "@/sanity/queries";
+import { fetchProfile } from "@/lib/cms";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
@@ -23,6 +24,7 @@ export async function generateStaticParams() {
 
 export default async function BlogPostPage({ params }: Props) {
   const { slug } = await params;
+  const profile = await fetchProfile();
 
   let post;
   try {
@@ -35,7 +37,7 @@ export default async function BlogPostPage({ params }: Props) {
 
   return (
     <div className="grain">
-      <Navbar variant="personal" />
+      <Navbar variant="personal" profile={profile} />
       <main className="pt-32 pb-20 px-6 md:px-10">
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>

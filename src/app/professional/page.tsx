@@ -25,7 +25,7 @@ export default async function ProfessionalPage() {
 
   return (
     <div className="grain">
-      <Navbar variant="professional" />
+      <Navbar variant="professional" profile={profile} />
       <main>
         <Hero variant="professional" profile={profile} />
         <About profile={profile} />
