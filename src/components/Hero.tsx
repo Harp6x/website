@@ -89,6 +89,16 @@ export default function Hero({ variant = "professional", profile: profileProp }:
                   <a href="#contact" className="px-6 py-3 text-base font-medium text-[var(--text-muted)] hover:text-[#d97706] transition-colors duration-300">
                     Contact
                   </a>
+                  {profile.professionalResumeUrl && (
+                    <a
+                      href={profile.professionalResumeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-6 py-3 text-base font-medium text-[var(--text-muted)] hover:text-[#d97706] transition-colors duration-300"
+                    >
+                      Resume
+                    </a>
+                  )}
                 </>
               ) : (
                 <>
@@ -101,6 +111,16 @@ export default function Hero({ variant = "professional", profile: profileProp }:
                   <a href="#contact" className="px-7 py-3.5 text-base font-medium text-[var(--text-muted)] hover:text-[var(--personal-accent)] transition-colors duration-300">
                     Contact
                   </a>
+                  {profile.personalResumeUrl && (
+                    <a
+                      href={profile.personalResumeUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-7 py-3.5 text-base font-medium text-[var(--text-muted)] hover:text-[var(--personal-accent)] transition-colors duration-300"
+                    >
+                      Resume
+                    </a>
+                  )}
                 </>
               )}
             </motion.div>

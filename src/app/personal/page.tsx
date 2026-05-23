@@ -7,6 +7,7 @@ import BeyondWork from "@/components/BeyondWork";
 import Journal from "@/components/Journal";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CrossPageNudge from "@/components/CrossPageNudge";
 import { fetchProfile, fetchBeyondWork, fetchPhilosophies, fetchJournalTopics, fetchPersonalAbout, fetchLifePillars } from "@/lib/cms";
 
 export const revalidate = 60;
@@ -30,6 +31,7 @@ export default async function PersonalPage() {
   return (
     <div className="personal-warm">
       <Navbar variant="personal" profile={profile} />
+      <CrossPageNudge variant="personal" />
       <main>
         <Hero variant="personal" profile={profile} />
         <PersonalAbout data={personalAbout} />

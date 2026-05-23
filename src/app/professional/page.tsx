@@ -6,6 +6,7 @@ import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import CrossPageNudge from "@/components/CrossPageNudge";
 import { fetchProfile, fetchExperiences, fetchProjects, fetchSkills } from "@/lib/cms";
 
 export const revalidate = 60;
@@ -26,6 +27,7 @@ export default async function ProfessionalPage() {
   return (
     <div className="grain">
       <Navbar variant="professional" profile={profile} />
+      <CrossPageNudge variant="professional" />
       <main>
         <Hero variant="professional" profile={profile} />
         <About profile={profile} />
