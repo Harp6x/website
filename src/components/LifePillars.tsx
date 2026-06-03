@@ -50,7 +50,7 @@ export default function LifePillars({ pillarsData, profile: profileProp }: Props
           <h2 className="font-serif-heading text-4xl md:text-5xl font-semibold text-[var(--text-primary)] mb-4">
             Three pillars. One person.
           </h2>
-          <p className="text-[var(--text-muted)] text-base max-w-2xl mb-16 leading-relaxed">
+          <p className="text-[var(--text-muted)] text-base max-w-2xl mb-10 leading-relaxed">
             Each brand represents a different dimension of the same life — technology,
             exploration, and machines.
           </p>

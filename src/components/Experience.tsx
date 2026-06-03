@@ -20,7 +20,7 @@ export default function Experience({ chapters: chaptersProp }: Props) {
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
             The path so far.
           </h2>
-          <p className="text-[var(--text-muted)] text-base max-w-xl mb-16">
+          <p className="text-[var(--text-muted)] text-base max-w-xl mb-10">
             SOC to threat intel to detection engineering to product owner. Each chapter built on the last.
           </p>
         </AnimatedSection>

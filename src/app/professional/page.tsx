@@ -4,10 +4,11 @@ import About from "@/components/About";
 import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
+import ProductShowcase from "@/components/ProductShowcase";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CrossPageNudge from "@/components/CrossPageNudge";
-import { fetchProfile, fetchExperiences, fetchProjects, fetchSkills } from "@/lib/cms";
+import { fetchProfile, fetchExperiences, fetchProjects, fetchSkills, fetchProducts } from "@/lib/cms";
 
 export const revalidate = 60;
 
@@ -17,11 +18,12 @@ export const metadata = {
 };
 
 export default async function ProfessionalPage() {
-  const [profile, experiences, projects, skills] = await Promise.all([
+  const [profile, experiences, projects, skills, products] = await Promise.all([
     fetchProfile(),
     fetchExperiences(),
     fetchProjects(),
     fetchSkills(),
+    fetchProducts(),
   ]);
 
   return (
@@ -34,6 +36,7 @@ export default async function ProfessionalPage() {
         <Experience chapters={experiences} />
         <Skills skills={skills} />
         <Projects projects={projects} />
+        <ProductShowcase products={products} variant="professional" />
         <Contact variant="professional" profile={profile} />
       </main>
       <Footer profile={profile} />

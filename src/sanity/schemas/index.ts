@@ -9,6 +9,7 @@ import philosophy from "./philosophy";
 import journalTopic from "./journalTopic";
 import personalAbout from "./personalAbout";
 import lifePillar from "./lifePillar";
+import product from "./product";
 
 export const schemaTypes = [
   blogPost,
@@ -22,4 +23,5 @@ export const schemaTypes = [
   journalTopic,
   personalAbout,
   lifePillar,
+  product,
 ];

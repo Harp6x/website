@@ -21,7 +21,7 @@ export default function Projects({ projects: projectsProp }: Props) {
           <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
             Selected projects.
           </h2>
-          <p className="text-[var(--text-muted)] text-base max-w-xl mb-16">
+          <p className="text-[var(--text-muted)] text-base max-w-xl mb-10">
             Things I&apos;ve built, led, or am building. where the thinking matters
             as much as the outcome.
           </p>

@@ -109,3 +109,34 @@ export interface ContentVision {
   pillars: string[];
   closingLine: string;
 }
+
+export type ProductBrand = "harp6x" | "tgu" | "crossover";
+export type ProductType =
+  | "template"
+  | "manual"
+  | "ebook"
+  | "toolkit"
+  | "bundle"
+  | "course"
+  | "essay"
+  | "subscription";
+export type PriceType = "free" | "paid" | "bundle" | "coming-soon";
+export type ProductSurface = "professional" | "personal";
+
+export interface Product {
+  id: string;
+  slug: string;
+  title: string;
+  shortDescription: string;
+  format?: string;
+  brand: ProductBrand;
+  productType: ProductType;
+  themes: string[];
+  showOn: ProductSurface[];
+  priceType: PriceType;
+  price?: string;
+  gumroadUrl?: string;
+  ctaLabel?: string;
+  coverImage?: string;
+  featured?: boolean;
+}

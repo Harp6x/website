@@ -122,8 +122,20 @@ body {
 
 /* Cinematic section spacing */
 .section-padding {
-  padding-top: 8rem;
-  padding-bottom: 8rem;
+  padding-top: 4.5rem;
+  padding-bottom: 4.5rem;
+}
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
+  }
+}
+
+/* Tightened section-ending divider spacing (was mt-32 = 8rem) */
+.section-padding .divider,
+.section-padding .warm-divider {
+  margin-top: 4rem;
 }
 
 /* Glass card */

@@ -1,6 +1,6 @@
-import { getProfile, getExperiences, getProjects, getSkills, getBeyondWork, getPhilosophies, getJournalTopics, getPersonalAbout, getLifePillars } from "@/sanity/queries";
-import type { SanityProfile, SanityExperience, SanityProject, SanitySkills, SanityBeyondWork, SanityPhilosophy, SanityJournalTopic, SanityPersonalAbout, SanityLifePillar } from "@/sanity/queries";
-import type { Profile, Chapter, Project, Skills, LifeSection, JournalTopic } from "@/data/types";
+import { getProfile, getExperiences, getProjects, getSkills, getBeyondWork, getPhilosophies, getJournalTopics, getPersonalAbout, getLifePillars, getProducts } from "@/sanity/queries";
+import type { SanityProfile, SanityExperience, SanityProject, SanitySkills, SanityBeyondWork, SanityPhilosophy, SanityJournalTopic, SanityPersonalAbout, SanityLifePillar, SanityProductDoc } from "@/sanity/queries";
+import type { Profile, Chapter, Project, Skills, LifeSection, JournalTopic, Product, ProductBrand, ProductType, PriceType, ProductSurface } from "@/data/types";
 
 import profileFallback from "@/data/profile";
 import experienceFallback from "@/data/experience";
@@ -8,6 +8,7 @@ import projectsFallback from "@/data/projects";
 import skillsFallback from "@/data/skills";
 import beyondFallback from "@/data/beyond";
 import journalFallback from "@/data/journal";
+import productsFallback from "@/data/products";
 
 function safe<T>(fn: () => Promise<T>): Promise<T | null> {
   return fn().catch(() => null);
@@ -132,5 +133,27 @@ export async function fetchLifePillars(): Promise<{ brand: string; key: string; 
     theme: l.theme ?? "",
     description: l.description ?? "",
     contentPillars: l.contentPillars ?? [],
+  }));
+}
+
+export async function fetchProducts(): Promise<Product[]> {
+  const cms = await safe(getProducts);
+  if (!cms?.length) return productsFallback;
+  return cms.map((p: SanityProductDoc) => ({
+    id: p._id,
+    slug: p.slug?.current ?? p._id,
+    title: p.title,
+    shortDescription: p.shortDescription ?? "",
+    format: p.format,
+    brand: (p.brand as ProductBrand) ?? "harp6x",
+    productType: (p.productType as ProductType) ?? "manual",
+    themes: p.themes ?? [],
+    showOn: (p.showOn as ProductSurface[]) ?? ["personal"],
+    priceType: (p.priceType as PriceType) ?? "paid",
+    price: p.price,
+    gumroadUrl: p.gumroadUrl,
+    ctaLabel: p.ctaLabel,
+    coverImage: p.coverImageUrl,
+    featured: p.featured,
   }));
 }

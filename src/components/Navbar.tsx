@@ -11,6 +11,7 @@ const proLinks = [
   { label: "Work", href: "#experience" },
   { label: "Skills", href: "#skills" },
   { label: "Projects", href: "#projects" },
+  { label: "Library", href: "/products" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -18,6 +19,7 @@ const personalLinks = [
   { label: "About", href: "#about" },
   { label: "Philosophy", href: "#philosophy" },
   { label: "Pillars", href: "#pillars" },
+  { label: "Products", href: "/products" },
   { label: "Beyond", href: "#beyond" },
   { label: "Journal", href: "#journal" },
   { label: "Contact", href: "#contact" },
@@ -55,19 +57,29 @@ export default function Navbar({ variant = "professional", profile }: Props) {
           href="/"
           className="font-mono text-sm tracking-[0.2em] text-[var(--text-primary)] hover:text-[#d97706] transition-colors duration-300"
         >
-          {profile.handle}
+          {profile.name}
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-300 tracking-wide"
-            >
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) =>
+            link.href.startsWith("#") ? (
+              <a
+                key={link.href}
+                href={link.href}
+                className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-300 tracking-wide"
+              >
+                {link.label}
+              </a>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-300 tracking-wide"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
           {variant === "professional" ? (
             <Link
               href="/personal"
@@ -104,16 +116,27 @@ export default function Navbar({ variant = "professional", profile }: Props) {
             className="md:hidden bg-[var(--bg-primary-translucent)] backdrop-blur-2xl border-b border-[var(--border)]/50 overflow-hidden"
           >
             <div className="px-6 py-6 flex flex-col gap-5">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setMobileOpen(false)}
-                  className="text-base text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) =>
+                link.href.startsWith("#") ? (
+                  <a
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-base text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    onClick={() => setMobileOpen(false)}
+                    className="text-base text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
               {variant === "professional" ? (
                 <Link
                   href="/personal"

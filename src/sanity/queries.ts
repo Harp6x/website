@@ -174,6 +174,36 @@ export async function getLifePillars(): Promise<SanityLifePillar[]> {
   return client.fetch(`*[_type == "lifePillar"] | order(order asc)`);
 }
 
+// ─── Products ───
+export interface SanityProductDoc {
+  _id: string;
+  title: string;
+  slug?: { current: string };
+  shortDescription?: string;
+  format?: string;
+  brand: string;
+  productType: string;
+  themes?: string[];
+  showOn?: string[];
+  priceType: string;
+  price?: string;
+  gumroadUrl?: string;
+  ctaLabel?: string;
+  featured?: boolean;
+  order?: number;
+  coverImageUrl?: string;
+}
+
+export async function getProducts(): Promise<SanityProductDoc[]> {
+  return client.fetch(
+    `*[_type == "product" && published == true] | order(order asc) {
+      _id, title, slug, shortDescription, format, brand, productType,
+      themes, showOn, priceType, price, gumroadUrl, ctaLabel, featured, order,
+      "coverImageUrl": coverImage.asset->url
+    }`
+  );
+}
+
 // ─── Legacy ───
 export interface SanitySettings {
   currentRole?: string;

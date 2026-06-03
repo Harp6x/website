@@ -34,16 +34,17 @@ export default function LandingHero({ profile: profileProp }: Props) {
       </motion.div>
 
       {/* Split */}
-      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-0">
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-0 items-stretch">
         {/* Professional */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 1.2 }}
+          className="h-full"
         >
           <Link
             href="/professional"
-            className="group block p-10 md:p-16 border border-[var(--border-subtle)] md:border-r-0 rounded-t-lg md:rounded-tr-none md:rounded-l-lg hover:border-[#d97706]/20 transition-all duration-500 relative overflow-hidden"
+            className="group flex flex-col h-full p-10 md:p-16 border border-[var(--border-subtle)] md:border-r-0 rounded-t-lg md:rounded-tr-none md:rounded-l-lg hover:border-[#d97706]/20 transition-all duration-500 relative overflow-hidden"
           >
             {/* Hover glow */}
             <div className="absolute inset-0 bg-gradient-to-br from-[#d97706]/0 to-transparent group-hover:from-[#d97706]/[0.03] transition-all duration-700" />
@@ -80,10 +81,11 @@ export default function LandingHero({ profile: profileProp }: Props) {
           initial={{ opacity: 0, x: 40 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 1.4 }}
+          className="h-full"
         >
           <Link
             href="/personal"
-            className="group block p-10 md:p-16 border border-[var(--border-subtle)] md:border-l-[var(--border-subtle)] rounded-b-lg md:rounded-bl-none md:rounded-r-lg hover:border-[#d97706]/20 transition-all duration-500 relative overflow-hidden"
+            className="group flex flex-col h-full p-10 md:p-16 border border-[var(--border-subtle)] md:border-l-[var(--border-subtle)] rounded-b-lg md:rounded-bl-none md:rounded-r-lg hover:border-[#d97706]/20 transition-all duration-500 relative overflow-hidden"
           >
             <div className="absolute inset-0 bg-gradient-to-bl from-[#d97706]/0 to-transparent group-hover:from-[#d97706]/[0.03] transition-all duration-700" />
 
