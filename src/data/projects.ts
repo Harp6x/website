@@ -17,6 +17,16 @@ const projects: Project[] = [
     tags: ["Product Ownership", "Cisco Security", "Syslog", "Automation"],
   },
   {
+    title: "hobie",
+    category: "Product / Side Project",
+    description:
+      "A cozy hobby-tracking studio. roadmaps, quests, and focus timers that turn casual interest into real, visible progress.",
+    thinking:
+      "Most hobby apps are either rigid course platforms or empty timers. hobie sits in between. just enough structure to keep momentum, never enough to kill the joy.",
+    tags: ["React", "Supabase", "Product Design", "Vite"],
+    link: "https://myhobie.vercel.app",
+  },
+  {
     title: "The CTI Dispatch",
     category: "Publication",
     description:

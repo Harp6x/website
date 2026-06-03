@@ -107,7 +107,8 @@ async function seed() {
 
   // ─── Projects ───
   const projects = [
-    { title: "Cisco SAL Intelligence & Analytics", category: "Product", description: "Building the intelligence layer for Cisco's firewall ecosystem. Transforming raw syslog data, network telemetry, and security signals into proactive threat detection.", thinking: "The challenge: SOC teams drown in data but starve for insight. The approach: treat security telemetry as a product problem, not just an engineering one.", tags: ["Product Ownership", "Cisco Security", "Syslog", "Automation"] },
+    { id: "project-1", order: 1, title: "Cisco SAL Intelligence & Analytics", category: "Product", description: "Building the intelligence layer for Cisco's firewall ecosystem. Transforming raw syslog data, network telemetry, and security signals into proactive threat detection.", thinking: "The challenge: SOC teams drown in data but starve for insight. The approach: treat security telemetry as a product problem, not just an engineering one.", tags: ["Product Ownership", "Cisco Security", "Syslog", "Automation"] },
+    { id: "project-hobie", order: 1.5, title: "hobie", category: "Product / Side Project", description: "A cozy hobby-tracking studio. roadmaps, quests, and focus timers that turn casual interest into real, visible progress.", thinking: "Most hobby apps are either rigid course platforms or empty timers. hobie sits in between. just enough structure to keep momentum, never enough to kill the joy.", tags: ["React", "Supabase", "Product Design", "Vite"], link: "https://myhobie.vercel.app" },
     { title: "The CTI Dispatch", category: "Publication", description: "A weekly publication of curated cyber threat intelligence. analysis, not just headlines. Special bulletins for high-impact events reaching security professionals.", thinking: "Most threat intel is noise. The goal: signal over volume, clarity over comprehensiveness.", tags: ["CTI", "Writing", "OSINT", "Analysis"], link: "https://medium.com/@harp6x" },
     { title: "SOC Workflow Automation", category: "Security Engineering", description: "Redesigned SOC workflows that improved efficiency by 65% and cut false positives by 40%. Built detection rules, playbooks, and analyst decision frameworks.", thinking: "Alert fatigue is a design problem. By rethinking the investigation pipeline, we gave analysts back their judgment.", tags: ["SIEM", "SOAR", "MITRE ATT&CK", "Detection Engineering"] },
     { title: "APT Threat Hunting Program", category: "Threat Intelligence", description: "Built and led proactive threat hunting operations that identified 7 threat groups before they could establish persistence.", thinking: "Hunting isn't about finding needles in haystacks. It's about understanding which haystacks to look in.", tags: ["APT", "Threat Hunting", "IOC Analysis", "Intelligence"] },
@@ -115,11 +116,12 @@ async function seed() {
   ];
   for (const [i, proj] of projects.entries()) {
     console.log(`  → Project: ${proj.title}`);
+    const { id, order, ...fields } = proj;
     await client.createOrReplace({
-      _id: `project-${i + 1}`,
+      _id: id ?? `project-${i + 1}`,
       _type: "project",
-      ...proj,
-      order: i + 1,
+      ...fields,
+      order: order ?? i + 1,
     });
   }
 
