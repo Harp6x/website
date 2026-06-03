@@ -234,6 +234,135 @@ async function seed() {
     });
   }
 
+  // ─── Site Settings (singleton) ───
+  console.log("  → Site Settings");
+  await client.createOrReplace({
+    _id: "siteSettings",
+    _type: "siteSettings",
+    currentRole: "Product Owner",
+    currentCompany: "(prev. Cisco)",
+    location: "New Delhi, India",
+    tagline: "Building resilient systems.",
+    focus: "Security & Product",
+    subtitleLine1: "Product thinker. Cybersecurity engineer. Explorer.",
+    subtitleLine2:
+      "Six years in cybersecurity. From SOC analyst to threat intel to detection engineering to product owner at Cisco.",
+  });
+
+  // ─── Blog Posts ───
+  const toBlocks = (paragraphs) =>
+    paragraphs.map((text, i) => ({
+      _type: "block",
+      _key: `b${i}`,
+      style: "normal",
+      markDefs: [],
+      children: [{ _type: "span", _key: `s${i}`, text, marks: [] }],
+    }));
+
+  const blogPosts = [
+    {
+      slug: "why-i-left-the-soc",
+      title: "Why I Left the SOC",
+      category: "Cybersecurity",
+      excerpt:
+        "Five years defending networks taught me one thing: reactive security breaks at scale. This is the story of shifting from operator to builder.",
+      publishedAt: "2026-01-15T09:00:00Z",
+      body: [
+        "For five years, my job was to react. An alert fires, you triage it, you decide if it matters, you respond. Repeat a few thousand times a month. You get good at it — fast, accurate, calm under pressure. And then one day you realize the whole model is upside down.",
+        "Reactive security breaks at scale. No matter how good your analysts are, you're always behind. The attacker chooses the time, the place, and the method. You're just trying to keep up. The only real leverage is upstream — in how the systems are designed, how the signals are shaped, what gets built before the alert ever fires.",
+        "That's the shift that moved me from operator to builder. From triaging alerts to owning the product that decides which alerts exist in the first place. It's the difference between bailing water and fixing the hull.",
+      ],
+    },
+    {
+      slug: "discipline-as-an-operating-system",
+      title: "Discipline as an Operating System",
+      category: "Philosophy",
+      excerpt:
+        "Stoicism isn't philosophy for academics. It's firmware for anyone trying to build something real while the world demands you stay comfortable.",
+      publishedAt: "2026-02-02T09:00:00Z",
+      body: [
+        "Motivation is a feeling. Discipline is a system. One depends on your mood; the other runs regardless of it. If you want to build anything that lasts, you cannot afford to outsource your consistency to how you happen to feel on a Tuesday morning.",
+        "I think of discipline the way I think of infrastructure: you set it up once, deliberately, and then it carries the load without you having to decide again every day. The decisions are made in advance. Showing up is no longer a negotiation.",
+        "This is what the Stoics understood. Freedom isn't the absence of constraint — it's choosing your constraints so well that you stop being jerked around by everything else. Discipline, done right, is the most freedom you'll ever feel.",
+      ],
+    },
+    {
+      slug: "building-systems-for-life",
+      title: "Building Systems for Life",
+      category: "Systems Thinking",
+      excerpt:
+        "The same principles that make good infrastructure — redundancy, observability, graceful degradation — apply to how you design a life.",
+      publishedAt: "2026-02-20T09:00:00Z",
+      body: [
+        "Good infrastructure has a few properties: it's observable, so you can see what's happening; it's redundant, so one failure doesn't take everything down; and it degrades gracefully, so when something breaks, it bends instead of shattering.",
+        "It turns out these are good properties for a life, too. Observability is knowing your own patterns honestly. Redundancy is not staking your entire identity on one outcome. Graceful degradation is having enough slack that a bad week doesn't become a bad year.",
+        "Most people design their lives by accident, one default at a time. The alternative is to treat it like a system you're responsible for — and to build it on purpose.",
+      ],
+    },
+  ];
+  for (const [i, post] of blogPosts.entries()) {
+    console.log(`  → Blog: ${post.title}`);
+    await client.createOrReplace({
+      _id: `blog-${post.slug}`,
+      _type: "blogPost",
+      title: post.title,
+      slug: { _type: "slug", current: post.slug },
+      category: post.category,
+      excerpt: post.excerpt,
+      publishedAt: post.publishedAt,
+      body: toBlocks(post.body),
+    });
+  }
+
+  // ─── Products ───
+  const products = [
+    { slug: "ai-workflow-field-manual", title: "AI Workflow Field Manual", shortDescription: "A practical field manual for orchestrating AI in real work — 100+ prompts, automation patterns, and security-aware use cases.", format: "PDF · Field manual", brand: "harp6x", productType: "manual", themes: ["ai", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹1,499", gumroadUrl: "https://harp6x.gumroad.com/l/ai-workflow-field-manual", featured: true },
+    { slug: "cybersecurity-starter-kit", title: "Cybersecurity Starter Kit", shortDescription: "A personal security stack, annual audit checklist, and setup guides — the complete starting point for digital safety.", format: "PDF + checklists", brand: "harp6x", productType: "toolkit", themes: ["cybersecurity", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹799", gumroadUrl: "https://harp6x.gumroad.com/l/cybersecurity-starter-kit", featured: true },
+    { slug: "linkedin-playbook-technical", title: "The LinkedIn Playbook for Technical People", shortDescription: "Build a credible LinkedIn presence as an engineer or security professional — without the performative self-promotion.", format: "PDF · Guide", brand: "harp6x", productType: "manual", themes: ["career", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹999", gumroadUrl: "https://harp6x.gumroad.com/l/linkedin-playbook-technical", featured: true },
+    { slug: "freelancers-notion-os", title: "The Freelancer's Notion OS", shortDescription: "A complete Notion operating system for solo client work — CRM, projects, pipeline, and financial tracking in one workspace.", format: "Notion template", brand: "harp6x", productType: "template", themes: ["business", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹4,999", gumroadUrl: "https://harp6x.gumroad.com/l/freelancers-notion-os" },
+    { slug: "one-person-business-planner", title: "The One-Person Business Annual Planner", shortDescription: "A relational Notion planning system that flows from annual purpose down to weekly tasks — built for solo operators.", format: "Notion template", brand: "harp6x", productType: "template", themes: ["business", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹2,999", gumroadUrl: "https://harp6x.gumroad.com/l/one-person-business-planner" },
+    { slug: "creator-os-bundle", title: "The Creator OS Bundle", shortDescription: "Content OS, Signal OS, and the AI Workflow Field Manual together — a complete solo creator operating system.", format: "Bundle · 3 products", brand: "harp6x", productType: "bundle", themes: ["systems", "ai"], showOn: ["professional", "personal"], priceType: "bundle", price: "₹3,999", gumroadUrl: "https://harp6x.gumroad.com/l/creator-os-bundle" },
+    { slug: "signal-club", title: "Signal Club — Monthly Subscription", shortDescription: "A monthly membership: one premium systems deep-dive, the full back catalogue, a live Q&A, and early access to everything new.", format: "Subscription · monthly", brand: "harp6x", productType: "subscription", themes: ["systems", "ai"], showOn: ["professional", "personal"], priceType: "paid", price: "₹499/mo", gumroadUrl: "https://harp6x.gumroad.com/l/signal-club" },
+    { slug: "90-day-creator-sprint", title: "The 90-Day Creator Sprint", shortDescription: "A cohort program where you build your content system, first product, and first 500 subscribers — with weekly live calls and a private community.", format: "Cohort · 90 days", brand: "harp6x", productType: "course", themes: ["systems", "business"], showOn: ["professional", "personal"], priceType: "paid", price: "₹9,999", gumroadUrl: "https://harp6x.gumroad.com/l/90-day-creator-sprint" },
+    { slug: "notion-template-shop-bundle", title: "The Notion Template Shop Bundle", shortDescription: "Ten focused Notion micro-templates — task manager, weekly review, content calendar, goal tracker, and more — in one collection.", format: "Bundle · 10 templates", brand: "harp6x", productType: "bundle", themes: ["systems"], showOn: ["professional", "personal"], priceType: "bundle", price: "₹1,499", gumroadUrl: "https://harp6x.gumroad.com/l/notion-template-shop-bundle" },
+    { slug: "creator-research-playbook", title: "The Creator Research Playbook", shortDescription: "The complete research system for creators — finding what your audience needs, what's working in your niche, and where the content gaps are.", format: "PDF · Guide", brand: "harp6x", productType: "manual", themes: ["systems", "business"], showOn: ["professional", "personal"], priceType: "paid", price: "₹1,499", gumroadUrl: "https://harp6x.gumroad.com/l/creator-research-playbook" },
+    { slug: "india-train-bible", title: "The India Train Bible", shortDescription: "The complete guide to booking, riding, and navigating India's railways as a solo traveller — IRCTC, Tatkal, and 30 essential routes.", format: "PDF · 50–70 pages", brand: "tgu", productType: "manual", themes: ["travel"], showOn: ["personal"], priceType: "paid", price: "₹499", gumroadUrl: "https://theregoesuddip.gumroad.com/l/india-train-bible", featured: true },
+    { slug: "northeast-india-fieldguide", title: "The Northeast India Fieldguide", shortDescription: "All 8 states, the permit systems, routes, and culture — the most comprehensive solo traveller guide to Northeast India.", format: "PDF · 60–80 pages", brand: "tgu", productType: "manual", themes: ["travel", "trekking"], showOn: ["personal"], priceType: "paid", price: "₹799", gumroadUrl: "https://theregoesuddip.gumroad.com/l/northeast-india-fieldguide", featured: true },
+    { slug: "letters-from-india", title: "Letters from India", shortDescription: "A curated collection of 25 long-form travel essays — India experienced through honest writing, read like a book.", format: "eBook · PDF", brand: "tgu", productType: "essay", themes: ["writing", "travel"], showOn: ["personal"], priceType: "paid", price: "₹399", gumroadUrl: "https://theregoesuddip.gumroad.com/l/letters-from-india", featured: true },
+    { slug: "solo-travel-safety-protocol", title: "The Solo Travel Safety Protocol", shortDescription: "A practical, non-fear-based safety system for solo travel in India — threat model, check-ins, and what to do when things go wrong.", format: "PDF + checklist", brand: "tgu", productType: "toolkit", themes: ["travel"], showOn: ["personal"], priceType: "paid", price: "₹299", gumroadUrl: "https://theregoesuddip.gumroad.com/l/solo-travel-safety-protocol" },
+    { slug: "annual-india-trip-planner", title: "The Annual India Solo Trip Planner", shortDescription: "A Notion system for India solo travel — filterable destination database, itinerary builder, budget and permit trackers.", format: "Notion template", brand: "tgu", productType: "template", themes: ["travel", "systems"], showOn: ["personal"], priceType: "paid", price: "₹999", gumroadUrl: "https://theregoesuddip.gumroad.com/l/annual-india-trip-planner" },
+    { slug: "himalayan-trek-permit-guide", title: "The Himalayan Trek Permit Guide", shortDescription: "The bureaucratic layer of Himalayan trekking decoded — which permits exist, who needs them, and how to get them for Spiti, Ladakh, Sikkim and more.", format: "PDF · 30–40 pages", brand: "tgu", productType: "manual", themes: ["trekking", "travel"], showOn: ["personal"], priceType: "paid", price: "₹299", gumroadUrl: "https://theregoesuddip.gumroad.com/l/himalayan-trek-permit-guide" },
+    { slug: "india-off-season-calendar", title: "The India Off-Season Travel Calendar", shortDescription: "A 12-month visual calendar of every Indian destination — the best, worst, and shoulder months, plus a filterable Notion version.", format: "PDF + Notion", brand: "tgu", productType: "template", themes: ["travel"], showOn: ["personal"], priceType: "paid", price: "₹399", gumroadUrl: "https://theregoesuddip.gumroad.com/l/india-off-season-calendar" },
+    { slug: "responsible-traveller-guide", title: "The Responsible Traveller's India Guide", shortDescription: "Practical, specific guidance for ethical travel in India — local economies, homestays, photography ethics, and what your tourism spending supports.", format: "PDF · 25–35 pages", brand: "tgu", productType: "manual", themes: ["travel"], showOn: ["personal"], priceType: "paid", price: "₹299", gumroadUrl: "https://theregoesuddip.gumroad.com/l/responsible-traveller-guide" },
+    { slug: "monsoon-india-photo-guide", title: "The Monsoon India Photo Guide", shortDescription: "A photography guide for India in the monsoon — gear, compositions for rain light, the best locations, and 15 case-study images with breakdowns.", format: "PDF · 25–35 pages", brand: "tgu", productType: "manual", themes: ["photography", "travel"], showOn: ["personal"], priceType: "paid", price: "₹399", gumroadUrl: "https://theregoesuddip.gumroad.com/l/monsoon-india-photo-guide" },
+    { slug: "48-hour-city-guide-bundle", title: "The 48-Hour City Guide Bundle", shortDescription: "Ten honest 48-hour guides to India's cities — where to base yourself, the few things worth doing, and the best meals at three price points.", format: "Bundle · 10 city guides", brand: "tgu", productType: "bundle", themes: ["travel"], showOn: ["personal"], priceType: "bundle", price: "₹799", gumroadUrl: "https://theregoesuddip.gumroad.com/l/48-hour-city-guide-bundle" },
+    { slug: "lifeos-meaningful-ambition", title: "LifeOS — The Meaningful Ambition System", shortDescription: "A 12-module system for building an ambitious life that still feels human — purpose, attention, freedom, and meaningful work.", format: "12 modules", brand: "crossover", productType: "course", themes: ["mindset", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹4,999", gumroadUrl: "https://harp6x.gumroad.com/l/lifeos-meaningful-ambition", featured: true },
+    { slug: "modern-manuals-series", title: "The Modern Manuals Series", shortDescription: "Eight short books of practical philosophy — thinking clearly, attention, freedom, solitude, AI, anti-burnout, and meaningful work.", format: "Bundle · 8 manuals", brand: "crossover", productType: "bundle", themes: ["mindset", "writing"], showOn: ["professional", "personal"], priceType: "bundle", price: "₹2,499", gumroadUrl: "https://harp6x.gumroad.com/l/modern-manuals-series" },
+    { slug: "state-based-products-suite", title: "The State-Based Products Suite", shortDescription: "Tools organised by the state you're in — stuck, overwhelmed, drifting, rebuilding — rather than by topic. Find the one that recognises you.", format: "Suite · in development", brand: "crossover", productType: "bundle", themes: ["mindset", "systems"], showOn: ["professional", "personal"], priceType: "coming-soon", ctaLabel: "Join the waitlist", gumroadUrl: "https://harp6x.gumroad.com/l/state-based-products-suite" },
+  ];
+  for (const [i, p] of products.entries()) {
+    console.log(`  → Product: ${p.title}`);
+    await client.createOrReplace({
+      _id: `product-${p.slug}`,
+      _type: "product",
+      title: p.title,
+      slug: { _type: "slug", current: p.slug },
+      shortDescription: p.shortDescription,
+      format: p.format,
+      brand: p.brand,
+      productType: p.productType,
+      themes: p.themes,
+      showOn: p.showOn,
+      priceType: p.priceType,
+      ...(p.price ? { price: p.price } : {}),
+      ...(p.gumroadUrl ? { gumroadUrl: p.gumroadUrl } : {}),
+      ...(p.ctaLabel ? { ctaLabel: p.ctaLabel } : {}),
+      featured: p.featured ?? false,
+      published: true,
+      order: i + 1,
+    });
+  }
+
   console.log("\n✅ Seeding complete! All content is now in Sanity CMS.");
   console.log("   Open /studio to edit any content.");
 }
