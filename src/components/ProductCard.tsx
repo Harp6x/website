@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowUpRight, ArrowRight } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import type { Product } from "@/data/types";
 import {
   BRAND_LABELS,
@@ -29,7 +29,7 @@ export default function ProductCard({ product, variant = "professional" }: Props
     : "var(--border-subtle)";
 
   return (
-    <div className={`group flex flex-col h-full p-7 ${cardClass}`}>
+    <Link href={`/products/${product.slug}`} className={`group flex flex-col h-full p-7 ${cardClass}`}>
       {/* Cover (only if provided) */}
       {product.coverImage && (
         <div className="relative aspect-[16/9] -mx-7 -mt-7 mb-6 overflow-hidden rounded-t-lg bg-black/5">
@@ -85,13 +85,6 @@ export default function ProductCard({ product, variant = "professional" }: Props
         </div>
 
         <div className="flex items-center gap-4">
-          <Link
-            href={`/products/${product.slug}`}
-            className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
-          >
-            Learn More
-            <ArrowRight className="w-3.5 h-3.5" />
-          </Link>
           {cta.disabled ? (
             <span className="text-sm font-medium text-[var(--text-faint)]">
               {cta.label}
@@ -101,6 +94,7 @@ export default function ProductCard({ product, variant = "professional" }: Props
               href={cta.href}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
               className="inline-flex items-center gap-1.5 text-sm font-medium group-hover:gap-2.5 transition-all"
               style={{ color: accent }}
             >
@@ -110,6 +104,6 @@ export default function ProductCard({ product, variant = "professional" }: Props
           )}
         </div>
       </div>
-    </div>
+    </Link>
   );
 }

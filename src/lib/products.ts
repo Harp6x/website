@@ -70,7 +70,7 @@ export function getProductCta(product: Product): ProductCta {
   if (!label) {
     if (priceType === "free") label = "Download free";
     else if (priceType === "coming-soon") label = "Join the waitlist";
-    else label = "View on Gumroad";
+    else label = "Buy Now";
   }
 
   return { label, href: gumroadUrl, disabled: false };
