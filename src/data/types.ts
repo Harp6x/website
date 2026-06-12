@@ -140,3 +140,13 @@ export interface Product {
   coverImage?: string;
   featured?: boolean;
 }
+
+export interface ProductDetail {
+  slug: string;
+  headline: string;
+  subheadline: string;
+  problem: string;
+  whatsIncluded: { title: string; description: string }[];
+  closingPitch?: string;
+  seoKeywords: string[];
+}

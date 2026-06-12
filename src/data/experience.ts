@@ -25,6 +25,21 @@ const chapters: Chapter[] = [
   },
   {
     era: "Parallel",
+    title: "CEO & Founder",
+    company: "Before Maps",
+    period: "2023 – Present",
+    narrative:
+      "Founded and run Before Maps — an exploration-led travel company building scouted, small-group journeys across India. Designed the full product from route planning to the digital platform. Every journey is personally field-tested before it opens.",
+    highlights: [
+      "Built the full-stack platform (Next.js, Sanity CMS, Vercel)",
+      "Designed product catalog, booking pipeline, and operations system",
+      "Personally scouted every route — Himalayas, Northeast, Western Ghats",
+      "Launched digital product line: travel guides, toolkits, and planning systems",
+    ],
+    current: true,
+  },
+  {
+    era: "Parallel",
     title: "Writer & CTI Analyst",
     company: "The CTI Dispatch",
     period: "2025 – Present",

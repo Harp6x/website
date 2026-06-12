@@ -55,6 +55,16 @@ const projects: Project[] = [
     tags: ["APT", "Threat Hunting", "IOC Analysis", "Intelligence"],
   },
   {
+    title: "Before Maps",
+    category: "Founder / Product",
+    description:
+      "Exploration-led journeys across India. Every route personally scouted, tested with a pilot group, and opened only when it meets our standards. Built the full-stack platform, product catalog, and operations system.",
+    thinking:
+      "Travel is a product problem. Most operators sell destinations. Before Maps sells a standard of preparation — the route, the logistics, the safety margin, the story.",
+    tags: ["Next.js", "Sanity CMS", "Product Design", "Operations"],
+    link: "https://beforemaps.com",
+  },
+  {
     title: "Jimny Build Documentation",
     category: "Personal / Exploration",
     description:

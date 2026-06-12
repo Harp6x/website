@@ -1,7 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowUpRight } from "lucide-react";
+import Link from "next/link";
+import { ArrowUpRight, ArrowRight } from "lucide-react";
 import type { Product } from "@/data/types";
 import {
   BRAND_LABELS,
@@ -83,22 +84,31 @@ export default function ProductCard({ product, variant = "professional" }: Props
           </span>
         </div>
 
-        {cta.disabled ? (
-          <span className="text-sm font-medium text-[var(--text-faint)]">
-            {cta.label}
-          </span>
-        ) : (
-          <a
-            href={cta.href}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm font-medium group-hover:gap-2.5 transition-all"
-            style={{ color: accent }}
+        <div className="flex items-center gap-4">
+          <Link
+            href={`/products/${product.slug}`}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-[var(--text-secondary)] hover:text-[var(--text-primary)] transition-colors"
           >
-            {cta.label}
-            <ArrowUpRight className="w-4 h-4" />
-          </a>
-        )}
+            Learn More
+            <ArrowRight className="w-3.5 h-3.5" />
+          </Link>
+          {cta.disabled ? (
+            <span className="text-sm font-medium text-[var(--text-faint)]">
+              {cta.label}
+            </span>
+          ) : (
+            <a
+              href={cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium group-hover:gap-2.5 transition-all"
+              style={{ color: accent }}
+            >
+              {cta.label}
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
