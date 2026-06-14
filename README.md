@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Portfolio — Uddip Ranjan Das
 
-## Getting Started
+Dual-persona portfolio site with CMS-driven content and static fallbacks. Professional side (career, skills, projects) and personal side (philosophy, journal, beyond-work) — each with its own visual identity.
 
-First, run the development server:
+## Tech Stack
+
+| Layer | Tech |
+|---|---|
+| Framework | Next.js 16 (App Router), TypeScript, React 19 |
+| CMS | Sanity v5 (13 schemas, embedded Studio at `/studio`) |
+| Styling | Tailwind CSS v4 (CSS custom properties, light/dark) |
+| Animation | Framer Motion |
+| Analytics | Vercel Analytics + Speed Insights |
+| Hosting | Vercel (auto-deploy from main) |
+
+## Setup
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+cp .env.example .env.local   # Fill in Sanity + optional API keys
+npm run dev                   # → http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Scripts
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+| Command | Purpose |
+|---|---|
+| `npm run dev` | Next.js dev server |
+| `npm run build` | Production build |
+| `npm run lint` | ESLint check |
+| `npm run typecheck` | TypeScript check |
+| `npm test` | Vitest tests |
+| `npm run format` | Prettier format |
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Architecture
 
-## Learn More
+**Dual-source data:** Every page fetches from Sanity CMS first. If CMS fails, static fallback data in `src/data/` is used. The site never breaks.
 
-To learn more about Next.js, take a look at the following resources:
+**Dual-persona routing:** `/professional` (amber accent) and `/personal` (terracotta/teal accent) are separate pages, each fetching their own data. Landing page at `/` is the gateway.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+**13 Sanity schemas:** profile, experience, project, skill, beyondWork, philosophy, journalTopic, personalAbout, lifePillar, product, blogPost, siteSettings.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Documentation
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| File | Purpose |
+|---|---|
+| `AGENTS.md` | Full AI agent context |
+| `CLAUDE.md` | Claude-specific quick context |
+| `CMS-GUIDE.md` | Self-service CMS guide |
+| `docs/ARCHITECTURE.md` | System architecture and data flow |
+| `docs/HANDBOOK.md` | Maintenance guide |
+| `docs/HOW-IT-WORKS.md` | Founder-friendly explainer |
+| `docs/lessons/` | Hard-learned rules |
