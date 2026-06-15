@@ -23,22 +23,34 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
-  title: "Uddip Ranjan Das — Building Resilient Systems",
+  title: "Uddip Ranjan Das — Founder, Builder, Explorer",
   description:
-    "Product thinker. Cybersecurity engineer. Explorer. 5+ years in threat intelligence, SOC operations, and security automation. Now building the intelligence layer at Cisco.",
+    "Founder of Before Maps, Co-founder of Ms Paul Therapies, Creator of Hobie. Building companies, products, and systems with AI. Ex-Cisco. Full-time founder.",
   keywords: [
-    "cybersecurity",
-    "product owner",
-    "threat intelligence",
-    "security automation",
     "Uddip Ranjan Das",
     "harp6x",
+    "Before Maps",
+    "Ms Paul Therapies",
+    "Hobie",
+    "founder",
+    "builder",
+    "AI",
+    "cybersecurity",
+    "product owner",
+    "vibe coding",
   ],
   openGraph: {
-    title: "Uddip Ranjan Das — Building Resilient Systems",
+    title: "Uddip Ranjan Das — Founder, Builder, Explorer",
     description:
-      "Product thinker. Cybersecurity engineer. Explorer. Security, automation, and meaningful living.",
+      "Building three companies. Shipping with AI. Before Maps, Ms Paul Therapies, Hobie.",
     type: "website",
+    siteName: "Uddip Ranjan Das",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Uddip Ranjan Das — Founder, Builder, Explorer",
+    description:
+      "Building three companies. Shipping with AI. Before Maps, Ms Paul Therapies, Hobie.",
   },
 };
 
