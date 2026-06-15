@@ -49,7 +49,7 @@ export default function About({ profile: profileProp }: Props) {
             </AnimatedSection>
           </div>
 
-          {/* Right: Quick facts */}
+          {/* Right: Quick facts + Claude quote */}
           <div>
             <AnimatedSection delay={0.2}>
               <div className="space-y-8 lg:pt-16">
@@ -66,6 +66,19 @@ export default function About({ profile: profileProp }: Props) {
                 ))}
               </div>
             </AnimatedSection>
+
+            {profile.claudeReviewShort && (
+              <AnimatedSection delay={0.3}>
+                <div className="mt-10 p-5 rounded-xl border border-[var(--border-subtle)] bg-[var(--card-bg)]">
+                  <p className="text-[var(--text-secondary)] text-sm leading-relaxed italic">
+                    &ldquo;{profile.claudeReviewShort}&rdquo;
+                  </p>
+                  <p className="text-[var(--text-muted)] text-xs font-mono mt-3">
+                    — Claude Code, AI coding partner
+                  </p>
+                </div>
+              </AnimatedSection>
+            )}
           </div>
         </div>
       </div>

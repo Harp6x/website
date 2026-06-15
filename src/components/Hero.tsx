@@ -63,12 +63,12 @@ export default function Hero({ variant = "professional", profile: profileProp }:
               transition={{ delay: 1.5, duration: 0.5 }}
               className="text-[var(--text-secondary)] text-xl md:text-2xl max-w-lg leading-relaxed mb-10"
             >
-              {isPro ? profile.subtitleLine1 : "Founder. Builder. Creator. Explorer."}
+              {isPro ? profile.subtitleLine1 : "Founder. Builder. Explorer."}
               <br />
               <span className="text-[var(--text-muted)]">
                 {isPro
                   ? profile.subtitleLine2
-                  : "Companies, products, content, and the honest process of becoming."}
+                  : "Building companies, chasing mountains, documenting the process."}
               </span>
             </motion.p>
 

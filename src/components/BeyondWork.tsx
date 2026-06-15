@@ -21,7 +21,7 @@ export default function BeyondWork({ sections: sectionsProp }: Props) {
             The human layer.
           </h2>
           <p className="text-[var(--text-secondary)] text-base max-w-2xl mb-3 leading-relaxed">
-            The portfolio shows what I do. This part shows who I am — technically
+            The portfolio shows what I do. This part shows who I am, technically
             skilled, emotionally aware, creatively ambitious, drawn toward exploration.
           </p>
           <p className="text-[var(--text-muted)] text-base max-w-2xl mb-10 leading-relaxed">

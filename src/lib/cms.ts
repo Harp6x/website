@@ -46,6 +46,8 @@ export async function fetchProfile(): Promise<Profile> {
     personalBrands: Object.keys(personalBrands).length ? personalBrands : profileFallback.personalBrands,
     professionalResumeUrl: cms.professionalResumeUrl ?? profileFallback.professionalResumeUrl,
     personalResumeUrl: cms.personalResumeUrl ?? profileFallback.personalResumeUrl,
+    claudeReview: cms.claudeReview ?? profileFallback.claudeReview,
+    claudeReviewShort: cms.claudeReviewShort ?? profileFallback.claudeReviewShort,
   };
 }
 

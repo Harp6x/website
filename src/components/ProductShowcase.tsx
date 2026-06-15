@@ -18,7 +18,7 @@ const COPY = {
     eyebrow: "Built & Shipped",
     heading: "Library.",
     intro:
-      "Beyond the day job, I design and ship systems, manuals, and tools — practical things people use to work and think better. A selection below.",
+      "Beyond the day job, I design and ship systems, manuals, and tools. Practical things people use to work and think better. A selection below.",
     cta: "Browse the full library",
   },
   personal: {
@@ -26,7 +26,7 @@ const COPY = {
     eyebrow: "The Library",
     heading: "Products.",
     intro:
-      "Field guides, systems, and essays from the things I build and the places I go — for travellers, builders, and people designing a more intentional life.",
+      "Field guides, systems, and essays from the things I build and the places I go. For travellers, builders, and people designing a more intentional life.",
     cta: "See all products",
   },
 } as const;

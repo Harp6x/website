@@ -5,6 +5,7 @@ import Experience from "@/components/Experience";
 import Skills from "@/components/Skills";
 import Projects from "@/components/Projects";
 import ProductShowcase from "@/components/ProductShowcase";
+import ClaudeReview from "@/components/ClaudeReview";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CrossPageNudge from "@/components/CrossPageNudge";
@@ -37,6 +38,7 @@ export default async function ProfessionalPage() {
         <Skills skills={skills} />
         <Projects projects={projects} />
         <ProductShowcase products={products} variant="professional" />
+        <ClaudeReview profile={profile} />
         <Contact variant="professional" profile={profile} />
       </main>
       <Footer profile={profile} />

@@ -22,7 +22,7 @@ const projects: Project[] = [
     description:
       "A cozy hobby-tracking studio. Roadmaps, quests, and focus timers that turn casual interest into real, visible progress. Vibe-coded end-to-end with Claude Code.",
     thinking:
-      "Most hobby apps are either rigid course platforms or empty timers. Hobie sits in between — just enough structure to keep momentum, never enough to kill the joy.",
+      "Most hobby apps are either rigid course platforms or empty timers. Hobie sits in between: just enough structure to keep momentum, never enough to kill the joy.",
     tags: ["React 19", "Supabase", "TypeScript", "Tailwind v4", "PWA", "Vibe Coding"],
     link: "https://hobie-deploy.vercel.app",
   },
@@ -58,9 +58,9 @@ const projects: Project[] = [
     title: "Before Maps",
     category: "Founder & CEO",
     description:
-      "Founded and run Before Maps — an exploration-first travel company building scouted, small-group journeys across India. Built the full-stack platform, product catalog, digital product line, and operations system from scratch. Every route personally field-tested before it opens.",
+      "Founded and run Before Maps, an exploration-first travel company building scouted, small-group journeys across India. Built the full-stack platform, product catalog, digital product line, and operations system from scratch. Every route personally field-tested before it opens.",
     thinking:
-      "Travel is a product problem. Most operators sell destinations. Before Maps sells a standard of preparation — the route, the logistics, the safety margin, the story. We don't just show you where to go — we show you how to experience it.",
+      "Travel is a product problem. Most operators sell destinations. Before Maps sells a standard of preparation: the route, the logistics, the safety margin, the story. We don't just show you where to go, we show you how to experience it.",
     tags: ["Next.js", "Sanity CMS", "Product Design", "Operations", "Founder"],
     link: "https://beforemaps.com",
   },
@@ -68,9 +68,9 @@ const projects: Project[] = [
     title: "Ms Paul Therapies",
     category: "Co-founder & Tech Lead",
     description:
-      "Co-founded a therapy and wellness platform. Built the entire tech stack — Next.js, Sanity CMS, booking pipeline, content system. Designed the brand, client experience, and digital operations from scratch.",
+      "Co-founded a therapy and wellness platform. Built the entire tech stack: Next.js, Sanity CMS, booking pipeline, content system. Designed the brand, client experience, and digital operations from scratch.",
     thinking:
-      "Good therapy deserves good design. The trust a client feels starts before they walk in — it starts with how professional and human the digital experience feels.",
+      "Good therapy deserves good design. The trust a client feels starts before they walk in. It starts with how professional and human the digital experience feels.",
     tags: ["Next.js", "Sanity CMS", "Product Design", "Full-Stack", "Co-Founder"],
     link: "https://mspaultherapies.in",
   },

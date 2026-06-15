@@ -8,7 +8,7 @@ export const revalidate = 60;
 export const metadata = {
   title: "Library — Uddip Ranjan Das",
   description:
-    "Systems, field guides, manuals, and tools built across Harp6x and There Goes Uddip — for builders, travellers, and people designing a more intentional life.",
+    "Systems, field guides, manuals, and tools built across Harp6x and There Goes Uddip. For builders, travellers, and people designing a more intentional life.",
 };
 
 export default async function ProductsPage() {
@@ -55,7 +55,7 @@ export default async function ProductsPage() {
           </h1>
           <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
             Systems, field guides, manuals, and tools built across Harp6x and
-            There Goes Uddip. Filter by brand, type, theme, or price — every
+            There Goes Uddip. Filter by brand, type, theme, or price. Every
             link takes you to its page on Gumroad.
           </p>
         </div>

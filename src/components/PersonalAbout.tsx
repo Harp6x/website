@@ -7,8 +7,9 @@ const defaults = {
   headline: "I'm not building an audience.",
   headlineAccent: "I'm documenting a transition.",
   paragraphs: [
-    "From conventional systems into something more intentional. A life where work, creativity, exploration, and meaning aren't separate categories. they're integrated. This is an active, honest process, and I'm still in the middle of it.",
-    "By day, I build security systems and products. Outside of that, I chase clarity on mountain roads, think about philosophy, build things with my hands, and try to live a life that still feels alive while doing serious work. I believe in systems over motivation, slow compounding over viral moments, and discipline as the highest form of freedom.",
+    "From conventional systems into something more intentional. A life where work, creativity, exploration, and meaning aren't separate categories, they're integrated. This is an active, honest process, and I'm still in the middle of it.",
+    "I have ADHD, and it shows: three companies running in parallel, a dozen side interests, late-night hyperfocus sessions that produce more output than most people's week. The scattered energy is a feature. It means I can context-switch between scouting a Himalayan route, debugging a Sanity schema, and mixing a DJ set, all in the same day.",
+    "I believe in systems over motivation, slow compounding over viral moments, and discipline as the highest form of freedom. Outside of building, I chase clarity on mountain roads, think about philosophy, and try to live a life that is equal parts serious and absolutely unhinged.",
   ],
   pillars: [
     { label: "Approach", value: "Document everything. Perform nothing." },
@@ -28,7 +29,7 @@ export default function PersonalAbout({ data }: Props) {
   const pillars = data?.pillars?.length ? data.pillars : defaults.pillars;
 
   return (
-    <section id="about" className="section-padding px-6 md:px-10">
+    <section id="about" className="section-padding-sm px-6 md:px-10">
       <div className="max-w-4xl mx-auto">
         <AnimatedSection>
           <div className="font-mono text-[11px] text-[var(--personal-accent)] tracking-[0.3em] uppercase mb-6">
@@ -65,7 +66,7 @@ export default function PersonalAbout({ data }: Props) {
         </div>
       </div>
 
-      <div className="warm-divider max-w-5xl mx-auto mt-32" />
+      <div className="warm-divider max-w-5xl mx-auto mt-16" />
     </section>
   );
 }

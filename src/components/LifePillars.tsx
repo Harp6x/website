@@ -58,7 +58,7 @@ export default function LifePillars({ pillarsData, profile: profileProp }: Props
             Four pillars. One person.
           </h2>
           <p className="text-[var(--text-muted)] text-base max-w-2xl mb-8 leading-relaxed">
-            Each brand represents a different dimension of the same life — technology,
+            Each brand represents a different dimension of the same life: technology,
             travel, exploration, and machines.
           </p>
         </AnimatedSection>

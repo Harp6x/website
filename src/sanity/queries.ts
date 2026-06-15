@@ -52,6 +52,8 @@ export interface SanityProfile {
   personalBrands?: { key: string; instagram?: string; youtube?: string; substack?: string; email?: string }[];
   professionalResumeUrl?: string;
   personalResumeUrl?: string;
+  claudeReview?: string;
+  claudeReviewShort?: string;
 }
 
 export async function getProfile(): Promise<SanityProfile | null> {

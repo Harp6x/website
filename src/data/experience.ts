@@ -16,7 +16,7 @@ const chapters: Chapter[] = [
     company: "Cisco",
     period: "2025 – June 2026",
     narrative:
-      "Led SAL Intelligence and Analytics. built the decision layer behind Cisco's firewall products. Turned raw network telemetry into actionable intelligence.",
+      "Led SAL Intelligence and Analytics, building the decision layer behind Cisco's firewall products. Turned raw network telemetry into actionable intelligence.",
     highlights: [
       "Product owner of Cisco SAL Intelligence & Analytics",
       "Developed solutions for Cisco Firewall Products",
@@ -29,11 +29,11 @@ const chapters: Chapter[] = [
     company: "Before Maps",
     period: "2023 – Present",
     narrative:
-      "Founded and run Before Maps — an exploration-led travel company building scouted, small-group journeys across India. Designed the full product from route planning to the digital platform. Every journey is personally field-tested before it opens.",
+      "Founded and run Before Maps, an exploration-led travel company building scouted, small-group journeys across India. Designed the full product from route planning to the digital platform. Every journey is personally field-tested before it opens.",
     highlights: [
       "Built the full-stack platform (Next.js, Sanity CMS, Vercel)",
       "Designed product catalog, booking pipeline, and operations system",
-      "Personally scouted every route — Himalayas, Northeast, Western Ghats",
+      "Personally scouted every route: Himalayas, Northeast, Western Ghats",
       "Launched digital product line: travel guides, toolkits, and planning systems",
     ],
     current: true,
@@ -44,7 +44,7 @@ const chapters: Chapter[] = [
     company: "Ms Paul Therapies",
     period: "2024 – Present",
     narrative:
-      "Co-founded a therapy and wellness platform. Built the entire tech stack — Next.js, Sanity CMS, booking pipeline, content system. Designed the brand, client experience, and digital operations from scratch.",
+      "Co-founded a therapy and wellness platform. Built the entire tech stack: Next.js, Sanity CMS, booking pipeline, content system. Designed the brand, client experience, and digital operations from scratch.",
     highlights: [
       "Built full-stack platform (Next.js, Sanity CMS, Vercel)",
       "Designed CMS-driven content system with published/draft workflows",
@@ -74,7 +74,7 @@ const chapters: Chapter[] = [
     company: "The CTI Dispatch",
     period: "2025 – Present",
     narrative:
-      "My own publication. Weekly curated CTI analysis, special bulletins for high-impact events. Building a voice in the intelligence community.",
+      "My own publication: weekly curated CTI analysis, special bulletins for high-impact events. Building a voice in the intelligence community.",
     highlights: [
       "Weekly editions of curated threat intelligence",
       "Special bulletins on high-impact cyber events",
@@ -86,12 +86,12 @@ const chapters: Chapter[] = [
     company: "Versprite Cybersecurity",
     period: "2022 – 2025",
     narrative:
-      "Three years of deepening mastery. from alert triage to leading threat intelligence programs. The phase where I stopped reacting and started thinking strategically.",
+      "Three years of deepening mastery, from alert triage to leading threat intelligence programs. The phase where I stopped reacting and started thinking strategically.",
     highlights: [
       "Led 6 CTI projects across 8 clients, identified 20 critical risks",
       "2000-endpoint defense, 15-min investigation, 30-sec response",
       "Improved SOC workflows by 65%, reduced false positives by 40%",
-      "APT hunting. early detection of 7 threat groups",
+      "APT hunting, early detection of 7 threat groups",
       "10,000 security logs/month, 500 intrusions mitigated",
       "Published 4 blogs, 25 weekly newsletters",
     ],
@@ -115,7 +115,7 @@ const chapters: Chapter[] = [
     company: "Innefu Labs / Innobuzz",
     period: "2018 – 2020",
     narrative:
-      "Where it started. Penetration testing, endpoint defense, vulnerability scanning across 1500 nodes. Learning the craft from the ground up.",
+      "Where it started: penetration testing, endpoint defense, vulnerability scanning across 1500 nodes. Learning the craft from the ground up.",
     highlights: [
       "Managed endpoint defense across 1500 nodes",
       "20 risk assessment reports, 90% patch compliance",

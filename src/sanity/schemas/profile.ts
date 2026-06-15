@@ -69,6 +69,8 @@ export default defineType({
         ],
       }],
     }),
+    defineField({ name: "claudeReview", title: "Claude Code Review (full)", type: "text", rows: 10, description: "Full review of working with you, written in Claude's voice. Shown on professional page." }),
+    defineField({ name: "claudeReviewShort", title: "Claude Code Review (short quote)", type: "text", rows: 3, description: "Short endorsement quote shown in the About section." }),
     defineField({
       name: "professionalResume",
       title: "Professional / Career Resume",

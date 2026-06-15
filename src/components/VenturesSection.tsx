@@ -2,6 +2,7 @@
 
 import { ExternalLink } from "lucide-react";
 import AnimatedSection from "./AnimatedSection";
+import Link from "next/link";
 import type { Venture } from "@/data/types";
 
 const STATUS_BADGE: Record<string, string> = {
@@ -28,7 +29,7 @@ export default function VenturesSection({ ventures }: Props) {
             Things I&apos;m building.
           </h2>
           <p className="text-[var(--text-muted)] text-base max-w-2xl mb-10 leading-relaxed">
-            Companies, products, and platforms — each one started as a problem I wanted to solve.
+            Companies, products, and platforms. Each one started as a problem I wanted to solve.
           </p>
         </AnimatedSection>
 
@@ -36,34 +37,43 @@ export default function VenturesSection({ ventures }: Props) {
           {ventures.map((v, i) => (
             <AnimatedSection key={v.slug} delay={i * 0.08}>
               <div className="warm-card group h-full p-6 flex flex-col">
-                <div className="flex items-start justify-between mb-3">
-                  <h3 className="font-serif-heading text-[var(--text-primary)] text-lg font-semibold group-hover:text-[var(--personal-accent)] transition-colors">
-                    {v.title}
-                  </h3>
-                  <span className={`text-[9px] font-mono tracking-wider uppercase px-2 py-0.5 rounded-full border ${STATUS_BADGE[v.status] ?? STATUS_BADGE.active}`}>
-                    {v.status}
-                  </span>
-                </div>
-
-                <p className="text-[var(--text-faint)] text-[10px] font-mono tracking-wider uppercase mb-3">
-                  {v.role}
-                </p>
-
-                <p className="text-[var(--text-secondary)] text-sm leading-[1.7] mb-4 flex-1">
-                  {v.tagline}
-                </p>
-
-                {v.techStack.length > 0 && (
-                  <div className="flex flex-wrap gap-1.5 mb-4">
-                    {v.techStack.slice(0, 5).map((t) => (
-                      <span key={t} className="text-[9px] font-mono text-[var(--text-faint)] tracking-wider px-2 py-0.5 rounded-full border border-[var(--personal-border-subtle)]">
-                        {t}
-                      </span>
-                    ))}
+                {/* Clickable card body → site */}
+                <a
+                  href={v.url ?? `/ventures/${v.slug}`}
+                  target={v.url ? "_blank" : undefined}
+                  rel={v.url ? "noopener noreferrer" : undefined}
+                  className="flex-1 block cursor-pointer"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <h3 className="font-serif-heading text-[var(--text-primary)] text-lg font-semibold group-hover:text-[var(--personal-accent)] transition-colors">
+                      {v.title}
+                    </h3>
+                    <span className={`text-[9px] font-mono tracking-wider uppercase px-2 py-0.5 rounded-full border ${STATUS_BADGE[v.status] ?? STATUS_BADGE.active}`}>
+                      {v.status}
+                    </span>
                   </div>
-                )}
 
-                <div className="flex gap-3 mt-auto">
+                  <p className="text-[var(--text-faint)] text-[10px] font-mono tracking-wider uppercase mb-3">
+                    {v.role}
+                  </p>
+
+                  <p className="text-[var(--text-secondary)] text-sm leading-[1.7] mb-4">
+                    {v.tagline}
+                  </p>
+
+                  {v.techStack.length > 0 && (
+                    <div className="flex flex-wrap gap-1.5 mb-4">
+                      {v.techStack.slice(0, 5).map((t) => (
+                        <span key={t} className="text-[9px] font-mono text-[var(--text-faint)] tracking-wider px-2 py-0.5 rounded-full border border-[var(--personal-border-subtle)]">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  )}
+                </a>
+
+                {/* Footer: external icon left, read more right */}
+                <div className="flex items-center justify-between mt-auto pt-3 border-t border-[var(--personal-border-subtle)]">
                   {v.url && (
                     <a
                       href={v.url}
@@ -71,15 +81,15 @@ export default function VenturesSection({ ventures }: Props) {
                       rel="noopener noreferrer"
                       className="inline-flex items-center gap-1.5 text-xs font-medium text-[var(--personal-accent)] hover:gap-2.5 transition-all"
                     >
-                      Visit <ExternalLink className="w-3 h-3" />
+                      <ExternalLink className="w-3 h-3" /> Visit
                     </a>
                   )}
-                  <a
+                  <Link
                     href={`/ventures/${v.slug}`}
-                    className="text-xs font-medium text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors"
+                    className="text-xs font-medium text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors ml-auto"
                   >
                     Read more →
-                  </a>
+                  </Link>
                 </div>
               </div>
             </AnimatedSection>

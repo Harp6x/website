@@ -7,22 +7,22 @@ const BLOCKS = [
   {
     label: "What It Is",
     content:
-      "Before Maps is an exploration-first travel company building scouted, small-group journeys across India. Every route is personally field-tested before it opens. Travelers apply to join — it's not a booking engine, it's a trust system.",
+      "Before Maps is an exploration-first travel company building scouted, small-group journeys across India. Every route is personally field-tested before it opens. Travelers apply to join. It is not a booking engine, it is a trust system.",
   },
   {
     label: "Why It Started",
     content:
-      "Most travel operators sell destinations. Before Maps was born from a different belief: that travel is a product problem. The real value isn't the place — it's the preparation, the route, the logistics, the safety margin, and the story behind it. It started because I wanted to build something I'd trust with my own people.",
+      "Most travel operators sell destinations. Before Maps was born from a different belief: that travel is a product problem. The real value is not the place, it is the preparation, the route, the logistics, the safety margin, and the story behind it. It started because I wanted to build something I would trust with my own people.",
   },
   {
     label: "Philosophy",
     content:
-      "Every journey is personally scouted and tested before anyone else sets foot on it. Application-only groups. Trust built through transparency and content — field notes, scouting logs, founder notes — not marketing. The brand positioning: we don't just show you where to go, we show you how to experience it.",
+      "Every journey is personally scouted and tested before anyone else sets foot on it. Application-only groups. Trust built through transparency and content: field notes, scouting logs, founder notes, not marketing. The brand positioning: we do not just show you where to go, we show you how to experience it.",
   },
   {
     label: "Goals",
     content:
-      "Build India's most trusted travel brand for thoughtful travelers — domestic and international. Make exploration accessible without sacrificing authenticity. Create a company where the founder's fieldwork is the product, and the content is the trust engine.",
+      "Build India's most trusted travel brand for thoughtful travelers, domestic and international. Make exploration accessible without sacrificing authenticity. Create a company where the founder's fieldwork is the product, and the content is the trust engine.",
   },
 ];
 
@@ -70,7 +70,7 @@ export default function BeforeMapsSection() {
         <AnimatedSection delay={0.3} className="mt-16">
           <div className="max-w-2xl mx-auto text-center">
             <p className="font-serif-heading text-[var(--text-muted)] text-xl leading-relaxed italic">
-              &ldquo;We don&apos;t just show you where to go — we show you how
+              &ldquo;We don&apos;t just show you where to go. We show you how
               to experience it.&rdquo;
             </p>
           </div>
