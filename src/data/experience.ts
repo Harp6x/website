@@ -40,6 +40,36 @@ const chapters: Chapter[] = [
   },
   {
     era: "Parallel",
+    title: "Co-founder & Tech Lead",
+    company: "Ms Paul Therapies",
+    period: "2024 – Present",
+    narrative:
+      "Co-founded a therapy and wellness platform. Built the entire tech stack — Next.js, Sanity CMS, booking pipeline, content system. Designed the brand, client experience, and digital operations from scratch.",
+    highlights: [
+      "Built full-stack platform (Next.js, Sanity CMS, Vercel)",
+      "Designed CMS-driven content system with published/draft workflows",
+      "Built client booking pipeline and payment integrations",
+      "Shipped product catalog, blog, and workshop systems",
+    ],
+    current: true,
+  },
+  {
+    era: "Parallel",
+    title: "Creator & Builder",
+    company: "Hobie",
+    period: "2025 – Present",
+    narrative:
+      "Building a cozy hobby-tracking studio. Roadmaps, quests, and focus timers that turn casual interest into real, visible progress. Vibe-coded the entire thing with AI.",
+    highlights: [
+      "Built with Vite + React 19 + TypeScript + Supabase + Tailwind v4",
+      "PWA-first design with offline support",
+      "Vibe-coded end-to-end with Claude Code and Windsurf",
+      "Deployed at hobie-deploy.vercel.app",
+    ],
+    current: true,
+  },
+  {
+    era: "Parallel",
     title: "Writer & CTI Analyst",
     company: "The CTI Dispatch",
     period: "2025 – Present",

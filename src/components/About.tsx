@@ -24,9 +24,9 @@ export default function About({ profile: profileProp }: Props) {
           <div>
             <AnimatedSection>
               <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] leading-tight mb-8">
-                I build systems that hold up
+                I build companies, products,
                 <br />
-                <span className="text-[var(--text-secondary)]">under pressure.</span>
+                <span className="text-[var(--text-secondary)]">and systems that ship.</span>
               </h2>
             </AnimatedSection>
 

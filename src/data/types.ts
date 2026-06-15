@@ -141,6 +141,19 @@ export interface Product {
   featured?: boolean;
 }
 
+export interface Venture {
+  slug: string;
+  title: string;
+  tagline: string;
+  role: string;
+  url?: string;
+  coverImage?: string;
+  philosophy?: string;
+  highlights: string[];
+  techStack: string[];
+  status: "active" | "building" | "paused";
+}
+
 export interface ProductDetail {
   slug: string;
   headline: string;

@@ -9,22 +9,22 @@ import type { Project } from "./types";
 const projects: Project[] = [
   {
     title: "Cisco SAL Intelligence & Analytics",
-    category: "Product",
+    category: "Product (ex-Cisco)",
     description:
-      "Building the intelligence layer for Cisco's firewall ecosystem. Transforming raw syslog data, network telemetry, and security signals into proactive threat detection.",
+      "Built the intelligence layer for Cisco's firewall ecosystem. Transformed raw syslog data, network telemetry, and security signals into proactive threat detection.",
     thinking:
       "The challenge: SOC teams drown in data but starve for insight. The approach: treat security telemetry as a product problem, not just an engineering one.",
     tags: ["Product Ownership", "Cisco Security", "Syslog", "Automation"],
   },
   {
-    title: "hobie",
-    category: "Product / Side Project",
+    title: "Hobie",
+    category: "Creator & Builder",
     description:
-      "A cozy hobby-tracking studio. roadmaps, quests, and focus timers that turn casual interest into real, visible progress.",
+      "A cozy hobby-tracking studio. Roadmaps, quests, and focus timers that turn casual interest into real, visible progress. Vibe-coded end-to-end with Claude Code.",
     thinking:
-      "Most hobby apps are either rigid course platforms or empty timers. hobie sits in between. just enough structure to keep momentum, never enough to kill the joy.",
-    tags: ["React", "Supabase", "Product Design", "Vite"],
-    link: "https://myhobie.vercel.app",
+      "Most hobby apps are either rigid course platforms or empty timers. Hobie sits in between — just enough structure to keep momentum, never enough to kill the joy.",
+    tags: ["React 19", "Supabase", "TypeScript", "Tailwind v4", "PWA", "Vibe Coding"],
+    link: "https://hobie-deploy.vercel.app",
   },
   {
     title: "The CTI Dispatch",
@@ -56,17 +56,27 @@ const projects: Project[] = [
   },
   {
     title: "Before Maps",
-    category: "Founder / Product",
+    category: "Founder & CEO",
     description:
-      "Exploration-led journeys across India. Every route personally scouted, tested with a pilot group, and opened only when it meets our standards. Built the full-stack platform, product catalog, and operations system.",
+      "Founded and run Before Maps — an exploration-first travel company building scouted, small-group journeys across India. Built the full-stack platform, product catalog, digital product line, and operations system from scratch. Every route personally field-tested before it opens.",
     thinking:
-      "Travel is a product problem. Most operators sell destinations. Before Maps sells a standard of preparation — the route, the logistics, the safety margin, the story.",
-    tags: ["Next.js", "Sanity CMS", "Product Design", "Operations"],
+      "Travel is a product problem. Most operators sell destinations. Before Maps sells a standard of preparation — the route, the logistics, the safety margin, the story. We don't just show you where to go — we show you how to experience it.",
+    tags: ["Next.js", "Sanity CMS", "Product Design", "Operations", "Founder"],
     link: "https://beforemaps.com",
   },
   {
+    title: "Ms Paul Therapies",
+    category: "Co-founder & Tech Lead",
+    description:
+      "Co-founded a therapy and wellness platform. Built the entire tech stack — Next.js, Sanity CMS, booking pipeline, content system. Designed the brand, client experience, and digital operations from scratch.",
+    thinking:
+      "Good therapy deserves good design. The trust a client feels starts before they walk in — it starts with how professional and human the digital experience feels.",
+    tags: ["Next.js", "Sanity CMS", "Product Design", "Full-Stack", "Co-Founder"],
+    link: "https://mspaultherapies.in",
+  },
+  {
     title: "Jimny Build Documentation",
-    category: "Personal / Exploration",
+    category: "Personal / Hobby",
     description:
       "Documenting the build process of a Suzuki Jimny. reliability mods, recovery systems, expedition preparation. Where engineering meets adventure.",
     thinking:

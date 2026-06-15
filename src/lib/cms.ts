@@ -1,6 +1,6 @@
-import { getProfile, getExperiences, getProjects, getSkills, getBeyondWork, getPhilosophies, getJournalTopics, getPersonalAbout, getLifePillars, getProducts } from "@/sanity/queries";
-import type { SanityProfile, SanityExperience, SanityProject, SanitySkills, SanityBeyondWork, SanityPhilosophy, SanityJournalTopic, SanityPersonalAbout, SanityLifePillar, SanityProductDoc } from "@/sanity/queries";
-import type { Profile, Chapter, Project, Skills, LifeSection, JournalTopic, Product, ProductBrand, ProductType, PriceType, ProductSurface } from "@/data/types";
+import { getProfile, getExperiences, getProjects, getSkills, getBeyondWork, getPhilosophies, getJournalTopics, getPersonalAbout, getLifePillars, getProducts, getVentures, getVenture } from "@/sanity/queries";
+import type { SanityProfile, SanityExperience, SanityProject, SanitySkills, SanityBeyondWork, SanityPhilosophy, SanityJournalTopic, SanityPersonalAbout, SanityLifePillar, SanityProductDoc, SanityVenture } from "@/sanity/queries";
+import type { Profile, Chapter, Project, Skills, LifeSection, JournalTopic, Product, ProductBrand, ProductType, PriceType, ProductSurface, Venture } from "@/data/types";
 
 import profileFallback from "@/data/profile";
 import experienceFallback from "@/data/experience";
@@ -134,6 +134,41 @@ export async function fetchLifePillars(): Promise<{ brand: string; key: string; 
     description: l.description ?? "",
     contentPillars: l.contentPillars ?? [],
   }));
+}
+
+export async function fetchVentures(): Promise<Venture[]> {
+  const cms = await safe(getVentures);
+  if (!cms?.length) return [];
+  return cms.map((v: SanityVenture) => ({
+    slug: v.slug?.current ?? v._id,
+    title: v.title,
+    tagline: v.tagline ?? "",
+    role: v.role ?? "",
+    url: v.url,
+    coverImage: v.coverImageUrl,
+    philosophy: v.philosophy,
+    highlights: v.highlights ?? [],
+    techStack: v.techStack ?? [],
+    status: (v.status as Venture["status"]) ?? "active",
+  }));
+}
+
+export async function fetchVenture(slug: string): Promise<(Venture & { body?: unknown[] }) | null> {
+  const cms = await safe(() => getVenture(slug));
+  if (!cms) return null;
+  return {
+    slug: cms.slug?.current ?? cms._id,
+    title: cms.title,
+    tagline: cms.tagline ?? "",
+    role: cms.role ?? "",
+    url: cms.url,
+    coverImage: cms.coverImageUrl,
+    philosophy: cms.philosophy,
+    highlights: cms.highlights ?? [],
+    techStack: cms.techStack ?? [],
+    status: (cms.status as Venture["status"]) ?? "active",
+    body: cms.body,
+  };
 }
 
 export async function fetchProducts(): Promise<Product[]> {

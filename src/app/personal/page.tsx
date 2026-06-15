@@ -9,7 +9,8 @@ import Journal from "@/components/Journal";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CrossPageNudge from "@/components/CrossPageNudge";
-import { fetchProfile, fetchBeyondWork, fetchPhilosophies, fetchJournalTopics, fetchPersonalAbout, fetchLifePillars, fetchProducts } from "@/lib/cms";
+import VenturesSection from "@/components/VenturesSection";
+import { fetchProfile, fetchBeyondWork, fetchPhilosophies, fetchJournalTopics, fetchPersonalAbout, fetchLifePillars, fetchProducts, fetchVentures } from "@/lib/cms";
 
 export const revalidate = 60;
 
@@ -20,7 +21,7 @@ export const metadata = {
 };
 
 export default async function PersonalPage() {
-  const [profile, beyondWork, philosophies, journalTopics, personalAbout, lifePillars, products] = await Promise.all([
+  const [profile, beyondWork, philosophies, journalTopics, personalAbout, lifePillars, products, ventures] = await Promise.all([
     fetchProfile(),
     fetchBeyondWork(),
     fetchPhilosophies(),
@@ -28,6 +29,7 @@ export default async function PersonalPage() {
     fetchPersonalAbout(),
     fetchLifePillars(),
     fetchProducts(),
+    fetchVentures(),
   ]);
 
   return (
@@ -37,9 +39,10 @@ export default async function PersonalPage() {
       <main>
         <Hero variant="personal" profile={profile} />
         <PersonalAbout data={personalAbout} />
-        <Philosophy philosophies={philosophies} />
+        <VenturesSection ventures={ventures} />
         <LifePillars pillarsData={lifePillars} profile={profile} />
         <ProductShowcase products={products} variant="personal" />
+        <Philosophy philosophies={philosophies} />
         <BeyondWork sections={beyondWork} />
         <Journal topics={journalTopics} />
         <Contact variant="personal" profile={profile} />

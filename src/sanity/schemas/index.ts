@@ -12,6 +12,7 @@ import journalTopic from "./journalTopic";
 import personalAbout from "./personalAbout";
 import lifePillar from "./lifePillar";
 import product from "./product";
+import venture from "./venture";
 
 export const schemaTypes = [
   // Object types (must be registered before document types that use them)
@@ -30,4 +31,5 @@ export const schemaTypes = [
   personalAbout,
   lifePillar,
   product,
+  venture,
 ];

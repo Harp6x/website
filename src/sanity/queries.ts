@@ -212,6 +212,43 @@ export async function getProducts(): Promise<SanityProductDoc[]> {
   );
 }
 
+// ─── Ventures ───
+export interface SanityVenture {
+  _id: string;
+  title: string;
+  slug?: { current: string };
+  tagline?: string;
+  role?: string;
+  url?: string;
+  coverImageUrl?: string;
+  philosophy?: string;
+  highlights?: string[];
+  techStack?: string[];
+  status?: string;
+  body?: unknown[];
+  order?: number;
+}
+
+export async function getVentures(): Promise<SanityVenture[]> {
+  return client.fetch(
+    `*[_type == "venture" && published != false] | order(order asc) {
+      _id, title, slug, tagline, role, url, philosophy, highlights, techStack, status, order,
+      "coverImageUrl": coverImage.asset->url
+    }`
+  );
+}
+
+export async function getVenture(slug: string): Promise<SanityVenture & { body: unknown[] }> {
+  return client.fetch(
+    `*[_type == "venture" && slug.current == $slug][0] {
+      _id, title, slug, tagline, role, url, philosophy, highlights, techStack, status, body,
+      "coverImageUrl": coverImage.asset->url,
+      seo
+    }`,
+    { slug }
+  );
+}
+
 // ─── Site Settings ───
 export interface SanitySettings {
   currentRole?: string;

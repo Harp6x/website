@@ -10,9 +10,16 @@ const defaultPillars = [
   {
     brand: "Harp6x",
     key: "harp6x" as const,
-    theme: "Systems · Technology · AI · Cybersecurity · Experimentation",
+    theme: "Systems · Technology · AI · Vibe Coding · Experimentation",
     description:
-      "The primary personal brand. Where technology, philosophy, and intentional living intersect.",
+      "The primary personal brand. Where technology, AI, philosophy, and intentional living intersect.",
+  },
+  {
+    brand: "Before Maps",
+    key: "beforemaps" as const,
+    theme: "Travel · Exploration · Scouting · India",
+    description:
+      "The travel company. Scouted, small-group journeys across India. Field-tested routes, honest content, and trust-first travel.",
   },
   {
     brand: "There Goes Uddip",
@@ -41,22 +48,22 @@ export default function LifePillars({ pillarsData, profile: profileProp }: Props
   const brands = profile.personalBrands;
 
   return (
-    <section id="pillars" className="section-padding px-6 md:px-10">
+    <section id="pillars" className="section-padding-sm px-6 md:px-10">
       <div className="max-w-5xl mx-auto">
         <AnimatedSection>
           <div className="font-mono text-[11px] text-[var(--personal-teal)] tracking-[0.3em] uppercase mb-6">
             Content Ecosystem
           </div>
-          <h2 className="font-serif-heading text-4xl md:text-5xl font-semibold text-[var(--text-primary)] mb-4">
-            Three pillars. One person.
+          <h2 className="font-serif-heading text-3xl md:text-4xl font-semibold text-[var(--text-primary)] mb-3">
+            Four pillars. One person.
           </h2>
-          <p className="text-[var(--text-muted)] text-base max-w-2xl mb-10 leading-relaxed">
+          <p className="text-[var(--text-muted)] text-base max-w-2xl mb-8 leading-relaxed">
             Each brand represents a different dimension of the same life — technology,
-            exploration, and machines.
+            travel, exploration, and machines.
           </p>
         </AnimatedSection>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {pillars.map((pillar, i) => {
             const links = brands[pillar.key];
             return (
@@ -99,7 +106,7 @@ export default function LifePillars({ pillarsData, profile: profileProp }: Props
         </div>
       </div>
 
-      <div className="warm-divider max-w-5xl mx-auto mt-32" />
+      <div className="warm-divider max-w-5xl mx-auto mt-16" />
     </section>
   );
 }

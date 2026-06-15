@@ -9,7 +9,27 @@ import type { LifeSection } from "./types";
 
 const sections: LifeSection[] = [
   {
-    emoji: "🧭",
+    emoji: "�",
+    title: "AI & Vibe Coding",
+    subtitle: "Building with taste at machine speed",
+    body: [
+      "I vibe-code. Claude Code, Windsurf, Cursor — the whole stack. Not because I can't write code the old way, but because building at the speed of thought is more fun. The AI handles the boilerplate, I handle the taste.",
+      "Every product I ship now is AI-assisted end-to-end. Before Maps, Hobie, Ms Paul Therapies — all built this way. The future of building is a conversation between human intent and machine execution. I'm already living in it.",
+    ],
+    mood: "Late-night terminals. Claude thinking. The dopamine of shipping at 3 AM.",
+  },
+  {
+    emoji: "🔧",
+    title: "Building Things",
+    subtitle: "Products, systems, companies",
+    body: [
+      "I build things obsessively. Before Maps is an exploration-led travel company. Hobie is a hobby-tracking studio. Ms Paul Therapies is a therapy platform I co-founded. Each one started as a problem I wanted to solve.",
+      "The craft of building is the thing. Figuring out the product, designing the system, shipping the code, iterating on feedback. I treat every project like a product problem — because it is one.",
+    ],
+    mood: "Whiteboards. Figma mockups. Deploy buttons. The satisfaction of something working.",
+  },
+  {
+    emoji: "�🧭",
     title: "Overlanding & 4x4",
     subtitle: "Where engineering meets the wild",
     body: [

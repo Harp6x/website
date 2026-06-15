@@ -9,34 +9,37 @@ import type { Skills } from "./types";
 
 const skills: Skills = {
   technical: [
+    "Full-Stack Development",
+    "Next.js",
+    "React",
+    "TypeScript",
+    "Vibe Coding",
+    "AI Agents & Workflows",
     "Cybersecurity",
     "SOC Operations",
     "SIEM",
     "Threat Intelligence",
     "OSINT",
     "Malware Analysis",
-    "Reverse Engineering",
     "Cisco Security",
     "Network Security",
     "Automation",
-    "Syslog Analysis",
     "Product Ownership",
-    "AI Workflows",
     "Dashboard Thinking",
     "Linux",
     "Python",
     "APIs",
-    "Data Interpretation",
   ],
 
   soft: [
     "Systems Thinking",
+    "Founder Mindset",
+    "Solo Execution",
     "Communication",
     "Emotional Intelligence",
     "Leadership",
     "Product Strategy",
-    "Adaptability",
-    "Curiosity",
+    "Decision Under Uncertainty",
     "Pattern Recognition",
     "Storytelling",
     "Deep Focus",
@@ -60,16 +63,20 @@ const skills: Skills = {
     "Intelx",
     "MITRE ATT&CK",
     // AI / Dev Tools
-    "GPT Pro",
-    "Google Cloud Code",
+    "Claude Code",
     "Windsurf",
     "Cursor",
+    "GPT Pro",
+    // Platforms
+    "Sanity CMS",
+    "Supabase",
+    "Vercel",
+    "Tailwind CSS",
     // Design / Analytics
     "Figma",
     "Google Looker Studio",
     // IDEs
     "VS Code",
-    "WebStorm",
   ],
 
   credentials: [

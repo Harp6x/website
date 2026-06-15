@@ -14,7 +14,7 @@ export default function Hero({ variant = "professional", profile: profileProp }:
   const profile = profileProp ?? profileFallback;
   const isPro = variant === "professional";
 
-  const taglineParts = (isPro ? profile.tagline : "Exploring everything.").replace(/\.$/, "").split(" ");
+  const taglineParts = (isPro ? profile.tagline : "Building and exploring everything.").replace(/\.$/, "").split(" ");
   const lastWord = taglineParts.pop();
   const firstWords = taglineParts.join(" ");
 
@@ -42,7 +42,7 @@ export default function Hero({ variant = "professional", profile: profileProp }:
               transition={{ delay: 1.2, duration: 0.5 }}
             >
               <div className="font-mono text-[11px] text-[var(--text-muted)] tracking-[0.3em] uppercase mb-8">
-                {isPro ? profile.heroKeywords : "Travel · Exploration · Philosophy"}
+                {isPro ? profile.heroKeywords : "Builder · Creator · Explorer · Founder"}
               </div>
             </motion.div>
 
@@ -63,12 +63,12 @@ export default function Hero({ variant = "professional", profile: profileProp }:
               transition={{ delay: 1.5, duration: 0.5 }}
               className="text-[var(--text-secondary)] text-xl md:text-2xl max-w-lg leading-relaxed mb-10"
             >
-              {isPro ? profile.subtitleLine1 : "Documenting the pursuit of a non-average life."}
+              {isPro ? profile.subtitleLine1 : "Founder. Builder. Creator. Explorer."}
               <br />
               <span className="text-[var(--text-muted)]">
                 {isPro
                   ? profile.subtitleLine2
-                  : "Travel, philosophy, vehicle builds, and the honest process of becoming."}
+                  : "Companies, products, content, and the honest process of becoming."}
               </span>
             </motion.p>
 
@@ -154,7 +154,7 @@ export default function Hero({ variant = "professional", profile: profileProp }:
               <>
                 <div>
                   <p className="font-mono text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase mb-1">Brands</p>
-                  <p className="text-[var(--text-secondary)] text-sm">Harp6x · There Goes Uddip · Jimny Runs</p>
+                  <p className="text-[var(--text-secondary)] text-sm">Harp6x · Before Maps · There Goes Uddip · Jimny Runs</p>
                 </div>
                 <div>
                   <p className="font-mono text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase mb-1">Platforms</p>

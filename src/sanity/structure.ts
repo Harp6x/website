@@ -69,6 +69,7 @@ const HANDLED_TYPES = [
   "beyondWork",
   "product",
   "blogPost",
+  "venture",
 ];
 
 export const structure: StructureResolver = (S) =>
@@ -124,6 +125,7 @@ export const structure: StructureResolver = (S) =>
                     .schemaType("personalAbout")
                     .documentId("personal-about-singleton")
                 ),
+              publishedDraftItem(S, "Ventures", "venture"),
               publishedDraftItem(S, "Philosophy", "philosophy"),
               S.listItem()
                 .title("Life Pillars")

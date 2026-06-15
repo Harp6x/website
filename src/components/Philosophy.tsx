@@ -57,43 +57,39 @@ export default function Philosophy({ philosophies: philosophiesProp }: Props) {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   return (
-    <section id="philosophy" className="section-padding px-6 md:px-10">
+    <section id="philosophy" className="section-padding-sm px-6 md:px-10">
       <div className="max-w-5xl mx-auto">
         <AnimatedSection>
-          <div className="font-mono text-[11px] text-[var(--personal-accent)] tracking-[0.3em] uppercase mb-6">
+          <div className="font-mono text-[10px] text-[var(--personal-accent)] tracking-[0.3em] uppercase mb-3">
             Operating System
           </div>
-          <h2 className="font-serif-heading text-4xl md:text-5xl font-semibold text-[var(--text-primary)] mb-4">
+          <h2 className="font-serif-heading text-2xl md:text-3xl font-semibold text-[var(--text-primary)] mb-8">
             Philosophies I live by.
           </h2>
-          <p className="text-[var(--text-muted)] text-base max-w-2xl mb-16 leading-relaxed">
-            Not borrowed quotes. These are the frameworks, principles, and mental models that
-            shape how I think, build, and move through the world.
-          </p>
         </AnimatedSection>
 
-        <div className="space-y-3">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           {philosophies.map((p, i) => (
             <AnimatedSection key={p.title} delay={i * 0.04}>
               <button
                 onClick={() => setExpanded(expanded === i ? null : i)}
                 className="w-full text-left group"
               >
-                <div className="flex items-center justify-between py-6 px-5 rounded-xl border border-[var(--personal-border-subtle)] hover:border-[var(--personal-border)] hover:bg-[var(--personal-bg-card)] transition-all">
-                  <div className="flex-1">
-                    <h3 className="font-serif-heading text-[var(--text-primary)] font-semibold text-lg group-hover:text-[var(--personal-accent)] transition-colors">
+                <div className="warm-card px-5 py-4 flex items-center justify-between">
+                  <div className="flex-1 min-w-0">
+                    <h3 className="font-serif-heading text-[var(--text-primary)] font-semibold text-sm group-hover:text-[var(--personal-accent)] transition-colors truncate">
                       {p.title}
                     </h3>
-                    <div className="flex gap-2 mt-2">
+                    <div className="flex gap-2 mt-1">
                       {p.tags.map((tag) => (
-                        <span key={tag} className="text-[9px] font-mono text-[var(--text-faint)] tracking-wider uppercase">
+                        <span key={tag} className="text-[8px] font-mono text-[var(--text-faint)] tracking-wider uppercase">
                           {tag}
                         </span>
                       ))}
                     </div>
                   </div>
                   <ChevronDown
-                    className={`w-4 h-4 text-[var(--text-faint)] transition-transform duration-300 ${
+                    className={`w-3.5 h-3.5 text-[var(--text-faint)] transition-transform duration-300 shrink-0 ml-3 ${
                       expanded === i ? "rotate-180" : ""
                     }`}
                   />
@@ -105,10 +101,10 @@ export default function Philosophy({ philosophies: philosophiesProp }: Props) {
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.3 }}
+                    transition={{ duration: 0.25 }}
                     className="overflow-hidden"
                   >
-                    <p className="font-serif-heading text-[var(--text-secondary)] text-base leading-[1.8] py-6 pl-5 ml-5 border-l-2 border-[var(--personal-accent)]/30 italic">
+                    <p className="font-serif-heading text-[var(--text-secondary)] text-sm leading-[1.7] px-5 py-3 border-l-2 border-[var(--personal-accent)]/30 ml-3 italic">
                       {p.summary}
                     </p>
                   </motion.div>
@@ -119,7 +115,7 @@ export default function Philosophy({ philosophies: philosophiesProp }: Props) {
         </div>
       </div>
 
-      <div className="warm-divider max-w-5xl mx-auto mt-32" />
+      <div className="warm-divider max-w-5xl mx-auto mt-16" />
     </section>
   );
 }

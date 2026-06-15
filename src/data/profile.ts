@@ -5,26 +5,28 @@ const profile: Profile = {
   handle: "harp6x",
   email: "uddip9@gmail.com",
   location: "New Delhi, India",
-  currentRole: "Product Owner",
-  currentCompany: "(prev. Cisco)",
-  focus: "Security & Product",
-  tagline: "Building resilient systems.",
-  subtitleLine1: "Product thinker. Cybersecurity engineer. Explorer.",
+  currentRole: "Founder & Builder",
+  currentCompany: "Before Maps · Ms Paul Therapies · Hobie",
+  focus: "Founder · Builder · AI Generalist",
+  tagline: "Building companies, products, and systems.",
+  subtitleLine1: "Founder. Builder. AI generalist. Explorer.",
   subtitleLine2:
-    "Six years in cybersecurity. From SOC analyst to threat intel to detection engineering to product owner at Cisco.",
-  heroKeywords: "Security · Product · Systems",
+    "CEO of Before Maps. Co-founder & Tech Lead, Ms Paul Therapies. Creator of Hobie. Ex-Cisco product owner. Now building full-time.",
+  heroKeywords: "Founder · Builder · AI · Exploration",
 
   bio: [
-    "I spent six years in cybersecurity, starting on the front lines of SOC operations, moving into threat intelligence and detection engineering, and eventually owning the product side at Cisco.",
-    "At Cisco, I led the SAL Intelligence and Analytics product as Product Owner, turning raw network telemetry and security signals into decisions that actually matter for customers.",
-    "The path was straightforward: understand the problem deeply first, then build the solution. That mindset took me from triaging alerts to defining what gets built next.",
+    "I spent six years in cybersecurity — SOC operations, threat intelligence, detection engineering — and ended up owning the product side at Cisco, leading SAL Intelligence & Analytics.",
+    "Then I left to build. **Before Maps** is an exploration-first travel company I founded — scouted, small-group journeys across India. Every route personally field-tested. **Ms Paul Therapies** is a therapy and wellness platform I co-founded as Tech Lead. **Hobie** is a hobby-tracking studio I'm building for people who want to turn casual interests into visible progress.",
+    "The through-line: understand the problem deeply, then build the solution. That mindset took me from triaging SOC alerts to founding three companies, shipping products, and vibe-coding full-stack platforms with AI.",
+    "Now I build with Claude Code, ship fast, and treat every project like a product problem. Cybersecurity gave me the discipline. Founding gave me the taste.",
   ],
   bioClosing:
-    "Outside of work, I chase clarity on mountain roads, think about philosophy, build things with my hands, and try to live a life that still feels alive while doing serious work.",
+    "Outside of building, I chase clarity on mountain roads, DJ at 2 AM, think about philosophy, and try to live a life that's equal parts serious and absolutely unhinged. Funmaxxing is not optional.",
 
   stats: [
-    { label: "Years in Cybersecurity", value: "6" },
-    { label: "As Product Owner", value: "1 yr" },
+    { label: "Companies Founded", value: "3" },
+    { label: "Products Shipped", value: "10+" },
+    { label: "Years in Cyber", value: "6" },
   ],
 
   socials: [
@@ -55,6 +57,9 @@ const profile: Profile = {
     jimnyruns: {
       instagram: "https://instagram.com/jimnyruns",
       youtube: "https://youtube.com/@jimnyruns",
+    },
+    beforemaps: {
+      instagram: "https://instagram.com/beforemaps.in",
     },
   },
 
