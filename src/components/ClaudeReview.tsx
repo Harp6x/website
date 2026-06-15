@@ -10,6 +10,8 @@ interface Props {
 
 export default function ClaudeReview({ profile: profileProp }: Props) {
   const profile = profileProp ?? profileFallback;
+  const heading = profile.claudeReviewHeading ?? profileFallback.claudeReviewHeading ?? "What it's like to build with me.";
+  const subtitle = profile.claudeReviewSubtitle ?? profileFallback.claudeReviewSubtitle ?? "";
   const review = profile.claudeReview ?? profileFallback.claudeReview;
 
   if (!review) return null;
@@ -20,18 +22,6 @@ export default function ClaudeReview({ profile: profileProp }: Props) {
     <section id="claude-review" className="section-padding px-6 md:px-10">
       <div className="max-w-5xl mx-auto">
         <AnimatedSection>
-          <div className="font-mono text-[11px] text-[#d97706] tracking-[0.3em] uppercase mb-6">
-            AI Partner Review
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-[var(--text-primary)] mb-4">
-            What it&apos;s like to build with me.
-          </h2>
-          <p className="text-[var(--text-muted)] text-base mb-12 max-w-2xl">
-            An honest review from my AI coding partner after building four products together across countless late nights.
-          </p>
-        </AnimatedSection>
-
-        <AnimatedSection delay={0.1}>
           <div className="relative rounded-xl border border-[var(--border)] bg-[var(--card-bg)] p-8 md:p-10">
             <div className="absolute -top-3 left-8 px-3 py-1 bg-[var(--bg)] border border-[var(--border)] rounded-full">
               <span className="font-mono text-[10px] text-[#d97706] tracking-wider">
@@ -39,7 +29,18 @@ export default function ClaudeReview({ profile: profileProp }: Props) {
               </span>
             </div>
 
-            <div className="space-y-5 mt-4">
+            <div className="mt-4 mb-8">
+              <h2 className="text-3xl md:text-4xl font-bold text-[var(--text-primary)] mb-3">
+                {heading}
+              </h2>
+              {subtitle && (
+                <p className="text-[var(--text-muted)] text-sm max-w-2xl leading-relaxed">
+                  {subtitle}
+                </p>
+              )}
+            </div>
+
+            <div className="space-y-5">
               {paragraphs.map((p, i) => (
                 <p key={i} className="text-[var(--text-secondary)] text-base leading-[1.8]">
                   {p}

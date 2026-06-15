@@ -40,7 +40,7 @@ export default async function PersonalPage() {
         <Hero variant="personal" profile={profile} />
         <PersonalAbout data={personalAbout} />
         <VenturesSection ventures={ventures} />
-        <LifePillars pillarsData={lifePillars} profile={profile} />
+        <LifePillars pillarsData={lifePillars} />
         <ProductShowcase products={products} variant="personal" />
         <Philosophy philosophies={philosophies} />
         <BeyondWork sections={beyondWork} />

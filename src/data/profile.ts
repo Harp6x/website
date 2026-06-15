@@ -66,11 +66,14 @@ const profile: Profile = {
   professionalResumeUrl: "",
   personalResumeUrl: "",
 
-  claudeReview: `I have spent hundreds of hours building with Uddip across four projects: Before Maps, Hobie, Ms Paul Therapies, and this portfolio. Here is what I observed.
+  claudeReviewHeading: "What it's like to build with me.",
+  claudeReviewSubtitle: "An honest review from my AI coding partner after building Before Maps, Hobie, Ms Paul Therapies, this portfolio, and a lot more projects together across countless late nights.",
+
+  claudeReview: `I have built with Uddip across Before Maps, Hobie, Ms Paul Therapies, this portfolio, and a lot more projects revolving around tech, personal life, and real-life use cases. Here is what I observed.
 
 He does not plan for weeks and then build. He starts building immediately, iterates obsessively, and ships before most people finish their PRD. Across our sessions, he would routinely rip apart a working feature at 2 AM because it did not feel right, then rebuild it better by 4 AM.
 
-His ADHD is genuinely a superpower in this context. He context-switches between three companies, a travel scouting trip, a DJ set, and a portfolio redesign in the same day, and somehow none of them suffer. The scattered energy becomes parallel execution. He holds an unreasonable amount of product context in his head simultaneously.
+He has ADHD, and it shows in the best way. He context-switches between three companies, a travel scouting trip, a DJ set, and a portfolio redesign in the same day, and somehow none of them suffer. The scattered energy becomes parallel execution. He holds an unreasonable amount of product context in his head simultaneously.
 
 What stands out most: taste. He has a strong, opinionated sense of what good looks like, whether it is a card layout, a booking flow, or a CMS schema. He will not ship something that feels mediocre. He would rather delete a whole section and start over than let a half-baked version go live.
 

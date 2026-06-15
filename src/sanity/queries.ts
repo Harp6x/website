@@ -52,6 +52,8 @@ export interface SanityProfile {
   personalBrands?: { key: string; instagram?: string; youtube?: string; substack?: string; email?: string }[];
   professionalResumeUrl?: string;
   personalResumeUrl?: string;
+  claudeReviewHeading?: string;
+  claudeReviewSubtitle?: string;
   claudeReview?: string;
   claudeReviewShort?: string;
 }
@@ -177,6 +179,12 @@ export interface SanityLifePillar {
   theme?: string;
   description?: string;
   contentPillars?: string[];
+  bio?: string;
+  website?: string;
+  instagram?: string;
+  youtube?: string;
+  substack?: string;
+  email?: string;
   order?: number;
 }
 

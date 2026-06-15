@@ -36,6 +36,8 @@ export interface Profile {
   personalBrands: Record<string, BrandLinks>;
   professionalResumeUrl: string;
   personalResumeUrl: string;
+  claudeReviewHeading?: string;
+  claudeReviewSubtitle?: string;
   claudeReview?: string;
   claudeReviewShort?: string;
 }

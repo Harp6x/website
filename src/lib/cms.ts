@@ -46,6 +46,8 @@ export async function fetchProfile(): Promise<Profile> {
     personalBrands: Object.keys(personalBrands).length ? personalBrands : profileFallback.personalBrands,
     professionalResumeUrl: cms.professionalResumeUrl ?? profileFallback.professionalResumeUrl,
     personalResumeUrl: cms.personalResumeUrl ?? profileFallback.personalResumeUrl,
+    claudeReviewHeading: cms.claudeReviewHeading ?? profileFallback.claudeReviewHeading,
+    claudeReviewSubtitle: cms.claudeReviewSubtitle ?? profileFallback.claudeReviewSubtitle,
     claudeReview: cms.claudeReview ?? profileFallback.claudeReview,
     claudeReviewShort: cms.claudeReviewShort ?? profileFallback.claudeReviewShort,
   };
@@ -126,7 +128,7 @@ export async function fetchPersonalAbout(): Promise<SanityPersonalAbout | null> 
   return safe(getPersonalAbout);
 }
 
-export async function fetchLifePillars(): Promise<{ brand: string; key: string; theme: string; description: string; contentPillars: string[] }[]> {
+export async function fetchLifePillars(): Promise<{ brand: string; key: string; theme: string; description: string; contentPillars: string[]; bio?: string; website?: string; instagram?: string; youtube?: string; substack?: string; email?: string }[]> {
   const cms = await safe(getLifePillars);
   if (!cms?.length) return [];
   return cms.map((l: SanityLifePillar) => ({
@@ -135,6 +137,12 @@ export async function fetchLifePillars(): Promise<{ brand: string; key: string; 
     theme: l.theme ?? "",
     description: l.description ?? "",
     contentPillars: l.contentPillars ?? [],
+    bio: l.bio,
+    website: l.website,
+    instagram: l.instagram,
+    youtube: l.youtube,
+    substack: l.substack,
+    email: l.email,
   }));
 }
 

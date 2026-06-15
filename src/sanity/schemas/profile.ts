@@ -69,6 +69,8 @@ export default defineType({
         ],
       }],
     }),
+    defineField({ name: "claudeReviewHeading", title: "Claude Review Heading", type: "string", description: "e.g. What it's like to build with me." }),
+    defineField({ name: "claudeReviewSubtitle", title: "Claude Review Subtitle", type: "text", rows: 2, description: "Subtitle below heading inside the review card." }),
     defineField({ name: "claudeReview", title: "Claude Code Review (full)", type: "text", rows: 10, description: "Full review of working with you, written in Claude's voice. Shown on professional page." }),
     defineField({ name: "claudeReviewShort", title: "Claude Code Review (short quote)", type: "text", rows: 3, description: "Short endorsement quote shown in the About section." }),
     defineField({

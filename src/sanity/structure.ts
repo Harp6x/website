@@ -99,8 +99,8 @@ export const structure: StructureResolver = (S) =>
           S.list()
             .title("Professional")
             .items([
-              publishedDraftItem(S, "Experience", "experience"),
-              publishedDraftItem(S, "Projects", "project"),
+              S.listItem().title("Experience").schemaType("experience").child(S.documentTypeList("experience").title("Experience")),
+              S.listItem().title("Projects").schemaType("project").child(S.documentTypeList("project").title("Projects")),
               S.listItem()
                 .title("Skills")
                 .child(
@@ -126,12 +126,10 @@ export const structure: StructureResolver = (S) =>
                     .documentId("personal-about-singleton")
                 ),
               publishedDraftItem(S, "Ventures", "venture"),
-              publishedDraftItem(S, "Philosophy", "philosophy"),
-              S.listItem()
-                .title("Life Pillars")
-                .child(S.documentTypeList("lifePillar").title("Life Pillars")),
-              publishedDraftItem(S, "Journal Topics", "journalTopic"),
-              publishedDraftItem(S, "Beyond Work", "beyondWork"),
+              S.listItem().title("Philosophy").schemaType("philosophy").child(S.documentTypeList("philosophy").title("Philosophy")),
+              S.listItem().title("Life Pillars").schemaType("lifePillar").child(S.documentTypeList("lifePillar").title("Life Pillars")),
+              S.listItem().title("Journal Topics").schemaType("journalTopic").child(S.documentTypeList("journalTopic").title("Journal Topics")),
+              S.listItem().title("Beyond Work").schemaType("beyondWork").child(S.documentTypeList("beyondWork").title("Beyond Work")),
             ])
         ),
 
