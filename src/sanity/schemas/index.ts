@@ -1,3 +1,5 @@
+import { seo } from "./objects/seo";
+import { portableText } from "./objects/portable-text";
 import blogPost from "./blogPost";
 import siteSettings from "./siteSettings";
 import profile from "./profile";
@@ -12,6 +14,10 @@ import lifePillar from "./lifePillar";
 import product from "./product";
 
 export const schemaTypes = [
+  // Object types (must be registered before document types that use them)
+  seo,
+  portableText,
+  // Document types
   blogPost,
   siteSettings,
   profile,

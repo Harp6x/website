@@ -123,22 +123,35 @@ Page request
 
 ---
 
-## Sanity Schemas (13 types)
+## Sanity Schemas (13 document types + 2 object types)
 
-| Schema | Type | Key Fields |
-|---|---|---|
-| `profile` | singleton | name, handle, email, tagline, bio[], stats[], socials[] |
-| `experience` | document | era, title, company, period, narrative, highlights[], current |
-| `project` | document | title, category, description, thinking, tags[], link |
-| `skill` | singleton | technical[], soft[], tools[], credentials[] |
-| `beyondWork` | document | emoji, title, subtitle, body[], mood |
-| `philosophy` | document | title, summary, tags[] |
-| `journalTopic` | document | title, preview, category, substackUrl |
-| `personalAbout` | singleton | headline, headlineAccent, paragraphs[], pillars[] |
-| `lifePillar` | document | brand, key, theme, description, contentPillars[] |
-| `product` | document | title, slug, brand, productType, priceType, price, coverImage |
-| `blogPost` | document | title, slug, category, excerpt, publishedAt, body[] |
-| `siteSettings` | singleton (legacy) | currentRole, tagline, etc. |
+### Object Types (reusable)
+| Schema | Purpose |
+|---|---|
+| `seo` | metaTitle, metaDescription, ogImage, noIndex — reusable SEO block |
+| `portableText` | Rich text with headings, bold, italic, links, images with alt+caption |
+
+### Document Types
+| Schema | Type | Key Fields | Visibility |
+|---|---|---|---|
+| `siteSettings` | singleton | currentRole, tagline, navigation[], socialLinks, footerText, seo, page toggles, dropdown options | — |
+| `profile` | singleton | name, handle, email, tagline, bio[], stats[], socials[] | — |
+| `skill` | singleton | technical[], soft[], tools[], credentials[] | — |
+| `personalAbout` | singleton | headline, headlineAccent, paragraphs[], pillars[] | — |
+| `experience` | document | era, title, company, period, narrative, highlights[], current | `published` |
+| `project` | document | title, category, description, thinking, tags[], coverImage, link | `published` |
+| `beyondWork` | document | emoji, title, subtitle, body[], mood | `published` |
+| `philosophy` | document | title, summary, tags[] | `published` |
+| `journalTopic` | document | title, preview, category, substackUrl | `published` |
+| `lifePillar` | document | brand, key, theme, description, contentPillars[] | — |
+| `product` | document | title, slug, brand, productType, priceType, price, coverImage | `published` |
+| `blogPost` | document | title, slug, category, excerpt, publishedAt, body (portableText), seo | `published` |
+
+### Desk Structure Patterns (from Before Maps)
+- **Published/Draft folders:** Content types with `published` toggle get Published / Drafts / All sub-folders in Studio
+- **Page visibility toggles:** `enableProfessionalPage`, `enablePersonalPage`, `enableProductsPage`, `enableBlogPage` in siteSettings
+- **CMS-editable dropdowns:** Categories for blog, projects, journal topics, and product themes/types are managed in Site Settings → Dropdown Options (not hardcoded in schemas)
+- **Draft indicator:** All previews show `[Draft]` prefix when `published === false`
 
 ---
 

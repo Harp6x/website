@@ -8,13 +8,15 @@ export interface SanityBlogPost {
   category: string;
   excerpt: string;
   publishedAt: string;
+  published?: boolean;
   coverImage?: { asset: { _ref: string } };
+  seo?: { metaTitle?: string; metaDescription?: string };
 }
 
 export async function getBlogPosts(): Promise<SanityBlogPost[]> {
   return client.fetch(
-    `*[_type == "blogPost"] | order(publishedAt desc) [0...20] {
-      _id, title, slug, category, excerpt, publishedAt, coverImage
+    `*[_type == "blogPost" && published != false] | order(publishedAt desc) [0...20] {
+      _id, title, slug, category, excerpt, publishedAt, coverImage, seo
     }`
   );
 }
@@ -74,7 +76,7 @@ export interface SanityExperience {
 }
 
 export async function getExperiences(): Promise<SanityExperience[]> {
-  return client.fetch(`*[_type == "experience"] | order(order asc)`);
+  return client.fetch(`*[_type == "experience" && published != false] | order(order asc)`);
 }
 
 // ─── Project ───
@@ -87,10 +89,16 @@ export interface SanityProject {
   tags?: string[];
   link?: string;
   order?: number;
+  coverImageUrl?: string;
 }
 
 export async function getProjects(): Promise<SanityProject[]> {
-  return client.fetch(`*[_type == "project"] | order(order asc)`);
+  return client.fetch(
+    `*[_type == "project" && published != false] | order(order asc) {
+      _id, title, category, description, thinking, tags, link, order,
+      "coverImageUrl": coverImage.asset->url
+    }`
+  );
 }
 
 // ─── Skills ───
@@ -117,7 +125,7 @@ export interface SanityBeyondWork {
 }
 
 export async function getBeyondWork(): Promise<SanityBeyondWork[]> {
-  return client.fetch(`*[_type == "beyondWork"] | order(order asc)`);
+  return client.fetch(`*[_type == "beyondWork" && published != false] | order(order asc)`);
 }
 
 // ─── Philosophy ───
@@ -130,7 +138,7 @@ export interface SanityPhilosophy {
 }
 
 export async function getPhilosophies(): Promise<SanityPhilosophy[]> {
-  return client.fetch(`*[_type == "philosophy"] | order(order asc)`);
+  return client.fetch(`*[_type == "philosophy" && published != false] | order(order asc)`);
 }
 
 // ─── Journal Topics ───
@@ -144,7 +152,7 @@ export interface SanityJournalTopic {
 }
 
 export async function getJournalTopics(): Promise<SanityJournalTopic[]> {
-  return client.fetch(`*[_type == "journalTopic"] | order(order asc)`);
+  return client.fetch(`*[_type == "journalTopic" && published != false] | order(order asc)`);
 }
 
 // ─── Personal About ───
@@ -204,7 +212,7 @@ export async function getProducts(): Promise<SanityProductDoc[]> {
   );
 }
 
-// ─── Legacy ───
+// ─── Site Settings ───
 export interface SanitySettings {
   currentRole?: string;
   currentCompany?: string;
@@ -213,6 +221,17 @@ export interface SanitySettings {
   focus?: string;
   subtitleLine1?: string;
   subtitleLine2?: string;
+  navigation?: { label: string; href: string }[];
+  socialLinks?: { github?: string; linkedin?: string; instagram?: string; youtube?: string; substack?: string; email?: string };
+  footerText?: string;
+  enableProfessionalPage?: boolean;
+  enablePersonalPage?: boolean;
+  enableProductsPage?: boolean;
+  enableBlogPage?: boolean;
+  blogCategories?: { value: string }[];
+  projectCategories?: { value: string }[];
+  journalCategories?: { value: string }[];
+  seo?: { metaTitle?: string; metaDescription?: string };
 }
 
 export async function getSiteSettings(): Promise<SanitySettings | null> {

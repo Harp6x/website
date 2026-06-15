@@ -11,6 +11,7 @@ export default defineType({
       type: "string",
       description: "Paste any emoji, e.g. 🧭 ⛰️ 🎵 📖",
     }),
+    defineField({ name: "published", title: "Published", type: "boolean", initialValue: true, description: "Toggle to show/hide this section" }),
     defineField({ name: "title", title: "Title", type: "string", validation: (r) => r.required() }),
     defineField({ name: "subtitle", title: "Subtitle", type: "string" }),
     defineField({
@@ -23,5 +24,10 @@ export default defineType({
     defineField({ name: "order", title: "Sort Order", type: "number" }),
   ],
   orderings: [{ title: "Order", name: "order", by: [{ field: "order", direction: "asc" }] }],
-  preview: { select: { title: "title", subtitle: "subtitle" } },
+  preview: {
+    select: { title: "title", subtitle: "subtitle", published: "published" },
+    prepare({ title, subtitle, published }) {
+      return { title: `${published === false ? "[Draft] " : ""}${title}`, subtitle };
+    },
+  },
 });

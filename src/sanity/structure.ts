@@ -1,4 +1,4 @@
-import type { StructureResolver } from "sanity/structure";
+import type { StructureBuilder, StructureResolver } from "sanity/structure";
 
 /**
  * Custom Studio desk structure.
@@ -6,9 +6,53 @@ import type { StructureResolver } from "sanity/structure";
  * Organized into clear groups separated by dividers:
  *   Site (singletons) · Professional · Personal · Products · Blog
  *
- * Singletons (Site Settings, Profile, Skills, Personal About) open a single
- * fixed document instead of a list, so there's never more than one.
+ * Content types with a `published` field get Published / Drafts / All sub-folders
+ * (pattern from Before Maps).
  */
+
+/**
+ * Helper: create a content-type item with Published / Drafts sub-folders.
+ * "Published" = published == true (or published field not set, defaulting to true)
+ * "Drafts"    = published == false explicitly
+ */
+function publishedDraftItem(
+  S: StructureBuilder,
+  title: string,
+  schemaType: string,
+) {
+  return S.listItem()
+    .title(title)
+    .schemaType(schemaType)
+    .child(
+      S.list()
+        .title(title)
+        .items([
+          S.listItem()
+            .title("Published")
+            .schemaType(schemaType)
+            .child(
+              S.documentList()
+                .title(`${title} — Published`)
+                .schemaType(schemaType)
+                .filter(`_type == "${schemaType}" && published != false`),
+            ),
+          S.listItem()
+            .title("Drafts")
+            .schemaType(schemaType)
+            .child(
+              S.documentList()
+                .title(`${title} — Drafts`)
+                .schemaType(schemaType)
+                .filter(`_type == "${schemaType}" && published == false`),
+            ),
+          S.divider(),
+          S.listItem()
+            .title("All")
+            .schemaType(schemaType)
+            .child(S.documentTypeList(schemaType).title(`${title} — All`)),
+        ]),
+    );
+}
 
 // Document types that are rendered as explicit list/folder items below and
 // should therefore NOT also appear in the auto-generated root list.
@@ -29,7 +73,7 @@ const HANDLED_TYPES = [
 
 export const structure: StructureResolver = (S) =>
   S.list()
-    .title("Content")
+    .title("Portfolio")
     .items([
       // ─── Site ───
       S.listItem()
@@ -54,12 +98,8 @@ export const structure: StructureResolver = (S) =>
           S.list()
             .title("Professional")
             .items([
-              S.listItem()
-                .title("Experience")
-                .child(S.documentTypeList("experience").title("Experience")),
-              S.listItem()
-                .title("Projects")
-                .child(S.documentTypeList("project").title("Projects")),
+              publishedDraftItem(S, "Experience", "experience"),
+              publishedDraftItem(S, "Projects", "project"),
               S.listItem()
                 .title("Skills")
                 .child(
@@ -84,36 +124,24 @@ export const structure: StructureResolver = (S) =>
                     .schemaType("personalAbout")
                     .documentId("personal-about-singleton")
                 ),
-              S.listItem()
-                .title("Philosophy")
-                .child(S.documentTypeList("philosophy").title("Philosophy")),
+              publishedDraftItem(S, "Philosophy", "philosophy"),
               S.listItem()
                 .title("Life Pillars")
                 .child(S.documentTypeList("lifePillar").title("Life Pillars")),
-              S.listItem()
-                .title("Journal Topics")
-                .child(
-                  S.documentTypeList("journalTopic").title("Journal Topics")
-                ),
-              S.listItem()
-                .title("Beyond Work")
-                .child(S.documentTypeList("beyondWork").title("Beyond Work")),
+              publishedDraftItem(S, "Journal Topics", "journalTopic"),
+              publishedDraftItem(S, "Beyond Work", "beyondWork"),
             ])
         ),
 
       S.divider(),
 
       // ─── Products ───
-      S.listItem()
-        .title("Products")
-        .child(S.documentTypeList("product").title("Products")),
+      publishedDraftItem(S, "Products", "product"),
 
       S.divider(),
 
       // ─── Blog ───
-      S.listItem()
-        .title("Blog Posts")
-        .child(S.documentTypeList("blogPost").title("Blog Posts")),
+      publishedDraftItem(S, "Blog Posts", "blogPost"),
 
       // Any other (future) document types fall through here.
       ...S.documentTypeListItems().filter(
