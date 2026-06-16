@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft, ExternalLink, Package, CheckCircle2 } from "lucide-react";
 import Footer from "@/components/Footer";
-import { fetchProfile, fetchProducts } from "@/lib/cms";
+import { fetchProfile, fetchProducts, fetchSiteSettings } from "@/lib/cms";
 import { getProductDetailBySlug } from "@/data/product-details";
 import type { Product } from "@/data/types";
 
@@ -43,10 +43,13 @@ export default async function ProductDetailPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const [profile, products] = await Promise.all([
+  const [profile, products, settings] = await Promise.all([
     fetchProfile(),
     fetchProducts(),
+    fetchSiteSettings(),
   ]);
+
+  if (!settings.enableProductsPage) notFound();
 
   const product = products.find((p: Product) => p.slug === slug);
   if (!product) notFound();

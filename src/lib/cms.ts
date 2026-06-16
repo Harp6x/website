@@ -1,5 +1,5 @@
-import { getProfile, getExperiences, getProjects, getSkills, getBeyondWork, getPhilosophies, getJournalTopics, getPersonalAbout, getLifePillars, getProducts, getVentures, getVenture } from "@/sanity/queries";
-import type { SanityProfile, SanityExperience, SanityProject, SanitySkills, SanityBeyondWork, SanityPhilosophy, SanityJournalTopic, SanityPersonalAbout, SanityLifePillar, SanityProductDoc, SanityVenture } from "@/sanity/queries";
+import { getProfile, getExperiences, getProjects, getSkills, getBeyondWork, getPhilosophies, getJournalTopics, getPersonalAbout, getLifePillars, getProducts, getVentures, getVenture, getSiteSettings } from "@/sanity/queries";
+import type { SanityProfile, SanityExperience, SanityProject, SanitySkills, SanityBeyondWork, SanityPhilosophy, SanityJournalTopic, SanityPersonalAbout, SanityLifePillar, SanityProductDoc, SanityVenture, SanitySettings } from "@/sanity/queries";
 import type { Profile, Chapter, Project, Skills, LifeSection, JournalTopic, Product, ProductBrand, ProductType, PriceType, ProductSurface, Venture } from "@/data/types";
 
 import profileFallback from "@/data/profile";
@@ -201,4 +201,29 @@ export async function fetchProducts(): Promise<Product[]> {
     coverImage: p.coverImageUrl,
     featured: p.featured,
   }));
+}
+
+export interface SiteSettings {
+  enableProductsPage: boolean;
+  enableBlogPage: boolean;
+  enableProfessionalPage: boolean;
+  enablePersonalPage: boolean;
+}
+
+const defaultSettings: SiteSettings = {
+  enableProductsPage: true,
+  enableBlogPage: true,
+  enableProfessionalPage: true,
+  enablePersonalPage: true,
+};
+
+export async function fetchSiteSettings(): Promise<SiteSettings> {
+  const cms = await safe(getSiteSettings);
+  if (!cms) return defaultSettings;
+  return {
+    enableProductsPage: cms.enableProductsPage ?? defaultSettings.enableProductsPage,
+    enableBlogPage: cms.enableBlogPage ?? defaultSettings.enableBlogPage,
+    enableProfessionalPage: cms.enableProfessionalPage ?? defaultSettings.enableProfessionalPage,
+    enablePersonalPage: cms.enablePersonalPage ?? defaultSettings.enablePersonalPage,
+  };
 }

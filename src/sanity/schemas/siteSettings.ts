@@ -70,6 +70,7 @@ export default defineType({
     tagArray("journalCategories", "Journal Categories", "Options for the Journal Topic category dropdown"),
     tagArray("productThemes", "Product Themes", "Options for the Product theme dropdown (e.g. AI & Automation, Cybersecurity)"),
     tagArray("productTypes", "Product Types", "Options for the Product type dropdown (e.g. Template, eBook, Course)"),
+    tagArray("ventureStatuses", "Venture Statuses", "Options for the Venture status dropdown (e.g. active, building, paused)"),
   ],
   preview: { prepare: () => ({ title: "Site Settings" }) },
 });

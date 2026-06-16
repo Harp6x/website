@@ -4,7 +4,8 @@ import { useState } from "react";
 import AnimatedSection from "./AnimatedSection";
 import topicsFallback from "@/data/journal";
 import type { JournalTopic } from "@/data/types";
-import { ArrowUpRight, ChevronDown } from "lucide-react";
+import { ArrowUpRight, ChevronDown, ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const COLLAPSED_COUNT = 6;
 
@@ -84,6 +85,15 @@ export default function Journal({ topics: topicsProp }: Props) {
             </button>
           </AnimatedSection>
         )}
+
+        <AnimatedSection delay={0.25} className="mt-10 text-center">
+          <Link
+            href="/journal"
+            className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--personal-border)] text-sm text-[var(--text-secondary)] hover:border-[var(--personal-accent)]/40 hover:text-[var(--text-primary)] transition-all duration-300"
+          >
+            View all posts <ArrowRight className="w-4 h-4" />
+          </Link>
+        </AnimatedSection>
 
         {/* Writing note */}
         <AnimatedSection delay={0.3} className="mt-16">

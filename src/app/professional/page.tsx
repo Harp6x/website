@@ -9,7 +9,7 @@ import ClaudeReview from "@/components/ClaudeReview";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CrossPageNudge from "@/components/CrossPageNudge";
-import { fetchProfile, fetchExperiences, fetchProjects, fetchSkills, fetchProducts } from "@/lib/cms";
+import { fetchProfile, fetchExperiences, fetchProjects, fetchSkills, fetchProducts, fetchSiteSettings } from "@/lib/cms";
 
 export const revalidate = 60;
 
@@ -19,17 +19,18 @@ export const metadata = {
 };
 
 export default async function ProfessionalPage() {
-  const [profile, experiences, projects, skills, products] = await Promise.all([
+  const [profile, experiences, projects, skills, products, settings] = await Promise.all([
     fetchProfile(),
     fetchExperiences(),
     fetchProjects(),
     fetchSkills(),
     fetchProducts(),
+    fetchSiteSettings(),
   ]);
 
   return (
     <div className="grain">
-      <Navbar variant="professional" profile={profile} />
+      <Navbar variant="professional" profile={profile} showProducts={settings.enableProductsPage} />
       <CrossPageNudge variant="professional" />
       <main>
         <Hero variant="professional" profile={profile} />
@@ -37,7 +38,7 @@ export default async function ProfessionalPage() {
         <Experience chapters={experiences} />
         <Skills skills={skills} />
         <Projects projects={projects} />
-        <ProductShowcase products={products} variant="professional" />
+        {settings.enableProductsPage && <ProductShowcase products={products} variant="professional" />}
         <ClaudeReview profile={profile} />
         <Contact variant="professional" profile={profile} />
       </main>

@@ -30,6 +30,7 @@ export default defineType({
       type: "array",
       of: [{
         type: "object",
+        name: "stat",
         fields: [
           defineField({ name: "label", title: "Label", type: "string" }),
           defineField({ name: "value", title: "Value", type: "string" }),

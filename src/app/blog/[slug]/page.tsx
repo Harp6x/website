@@ -42,7 +42,7 @@ export default async function BlogPostPage({ params }: Props) {
         <div className="max-w-3xl mx-auto">
           <AnimatedSection>
             <Link
-              href="/personal#journal"
+              href="/journal"
               className="inline-flex items-center gap-2 text-sm text-[var(--text-muted)] hover:text-[#d97706] transition-colors mb-8"
             >
               <ArrowLeft className="w-4 h-4" />

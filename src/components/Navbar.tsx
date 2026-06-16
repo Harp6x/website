@@ -28,10 +28,12 @@ const personalLinks = [
 interface Props {
   variant?: "professional" | "personal";
   profile: Profile;
+  showProducts?: boolean;
 }
 
-export default function Navbar({ variant = "professional", profile }: Props) {
-  const navLinks = variant === "professional" ? proLinks : personalLinks;
+export default function Navbar({ variant = "professional", profile, showProducts = true }: Props) {
+  const allLinks = variant === "professional" ? proLinks : personalLinks;
+  const navLinks = showProducts ? allLinks : allLinks.filter((l) => l.href !== "/products");
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
 

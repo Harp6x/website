@@ -1,7 +1,8 @@
 import Link from "next/link";
 import Footer from "@/components/Footer";
 import ProductCatalog from "@/components/ProductCatalog";
-import { fetchProfile, fetchProducts } from "@/lib/cms";
+import { fetchProfile, fetchProducts, fetchSiteSettings } from "@/lib/cms";
+import { notFound } from "next/navigation";
 
 export const revalidate = 60;
 
@@ -12,10 +13,13 @@ export const metadata = {
 };
 
 export default async function ProductsPage() {
-  const [profile, products] = await Promise.all([
+  const [profile, products, settings] = await Promise.all([
     fetchProfile(),
     fetchProducts(),
+    fetchSiteSettings(),
   ]);
+
+  if (!settings.enableProductsPage) notFound();
 
   return (
     <div className="grain">
