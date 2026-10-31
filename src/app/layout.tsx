@@ -25,24 +25,24 @@ const lora = Lora({
 export const metadata: Metadata = {
   title: "Uddip Ranjan Das — Founder, Builder, Explorer",
   description:
-    "Founder of Before Maps, Co-founder of Ms Paul Therapies, Creator of Hobie. Building companies, products, and systems with AI. Ex-Cisco. Full-time founder.",
+    "Co-Founder of IndieRoam, Founder of BeforeMaps, CTO at MSPaulTherapies. Building automotive expeditions, travel ventures, and digital operating systems. Ex-Cisco.",
   keywords: [
     "Uddip Ranjan Das",
     "harp6x",
-    "Before Maps",
-    "Ms Paul Therapies",
-    "Hobie",
+    "IndieRoam",
+    "BeforeMaps",
+    "MSPaulTherapies",
+    "automotive expeditions",
     "founder",
     "builder",
-    "AI",
+    "CTO",
     "cybersecurity",
     "product owner",
-    "vibe coding",
   ],
   openGraph: {
     title: "Uddip Ranjan Das — Founder, Builder, Explorer",
     description:
-      "Building three companies. Shipping with AI. Before Maps, Ms Paul Therapies, Hobie.",
+      "Co-Founder at IndieRoam, Founder at BeforeMaps, CTO at MSPaulTherapies. Building automotive expeditions, independent travel ventures, and digital systems. Ex-Cisco.",
     type: "website",
     siteName: "Uddip Ranjan Das",
   },
@@ -50,7 +50,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Uddip Ranjan Das — Founder, Builder, Explorer",
     description:
-      "Building three companies. Shipping with AI. Before Maps, Ms Paul Therapies, Hobie.",
+      "Co-Founder at IndieRoam, Founder at BeforeMaps, CTO at MSPaulTherapies. Building automotive expeditions, independent travel ventures, and digital systems. Ex-Cisco.",
   },
 };
 

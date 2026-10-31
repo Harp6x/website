@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 /**
- * Seed script: pushes all hardcoded portfolio content into Sanity CMS.
+ * Master seed script: pushes all portfolio content into Sanity CMS.
  * Run: node scripts/seed-sanity.mjs
  *
- * Requires SANITY_API_TOKEN, NEXT_PUBLIC_SANITY_PROJECT_ID, NEXT_PUBLIC_SANITY_DATASET
- * in .env.local (or environment).
+ * Requires SANITY_API_TOKEN (or SANITY_API_WRITE_TOKEN), NEXT_PUBLIC_SANITY_PROJECT_ID,
+ * NEXT_PUBLIC_SANITY_DATASET in .env.local (or environment).
  */
 
 import { createClient } from "@sanity/client";
@@ -16,10 +16,10 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 config({ path: resolve(__dirname, "../.env.local") });
 
 const client = createClient({
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "55vwwzpf",
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   apiVersion: "2024-01-01",
-  token: process.env.SANITY_API_TOKEN,
+  token: process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_API_TOKEN,
   useCdn: false,
 });
 
@@ -35,23 +35,28 @@ async function seed() {
     handle: "harp6x",
     email: "uddip9@gmail.com",
     location: "New Delhi, India",
-    currentRole: "Product Owner",
-    currentCompany: "(prev. Cisco)",
-    focus: "Security & Product",
-    tagline: "Building resilient systems.",
-    subtitleLine1: "Product thinker. Cybersecurity engineer. Explorer.",
-    subtitleLine2: "Six years in cybersecurity. From SOC analyst to threat intel to detection engineering to product owner at Cisco.",
-    heroKeywords: "Security · Product · Systems",
-    landingIntro: "Cybersecurity professional turned product owner. Explorer. Builder.",
+    currentRole: "Co-Founder & CTO",
+    currentCompany: "IndieRoam · BeforeMaps · MSPaulTherapies",
+    focus: "Automotive Expeditions · Travel Ventures · Digital Systems",
+    tagline: "Building expedition brands, travel ventures, and operating systems.",
+    subtitleLine1: "Co-Founder at IndieRoam · Founder at BeforeMaps · CTO at MSPaulTherapies",
+    subtitleLine2:
+      "Six years in cybersecurity at Cisco, now building automotive expedition brands, travel ventures, and digital systems.",
+    heroKeywords: "Expeditions · Product · Systems · Travel",
+    landingIntro:
+      "Technology founder and operator building automotive expeditions, independent travel ventures, and digital systems.",
     bio: [
-      "I spent six years in cybersecurity, starting on the front lines of SOC operations, moving into threat intelligence and detection engineering, and eventually owning the product side at Cisco.",
-      "At Cisco, I led the SAL Intelligence and Analytics product as Product Owner, turning raw network telemetry and security signals into decisions that actually matter for customers.",
-      "The path was straightforward: understand the problem deeply first, then build the solution. That mindset took me from triaging alerts to defining what gets built next.",
+      "I spent six years in cybersecurity: SOC operations, threat intelligence, detection engineering, and ultimately leading Cisco's SAL Intelligence & Analytics as Product Owner.",
+      "That foundation in systems architecture, risk modeling, and operational execution led directly into entrepreneurship. Today, my primary entrepreneurial focus is **IndieRoam**, where I serve as Co-Founder. We are building one of India's leading automotive expedition companies, specializing in premium self-drive expeditions, curated convoys, and managed road experiences across high-altitude and rugged terrains like Ladakh.",
+      "Alongside IndieRoam, I run **BeforeMaps**, an independent travel venture focused on personally explored destinations, curated group departures, private trips, and customized itineraries. I also serve as Chief Technology Officer (CTO) for **MSPaulTherapies**, directing technology leadership, platform architecture, and operational systems for a modern clinical practice.",
+      "My evolution connects cybersecurity, product thinking, and travel business building: understanding real-world operational complexities deeply, designing resilient systems to manage them, and executing with consistency.",
     ],
-    bioClosing: "Outside of work, I chase clarity on mountain roads, think about philosophy, build things with my hands, and try to live a life that still feels alive while doing serious work.",
+    bioClosing:
+      "Outside of building, I explore remote mountain passes, document overland expedition builds, and study systems and philosophy.",
     stats: [
-      { _key: "s1", label: "Years in Cybersecurity", value: "6" },
-      { _key: "s2", label: "As Product Owner", value: "1 yr" },
+      { _key: "s1", label: "Primary Focus", value: "IndieRoam" },
+      { _key: "s2", label: "Key Expeditions", value: "Ladakh & Beyond" },
+      { _key: "s3", label: "Years in Tech & Cyber", value: "6+" },
     ],
     socials: [
       { _key: "so1", label: "YouTube", href: "https://youtube.com/@harp6x" },
@@ -61,78 +66,463 @@ async function seed() {
     ],
     professionalEmails: ["uddip9@gmail.com", "uddipbuilds@gmail.com"],
     personalBrands: [
-      { _key: "b1", key: "harp6x", instagram: "https://instagram.com/harp6x", youtube: "https://youtube.com/@harp6x", substack: "https://substack.com/@harp6x", email: "harp6x@gmail.com" },
-      { _key: "b2", key: "theregoesuddip", instagram: "https://instagram.com/theregoesuddip", youtube: "https://youtube.com/@theregoesuddip", substack: "https://substack.com/@theregoesuddip", email: "theregoesuddip@gmail.com" },
-      { _key: "b3", key: "jimnyruns", instagram: "https://instagram.com/jimnyruns", youtube: "https://youtube.com/@jimnyruns" },
+      {
+        _key: "b1",
+        key: "harp6x",
+        instagram: "https://instagram.com/harp6x",
+        youtube: "https://youtube.com/@harp6x",
+        substack: "https://substack.com/@harp6x",
+        email: "harp6x@gmail.com",
+      },
+      {
+        _key: "b2",
+        key: "theregoesuddip",
+        instagram: "https://instagram.com/theregoesuddip",
+        youtube: "https://youtube.com/@theregoesuddip",
+        substack: "https://substack.com/@theregoesuddip",
+        email: "theregoesuddip@gmail.com",
+      },
+      {
+        _key: "b3",
+        key: "jimnyruns",
+        instagram: "https://instagram.com/jimnyruns",
+        youtube: "https://youtube.com/@jimnyruns",
+      },
+      {
+        _key: "b4",
+        key: "beforemaps",
+        instagram: "https://instagram.com/beforemaps.in",
+      },
     ],
-    resumePath: "/Uddip_Ranjan_Das_CV.pdf",
+    claudeReviewHeading: "Working with Uddip.",
+    claudeReviewSubtitle:
+      "An honest assessment from my AI pair-programming partner across IndieRoam, BeforeMaps, MSPaulTherapies, and systems architecture sessions.",
+    claudeReview: `I have worked with Uddip across the digital and operational systems for IndieRoam, BeforeMaps, MSPaulTherapies, and this portfolio. Here is what I observed.
+
+He approaches business ventures with the discipline of an engineer and the velocity of an operator. Rather than spending weeks on abstract roadmaps, he moves quickly to build concrete operating systems—whether that is mapping complex expedition logistics, structuring booking pipelines, or fine-tuning user interfaces.
+
+His technical background in cybersecurity and product ownership at Cisco is evident in how he designs operations. He anticipates failure modes, builds safety margins into route and convoy planning, and insists on clean, maintainable systems across every venture he touches.
+
+What stands out most is focus on ground truth. In his travel and expedition ventures, he personally scouts routes and field-tests logistics before offering them to travelers. That same rigor carries into software and digital workflows: if a system cannot handle real-world edge cases reliably, it does not ship.
+
+Working with Uddip means collaborating with a founder who pairs practical execution with high operational standards, clear product thinking, and genuine domain curiosity.`,
+    claudeReviewShort:
+      "Combines the systems discipline of cybersecurity engineering with the practical execution of a hands-on expedition founder and operator.",
   });
 
   // ─── Experience ───
+  console.log("  → Experience");
   const experiences = [
-    { era: "Latest", title: "Product Owner / Technical Lead", company: "Cisco", period: "2025 – June 2026", narrative: "Led SAL Intelligence and Analytics. built the decision layer behind Cisco's firewall products. Turned raw network telemetry into actionable intelligence.", highlights: ["Product owner of Cisco SAL Intelligence & Analytics", "Developed solutions for Cisco Firewall Products", "Bridged security operations with product strategy"], current: false, order: 1 },
-    { era: "Parallel", title: "Writer & CTI Analyst", company: "The CTI Dispatch", period: "2025 – Present", narrative: "My own publication. Weekly curated CTI analysis, special bulletins for high-impact events. Building a voice in the intelligence community.", highlights: ["Weekly editions of curated threat intelligence", "Special bulletins on high-impact cyber events"], order: 2 },
-    { era: "Growth", title: "Senior SOC Analyst & CTI Analyst", company: "Versprite Cybersecurity", period: "2022 – 2025", narrative: "Three years of deepening mastery. from alert triage to leading threat intelligence programs. The phase where I stopped reacting and started thinking strategically.", highlights: ["Led 6 CTI projects across 8 clients, identified 20 critical risks", "2000-endpoint defense, 15-min investigation, 30-sec response", "Improved SOC workflows by 65%, reduced false positives by 40%", "APT hunting. early detection of 7 threat groups", "10,000 security logs/month, 500 intrusions mitigated", "Published 4 blogs, 25 weekly newsletters"], order: 3 },
-    { era: "Foundation", title: "Security Researcher", company: "Ministry of Defence of India", period: "2021", narrative: "Contributing to national cyber defense. Malware triage, Blue Team simulations against nation-state threats. The experience that made everything else feel possible.", highlights: ["5 cyber defense initiatives", "Identified 12 IOCs linked to APT actors", "Weekly intelligence briefings to defense leadership"], order: 4 },
-    { era: "Origin", title: "InfoSec Analyst → Trainee", company: "Innefu Labs / Innobuzz", period: "2018 – 2020", narrative: "Where it started. Penetration testing, endpoint defense, vulnerability scanning across 1500 nodes. Learning the craft from the ground up.", highlights: ["Managed endpoint defense across 1500 nodes", "20 risk assessment reports, 90% patch compliance", "MITRE ATT&CK-based playbook implementation"], order: 5 },
+    {
+      id: "experience-indieroam",
+      era: "Current",
+      title: "Co-Founder",
+      company: "IndieRoam",
+      period: "2024 – Present",
+      narrative:
+        "Co-founded IndieRoam with a long-term ambition to build one of India's leading automotive expedition companies. Focused on premium self-drive expeditions, curated convoys, and managed road experiences. Driving business strategy, product development, technology, operations, marketing, and growth.",
+      highlights: [
+        "Directing company vision, business strategy, product development, technology, and growth",
+        "Focus on premium self-drive expeditions, curated convoys, and managed road experiences",
+        "Planned and executed complex automotive expeditions, including Ladakh self-drive convoys",
+        "Designed expedition operating systems: convoy logistics, communications, and emergency safety margins",
+        "Long-term ambition to establish a trusted, recognizable overland expedition brand in India",
+      ],
+      current: true,
+      published: true,
+      order: 1,
+    },
+    {
+      id: "experience-mspaul",
+      era: "Leadership",
+      title: "Chief Technology Officer (CTO)",
+      company: "MSPaulTherapies",
+      period: "2024 – Present",
+      narrative:
+        "Directing technology leadership and digital systems for a modern clinical psychology and wellness platform. Architected the digital infrastructure, client booking pipeline, and practice management workflows.",
+      highlights: [
+        "Leading technology strategy, platform architecture, and digital operations",
+        "Built automated client intake, booking pipeline, and secure payment integrations",
+        "Architected CMS-driven system for clinical services, workshops, and educational resources",
+        "Engineered internal operational workflows to scale practice efficiency",
+      ],
+      current: false,
+      published: true,
+      order: 2,
+    },
+    {
+      id: "experience-beforemaps",
+      era: "Ventures",
+      title: "Founder",
+      company: "BeforeMaps",
+      period: "2023 – Present",
+      narrative:
+        "Independent travel venture focused on personally explored destinations, curated group departures, private trips, customized itineraries, and travel experiences across India.",
+      highlights: [
+        "Curating and executing group departures, private trips, and customized itineraries",
+        "Personally exploring and scouting destinations, routes, and local hospitality networks",
+        "Built full-stack digital platform, route catalog, and direct booking systems",
+        "Managing on-ground trip operations, contingency planning, and traveler experience",
+      ],
+      current: false,
+      published: true,
+      order: 3,
+    },
+    {
+      id: "experience-1",
+      era: "Enterprise",
+      title: "Product Owner / Technical Lead",
+      company: "Cisco",
+      period: "2025 – June 2026",
+      narrative:
+        "Led SAL Intelligence and Analytics, building the decision layer behind Cisco's firewall products. Turned raw network telemetry and security signals into actionable intelligence.",
+      highlights: [
+        "Product Owner of Cisco SAL Intelligence & Analytics",
+        "Developed solutions for Cisco Firewall products",
+        "Bridged security operations with product strategy",
+      ],
+      current: false,
+      published: true,
+      order: 4,
+    },
+    {
+      id: "experience-2",
+      era: "Research",
+      title: "Writer & CTI Analyst",
+      company: "The CTI Dispatch",
+      period: "2025 – Present",
+      narrative:
+        "Independent publication providing weekly curated cyber threat intelligence analysis and tactical bulletins for high-impact security events.",
+      highlights: [
+        "Weekly editions of curated threat intelligence",
+        "Special bulletins on high-impact cyber events",
+      ],
+      current: false,
+      published: true,
+      order: 5,
+    },
+    {
+      id: "experience-3",
+      era: "Growth",
+      title: "Senior SOC Analyst & CTI Analyst",
+      company: "Versprite Cybersecurity",
+      period: "2022 – 2025",
+      narrative:
+        "Three years of deepening mastery, from alert triage to leading threat intelligence programs. The phase where I stopped reacting and started thinking strategically.",
+      highlights: [
+        "Led 6 CTI projects across 8 clients, identified 20 critical risks",
+        "2,000-endpoint defense, 15-min investigation, 30-sec response",
+        "Improved SOC workflows by 65%, reduced false positives by 40%",
+        "APT hunting, early detection of 7 threat groups",
+        "10,000 security logs/month, 500 intrusions mitigated",
+        "Published 4 blogs, 25 weekly newsletters",
+      ],
+      current: false,
+      published: true,
+      order: 6,
+    },
+    {
+      id: "experience-4",
+      era: "Foundation",
+      title: "Security Researcher",
+      company: "Ministry of Defence of India",
+      period: "2021",
+      narrative:
+        "Contributing to national cyber defense: malware triage, Blue Team defensive simulations against advanced threats.",
+      highlights: [
+        "5 cyber defense initiatives",
+        "Identified 12 IOCs linked to APT actors",
+        "Weekly intelligence briefings to defense leadership",
+      ],
+      current: false,
+      published: true,
+      order: 7,
+    },
+    {
+      id: "experience-5",
+      era: "Origin",
+      title: "InfoSec Analyst → Trainee",
+      company: "Innefu Labs / Innobuzz",
+      period: "2018 – 2020",
+      narrative:
+        "Foundational cybersecurity practice: penetration testing, endpoint defense, vulnerability scanning across 1500 nodes. Learning the craft from the ground up.",
+      highlights: [
+        "Managed endpoint defense across 1500 nodes",
+        "20 risk assessment reports, 90% patch compliance",
+        "MITRE ATT&CK-based playbook implementation",
+      ],
+      current: false,
+      published: true,
+      order: 8,
+    },
   ];
-  for (const [i, exp] of experiences.entries()) {
-    console.log(`  → Experience: ${exp.title}`);
+
+  for (const exp of experiences) {
+    const { id, ...fields } = exp;
     await client.createOrReplace({
-      _id: `experience-${i + 1}`,
+      _id: id,
       _type: "experience",
-      ...exp,
-      highlights: exp.highlights.map((h, j) => ({ ...{}, _key: `h${j}`, _type: "string" })),
+      ...fields,
     });
-    // Sanity arrays of strings need to be plain strings, let me fix
   }
 
-  // Actually let's use createOrReplace with proper string arrays
-  // Sanity string arrays are just plain arrays, the _key is needed for object arrays
-  // Re-seed experiences properly:
-  for (const [i, exp] of experiences.entries()) {
-    await client.createOrReplace({
-      _id: `experience-${i + 1}`,
-      _type: "experience",
-      era: exp.era,
-      title: exp.title,
-      company: exp.company,
-      period: exp.period,
-      narrative: exp.narrative,
-      highlights: exp.highlights,
-      current: exp.current ?? false,
-      order: exp.order,
-    });
-  }
+  // Clean up hobie
+  try {
+    await client.delete("experience-hobie");
+  } catch {}
 
   // ─── Projects ───
+  console.log("  → Projects");
   const projects = [
-    { id: "project-1", order: 1, title: "Cisco SAL Intelligence & Analytics", category: "Product", description: "Building the intelligence layer for Cisco's firewall ecosystem. Transforming raw syslog data, network telemetry, and security signals into proactive threat detection.", thinking: "The challenge: SOC teams drown in data but starve for insight. The approach: treat security telemetry as a product problem, not just an engineering one.", tags: ["Product Ownership", "Cisco Security", "Syslog", "Automation"] },
-    { id: "project-hobie", order: 1.5, title: "hobie", category: "Product / Side Project", description: "A cozy hobby-tracking studio. roadmaps, quests, and focus timers that turn casual interest into real, visible progress.", thinking: "Most hobby apps are either rigid course platforms or empty timers. hobie sits in between. just enough structure to keep momentum, never enough to kill the joy.", tags: ["React", "Supabase", "Product Design", "Vite"], link: "https://myhobie.vercel.app" },
-    { title: "The CTI Dispatch", category: "Publication", description: "A weekly publication of curated cyber threat intelligence. analysis, not just headlines. Special bulletins for high-impact events reaching security professionals.", thinking: "Most threat intel is noise. The goal: signal over volume, clarity over comprehensiveness.", tags: ["CTI", "Writing", "OSINT", "Analysis"], link: "https://medium.com/@harp6x" },
-    { title: "SOC Workflow Automation", category: "Security Engineering", description: "Redesigned SOC workflows that improved efficiency by 65% and cut false positives by 40%. Built detection rules, playbooks, and analyst decision frameworks.", thinking: "Alert fatigue is a design problem. By rethinking the investigation pipeline, we gave analysts back their judgment.", tags: ["SIEM", "SOAR", "MITRE ATT&CK", "Detection Engineering"] },
-    { title: "APT Threat Hunting Program", category: "Threat Intelligence", description: "Built and led proactive threat hunting operations that identified 7 threat groups before they could establish persistence.", thinking: "Hunting isn't about finding needles in haystacks. It's about understanding which haystacks to look in.", tags: ["APT", "Threat Hunting", "IOC Analysis", "Intelligence"] },
-    { title: "Jimny Build Documentation", category: "Personal / Exploration", description: "Documenting the build process of a Suzuki Jimny. reliability mods, recovery systems, expedition preparation. Where engineering meets adventure.", thinking: "A vehicle is a system. You modify it the same way you harden a network. assess risks, build redundancy, test under pressure.", tags: ["Overlanding", "4x4", "Documentation", "Systems Thinking"] },
+    {
+      id: "project-indieroam",
+      order: 1,
+      title: "IndieRoam — Automotive Expeditions",
+      category: "Co-Founder & Operator",
+      description:
+        "Building one of India's leading automotive expedition companies, specializing in premium self-drive expeditions, curated convoys, and managed road experiences across Ladakh and challenging Himalayan routes.",
+      thinking:
+        "Automotive expeditions demand precision operations. We engineer convoy management, communications, safety margins, and route intelligence as a cohesive operating system.",
+      tags: ["Expedition Planning", "Operations", "Automotive", "Product Strategy", "Growth"],
+      published: true,
+    },
+    {
+      id: "project-beforemaps",
+      order: 2,
+      title: "BeforeMaps",
+      category: "Founder",
+      description:
+        "Independent travel venture delivering curated group departures, private trips, customized itineraries, and travel experiences built entirely from firsthand exploration.",
+      thinking:
+        "Travel is a product problem. The real value lies in ground-truth scouting, thoughtful route design, and dependable logistics rather than generic aggregators.",
+      tags: ["Travel Operations", "Itinerary Design", "Exploration", "Next.js", "Sanity CMS"],
+      link: "https://beforemaps.com",
+      published: true,
+    },
+    {
+      id: "project-mspaul",
+      order: 3,
+      title: "MSPaulTherapies",
+      category: "Chief Technology Officer (CTO)",
+      description:
+        "Digital infrastructure and systems architecture for a clinical psychology and wellness platform, featuring automated scheduling, client intake, and publishing pipelines.",
+      thinking:
+        "Clinical technology must eliminate friction so therapists can focus entirely on care. The digital touchpoints must build immediate confidence and trust.",
+      tags: ["Platform Architecture", "Next.js", "Sanity CMS", "Digital Systems", "CTO"],
+      link: "https://mspaultherapies.in",
+      published: true,
+    },
+    {
+      id: "project-1",
+      order: 4,
+      title: "Cisco SAL Intelligence & Analytics",
+      category: "Enterprise Product (ex-Cisco)",
+      description:
+        "Built the intelligence layer for Cisco's firewall ecosystem. Transformed raw syslog data, network telemetry, and security signals into proactive threat detection.",
+      thinking:
+        "The challenge: SOC teams drown in data but starve for insight. The approach: treat security telemetry as a product problem, not just an engineering one.",
+      tags: ["Product Ownership", "Cisco Security", "Syslog", "Automation"],
+      published: true,
+    },
+    {
+      id: "project-2",
+      order: 5,
+      title: "The CTI Dispatch",
+      category: "Publication & Research",
+      description:
+        "A weekly publication of curated cyber threat intelligence: analysis, not just headlines. Special bulletins for high-impact events reaching security professionals.",
+      thinking:
+        "Most threat intel is noise. The goal: signal over volume, clarity over comprehensiveness.",
+      tags: ["CTI", "Writing", "OSINT", "Analysis"],
+      link: "https://medium.com/@harp6x",
+      published: true,
+    },
+    {
+      id: "project-3",
+      order: 6,
+      title: "SOC Workflow Automation",
+      category: "Security Engineering",
+      description:
+        "Redesigned SOC workflows that improved efficiency by 65% and cut false positives by 40%. Built detection rules, playbooks, and analyst decision frameworks.",
+      thinking:
+        "Alert fatigue is a design problem. By rethinking the investigation pipeline, we gave analysts back their judgment.",
+      tags: ["SIEM", "SOAR", "MITRE ATT&CK", "Detection Engineering"],
+      published: true,
+    },
+    {
+      id: "project-4",
+      order: 7,
+      title: "APT Threat Hunting Program",
+      category: "Threat Intelligence",
+      description:
+        "Built and led proactive threat hunting operations that identified 7 threat groups before they could establish persistence.",
+      thinking:
+        "Hunting isn't about finding needles in haystacks. It's about understanding which haystacks to look in.",
+      tags: ["APT", "Threat Hunting", "IOC Analysis", "Intelligence"],
+      published: true,
+    },
+    {
+      id: "project-5",
+      order: 8,
+      title: "Expedition Vehicle Preparation & Build",
+      category: "Automotive Systems",
+      description:
+        "Documenting the build and field preparation of a Suzuki Jimny for high-altitude overland expeditions: recovery systems, electrical redundancy, and payload management.",
+      thinking:
+        "A vehicle is a system. You modify it the same way you harden a network: assess risks, build redundancy, test under pressure.",
+      tags: ["Overlanding", "4x4", "Documentation", "Systems Thinking"],
+      published: true,
+    },
   ];
-  for (const [i, proj] of projects.entries()) {
-    console.log(`  → Project: ${proj.title}`);
-    const { id, order, ...fields } = proj;
+
+  for (const proj of projects) {
+    const { id, ...fields } = proj;
     await client.createOrReplace({
-      _id: id ?? `project-${i + 1}`,
+      _id: id,
       _type: "project",
       ...fields,
-      order: order ?? i + 1,
     });
   }
+
+  // Clean up hobie project
+  try {
+    await client.delete("project-hobie");
+  } catch {}
+
+  // ─── Ventures ───
+  console.log("  → Ventures");
+  const ventures = [
+    {
+      _id: "venture-indieroam",
+      _type: "venture",
+      title: "IndieRoam",
+      slug: { _type: "slug", current: "indieroam" },
+      role: "Co-Founder",
+      tagline: "Premium self-drive expeditions, curated convoys, and managed road experiences across India.",
+      status: "active",
+      published: true,
+      order: 1,
+      philosophy:
+        "Building one of India's leading automotive expedition companies. We combine precision route reconnaissance, managed convoys, and rugged hospitality to deliver transformative road experiences in high-altitude terrain.",
+      highlights: [
+        "Building one of India's leading automotive expedition companies",
+        "Focus on premium self-drive expeditions, curated convoys, and managed road experiences",
+        "Directing business strategy, product development, technology, operations, and growth",
+        "Field-tested automotive expedition execution across Ladakh and high-altitude corridors",
+        "Long-term ambition to establish a trusted, recognizable overland expedition brand",
+      ],
+      techStack: ["Expedition Operations", "Convoy Management", "Fleet Logistics", "Digital Booking", "Growth Strategy"],
+    },
+    {
+      _id: "venture-beforemaps",
+      _type: "venture",
+      title: "BeforeMaps",
+      slug: { _type: "slug", current: "before-maps" },
+      role: "Founder",
+      tagline: "Independent travel venture: personally explored destinations, group departures, and custom itineraries.",
+      status: "active",
+      published: true,
+      order: 2,
+      philosophy:
+        "Ground-truth travel design. Independent exploration, curated group departures, private trips, and customized itineraries built from firsthand field scouting.",
+      highlights: [
+        "Personally explored destinations and scouted routes across India",
+        "Curated group departures, private journeys, and custom itineraries",
+        "End-to-end trip operations, route logistics, and traveler care",
+        "Full-stack digital platform for direct travel engagement",
+      ],
+      techStack: ["Next.js", "Sanity CMS", "Travel Logistics", "Operations", "Vercel"],
+    },
+    {
+      _id: "venture-mspaul",
+      _type: "venture",
+      title: "MSPaulTherapies",
+      slug: { _type: "slug", current: "ms-paul-therapies" },
+      role: "Chief Technology Officer (CTO)",
+      tagline: "Digital systems, technology leadership, and platform architecture for modern clinical wellness.",
+      status: "active",
+      published: true,
+      order: 3,
+      philosophy:
+        "Applying disciplined technology leadership to healthcare, creating frictionless booking and operational infrastructure so clinicians can focus on care.",
+      highlights: [
+        "Full platform engineering: booking pipeline, intake automations, and payment flows",
+        "Modern clinical operations and content publishing systems",
+        "High trust, accessible user experience tailored for mental health clients",
+      ],
+      techStack: ["Next.js", "Sanity CMS", "Payment Integrations", "Automation", "Vercel"],
+    },
+  ];
+
+  for (const v of ventures) {
+    await client.createOrReplace(v);
+  }
+
+  // Clean up hobie venture
+  try {
+    await client.delete("venture-hobie");
+  } catch {}
 
   // ─── Skills (singleton) ───
   console.log("  → Skills");
   await client.createOrReplace({
     _id: "skills-singleton",
     _type: "skill",
-    technical: ["Cybersecurity", "SOC Operations", "SIEM", "Threat Intelligence", "OSINT", "Malware Analysis", "Reverse Engineering", "Cisco Security", "Network Security", "Automation", "Syslog Analysis", "Product Ownership", "AI Workflows", "Dashboard Thinking", "Linux", "Python", "APIs", "Data Interpretation"],
-    soft: ["Systems Thinking", "Communication", "Emotional Intelligence", "Leadership", "Product Strategy", "Adaptability", "Curiosity", "Pattern Recognition", "Storytelling", "Deep Focus", "Critical Thinking"],
-    tools: ["Cisco Secure Cloud Analytics", "Cisco Defense Orchestrator", "Cisco Secure Analytics & Logging", "Stellar Cyber", "D3 Security", "SentinelOne", "Cybereason", "Rapid7", "Qualys", "Maltego", "Intelx", "MITRE ATT&CK", "GPT Pro", "Google Cloud Code", "Windsurf", "Cursor", "Figma", "Google Looker Studio", "VS Code", "WebStorm"],
+    technical: [
+      "Cybersecurity",
+      "SOC Operations",
+      "SIEM",
+      "Threat Intelligence",
+      "OSINT",
+      "Malware Analysis",
+      "Reverse Engineering",
+      "Cisco Security",
+      "Network Security",
+      "Automation",
+      "Syslog Analysis",
+      "Product Ownership",
+      "AI Workflows",
+      "Dashboard Thinking",
+      "Linux",
+      "Python",
+      "APIs",
+      "Data Interpretation",
+    ],
+    soft: [
+      "Systems Thinking",
+      "Communication",
+      "Emotional Intelligence",
+      "Leadership",
+      "Product Strategy",
+      "Adaptability",
+      "Curiosity",
+      "Pattern Recognition",
+      "Storytelling",
+      "Deep Focus",
+      "Critical Thinking",
+    ],
+    tools: [
+      "Cisco Secure Cloud Analytics",
+      "Cisco Defense Orchestrator",
+      "Cisco Secure Analytics & Logging",
+      "Stellar Cyber",
+      "D3 Security",
+      "SentinelOne",
+      "Cybereason",
+      "Rapid7",
+      "Qualys",
+      "Maltego",
+      "Intelx",
+      "MITRE ATT&CK",
+      "GPT Pro",
+      "Google Cloud Code",
+      "Windsurf",
+      "Cursor",
+      "Figma",
+      "Google Looker Studio",
+      "VS Code",
+      "WebStorm",
+    ],
     credentials: [
       { _key: "c1", cert: "Certified Red Team Professional", org: "Pentester Academy" },
       { _key: "c2", cert: "Cyber Threat Intelligence Analyst", org: "Cybereason" },
@@ -144,232 +534,103 @@ async function seed() {
   });
 
   // ─── Beyond Work ───
+  console.log("  → Beyond Work");
   const beyondSections = [
-    { emoji: "🧭", title: "Overlanding & 4x4", subtitle: "Where engineering meets the wild", body: ["Building a Suzuki Jimny from stock to expedition-ready. Reliability modifications, recovery gear, communication systems. solving the same kind of problems I solve in security, but in the dirt.", "There's something about a mountain pass at dawn that resets the way you think. The vehicle is a system. You harden it the same way you harden infrastructure. assess risk, build redundancy, test under pressure, and trust your preparation when things get uncertain."], mood: "Dusty roads. Cold mornings. Engine sounds echoing off valley walls." },
-    { emoji: "⛰️", title: "Trekking & Exploration", subtitle: "Slow travel, honest places", body: ["I don't travel for leisure. I travel for perspective. Mountains, forests, solitude. The kind of places where your phone doesn't work and your mind finally does.", "Slow travel over luxury. Immersive experiences over Instagram moments. Walking for hours with nothing but the weight on your back and the quiet of your thoughts."], mood: "Thin air. Forest silence. The kind of tired that feels earned." },
-    { emoji: "🎵", title: "Music & DJing", subtitle: "Nighttime creative energy", body: ["Music is how I think when I'm not working. Deep house, ambient, electronic. the kind that creates atmosphere rather than demanding attention.", "Mixing isn't just about beatmatching. It's about reading energy, building tension, knowing when to let silence do the work. A lot like managing a SOC, honestly."], mood: "Late nights. Warm frequencies. The space between tracks." },
-    { emoji: "📖", title: "Philosophy & Mindset", subtitle: "Thinking about thinking", body: ["Stoicism, Buddhism, existentialism. not as academic exercises, but as operating systems for living. Discipline as freedom. Meaning as something you build, not something you find.", "Intentional living means deciding what matters before the world decides for you. It means building a life that holds up under pressure. not just a career."], mood: "Early mornings. Journaling. Questions without easy answers." },
+    {
+      emoji: "⚡",
+      title: "AI & Systems Building",
+      subtitle: "Building with taste at machine speed",
+      body: [
+        "I build with modern AI tooling: Claude Code, Cursor, and automated workflows. Not as a shortcut, but because building at the speed of thought unlocks rapid iteration. Rapid context switching, deep-focus sessions, and building in parallel across engineering, operations, and product strategy.",
+        "From expedition logistics platforms to digital therapy systems, modern development is a dialogue between strategic intent and rapid machine execution. The systems discipline remains grounded in cybersecurity rigor.",
+      ],
+      mood: "Late-night terminals. Clear architecture. The satisfaction of dependable systems.",
+    },
+    {
+      emoji: "🔧",
+      title: "Building Things",
+      subtitle: "Products, ventures, operating systems",
+      body: [
+        "I build things with an operator's mindset. IndieRoam is an automotive expedition company built for high-altitude journeys. BeforeMaps is an independent travel venture delivering scouted itineraries and group departures. MSPaulTherapies is a digital health platform where I serve as CTO.",
+        "The craft of building is the through-line: identifying operational bottlenecks, architecting dependable systems, shipping resilient platforms, and executing in the real world. I treat every venture as an interconnected product problem.",
+      ],
+      mood: "Field logs. System diagrams. Operational checklists. Real-world execution.",
+    },
+    {
+      emoji: "🧭",
+      title: "Overlanding & 4x4",
+      subtitle: "Where engineering meets the wild",
+      body: [
+        "Building a Suzuki Jimny from stock to expedition-ready. Reliability modifications, recovery gear, communication systems, solving the same kind of problems I solve in security, but in the dirt.",
+        "There's something about a mountain pass at dawn that resets the way you think. The vehicle is a system. You harden it the same way you harden infrastructure. assess risk, build redundancy, test under pressure, and trust your preparation when things get uncertain.",
+      ],
+      mood: "Dusty roads. Cold mornings. Engine sounds echoing off valley walls.",
+    },
+    {
+      emoji: "⛰️",
+      title: "Trekking & Exploration",
+      subtitle: "Slow travel, honest places",
+      body: [
+        "I don't travel for leisure. I travel for perspective. Mountains, forests, solitude. The kind of places where your phone doesn't work and your mind finally does.",
+        "Slow travel over luxury. Immersive experiences over Instagram moments. Walking for hours with nothing but the weight on your back and the quiet of your thoughts.",
+      ],
+      mood: "Thin air. Forest silence. The kind of tired that feels earned.",
+    },
+    {
+      emoji: "🎵",
+      title: "Music & DJing",
+      subtitle: "Nighttime creative energy",
+      body: [
+        "Music is how I think when I'm not working. Deep house, ambient, electronic. the kind that creates atmosphere rather than demanding attention.",
+        "Mixing isn't just about beatmatching. It's about reading energy, building tension, knowing when to let silence do the work. A lot like managing a SOC, honestly.",
+      ],
+      mood: "Late nights. Warm frequencies. The space between tracks.",
+    },
+    {
+      emoji: "📖",
+      title: "Philosophy & Mindset",
+      subtitle: "Thinking about thinking",
+      body: [
+        "Stoicism, Buddhism, existentialism: not academic exercises, but operating systems for living. Discipline as freedom. Meaning as something you build, not something you find.",
+        "Intentional living means deciding what matters before the world decides for you. It means building a life that holds up under pressure, not just a career.",
+      ],
+      mood: "Early mornings. Journaling. Questions without easy answers.",
+    },
   ];
-  for (const [i, sec] of beyondSections.entries()) {
-    console.log(`  → Beyond: ${sec.title}`);
+
+  for (const [i, b] of beyondSections.entries()) {
     await client.createOrReplace({
       _id: `beyond-${i + 1}`,
       _type: "beyondWork",
-      ...sec,
+      ...b,
       order: i + 1,
-    });
-  }
-
-  // ─── Philosophy ───
-  const philosophies = [
-    { title: "Systems over motivation", summary: "Motivation fades. Systems compound. Build the infrastructure for the life you want, and let it work even when you don't feel like it.", tags: ["discipline", "systems thinking"] },
-    { title: "Slow compounding", summary: "The most meaningful things in life take time. Relationships, skills, trust, understanding. all of it compounds slowly if you stay consistent.", tags: ["patience", "long-term"] },
-    { title: "Signal over noise", summary: "Most information is noise. Most opinions are noise. Most trends are noise. Curate ruthlessly. in content, in relationships, in how you spend attention.", tags: ["attention", "clarity"] },
-    { title: "Build once, use forever", summary: "Whether it's a system, a habit, a skill, or a piece of infrastructure. invest upfront so it serves you indefinitely. Front-load the work.", tags: ["leverage", "efficiency"] },
-    { title: "Freedom with structure", summary: "Real freedom isn't the absence of rules. It's having enough structure that you can be spontaneous without chaos. Discipline creates space.", tags: ["freedom", "discipline"] },
-    { title: "Document, don't perform", summary: "The difference between personal branding and documentation is intent. One seeks validation. The other seeks clarity. Always choose documentation.", tags: ["authenticity", "self-awareness"] },
-    { title: "Anti-average by default", summary: "Not contrarian for the sake of it. but questioning defaults. The average life is designed by committee. An intentional one is designed by you.", tags: ["intentionality", "identity"] },
-    { title: "Human-first automation", summary: "Technology should amplify human capability, not replace human judgment. Automate the mundane so you can focus on what actually matters.", tags: ["technology", "humanity"] },
-  ];
-  for (const [i, p] of philosophies.entries()) {
-    console.log(`  → Philosophy: ${p.title}`);
-    await client.createOrReplace({
-      _id: `philosophy-${i + 1}`,
-      _type: "philosophy",
-      ...p,
-      order: i + 1,
-    });
-  }
-
-  // ─── Journal Topics ───
-  const journalTopics = [
-    { title: "Why I Left the SOC", preview: "Five years defending networks taught me one thing: reactive security breaks at scale. This is the story of shifting from operator to builder.", category: "Cybersecurity" },
-    { title: "Mountain Journals. Spiti Valley", preview: "Five days with no signal, no plan B, and the kind of silence that rewires how you think.", category: "Travel" },
-    { title: "Discipline as an Operating System", preview: "Stoicism isn't philosophy for academics. It's firmware for anyone trying to build something real while the world demands you stay comfortable.", category: "Philosophy" },
-    { title: "Building Systems for Life", preview: "The same principles that make good infrastructure. redundancy, observability, graceful degradation. apply to how you design a life.", category: "Systems Thinking" },
-    { title: "The Jimny Build Log", preview: "Every modification tells a story about risk assessment, trade-offs, and trusting your preparation when the trail gets uncertain.", category: "Automotive" },
-    { title: "Burnout, Meaning, and What Comes After", preview: "What happens when the career you built starts feeling like a cage. And what it takes to rebuild without burning everything down.", category: "Reflections" },
-    { title: "AI Won't Replace You. But It Will Change What Matters", preview: "Thoughts on automation, product thinking, and why the human layer in security is more important than ever.", category: "AI & Automation" },
-    { title: "Exploration as Practice", preview: "Why I don't travel for leisure. Slow travel, honest places, and what mountains teach you about the rest of your life.", category: "Exploration" },
-  ];
-  for (const [i, j] of journalTopics.entries()) {
-    console.log(`  → Journal: ${j.title}`);
-    await client.createOrReplace({
-      _id: `journal-${i + 1}`,
-      _type: "journalTopic",
-      ...j,
-      order: i + 1,
-    });
-  }
-
-  // ─── Personal About (singleton) ───
-  console.log("  → Personal About");
-  await client.createOrReplace({
-    _id: "personal-about-singleton",
-    _type: "personalAbout",
-    headline: "I'm not building an audience.",
-    headlineAccent: "I'm documenting a transition.",
-    paragraphs: [
-      "From conventional systems into something more intentional. A life where work, creativity, exploration, and meaning aren't separate categories. they're integrated. This is an active, honest process, and I'm still in the middle of it.",
-      "By day, I build security systems and products. Outside of that, I chase clarity on mountain roads, think about philosophy, build things with my hands, and try to live a life that still feels alive while doing serious work. I believe in systems over motivation, slow compounding over viral moments, and discipline as the highest form of freedom.",
-    ],
-    pillars: [
-      { _key: "p1", label: "Approach", value: "Document everything. Perform nothing." },
-      { _key: "p2", label: "Mindset", value: "Systems thinking applied to life." },
-      { _key: "p3", label: "Direction", value: "Location independence. Creative freedom. Meaningful work." },
-    ],
-  });
-
-  // ─── Life Pillars ───
-  const lifePillars = [
-    { brand: "Harp6x", key: "harp6x", theme: "Systems · Technology · AI · Cybersecurity · Experimentation", description: "The primary personal brand. where technology, philosophy, and intentional living intersect. Shortform on Instagram, longform on YouTube and Substack.", contentPillars: ["Shortform: Instagram", "Longform: YouTube", "Blog: Substack"] },
-    { brand: "There Goes Uddip", key: "theregoesuddip", theme: "Travel · Philosophy · Reflection · Exploration", description: "The travel and reflection brand. Slow travel, mountain roads, honest places, and the kind of experiences that change how you see things.", contentPillars: ["Shortform: Instagram", "Longform: YouTube", "Blog: Substack"] },
-    { brand: "Jimny Runs", key: "jimnyruns", theme: "Overlanding · Vehicles · Mountains · Exploration", description: "Dedicated automotive and adventure platform. Jimny builds, overlanding, off-road trails, and expedition-style storytelling.", contentPillars: ["Shortform: Instagram", "Longform: YouTube"] },
-  ];
-  for (const [i, lp] of lifePillars.entries()) {
-    console.log(`  → Life Pillar: ${lp.brand}`);
-    await client.createOrReplace({
-      _id: `life-pillar-${i + 1}`,
-      _type: "lifePillar",
-      ...lp,
-      order: i + 1,
+      published: true,
     });
   }
 
   // ─── Site Settings (singleton) ───
   console.log("  → Site Settings");
-  await client.createOrReplace({
-    _id: "siteSettings",
-    _type: "siteSettings",
-    currentRole: "Product Owner",
-    currentCompany: "(prev. Cisco)",
+  await client.patch("siteSettings").set({
+    currentRole: "Co-Founder & CTO",
+    currentCompany: "IndieRoam · BeforeMaps · MSPaulTherapies",
     location: "New Delhi, India",
-    tagline: "Building resilient systems.",
-    focus: "Security & Product",
-    subtitleLine1: "Product thinker. Cybersecurity engineer. Explorer.",
+    focus: "Automotive Expeditions · Travel Ventures · Digital Systems",
+    tagline: "Building expedition brands, travel ventures, and operating systems.",
+    subtitleLine1: "Co-Founder at IndieRoam · Founder at BeforeMaps · CTO at MSPaulTherapies",
     subtitleLine2:
-      "Six years in cybersecurity. From SOC analyst to threat intel to detection engineering to product owner at Cisco.",
-  });
-
-  // ─── Blog Posts ───
-  const toBlocks = (paragraphs) =>
-    paragraphs.map((text, i) => ({
-      _type: "block",
-      _key: `b${i}`,
-      style: "normal",
-      markDefs: [],
-      children: [{ _type: "span", _key: `s${i}`, text, marks: [] }],
-    }));
-
-  const blogPosts = [
-    {
-      slug: "why-i-left-the-soc",
-      title: "Why I Left the SOC",
-      category: "Cybersecurity",
-      excerpt:
-        "Five years defending networks taught me one thing: reactive security breaks at scale. This is the story of shifting from operator to builder.",
-      publishedAt: "2026-01-15T09:00:00Z",
-      body: [
-        "For five years, my job was to react. An alert fires, you triage it, you decide if it matters, you respond. Repeat a few thousand times a month. You get good at it — fast, accurate, calm under pressure. And then one day you realize the whole model is upside down.",
-        "Reactive security breaks at scale. No matter how good your analysts are, you're always behind. The attacker chooses the time, the place, and the method. You're just trying to keep up. The only real leverage is upstream — in how the systems are designed, how the signals are shaped, what gets built before the alert ever fires.",
-        "That's the shift that moved me from operator to builder. From triaging alerts to owning the product that decides which alerts exist in the first place. It's the difference between bailing water and fixing the hull.",
-      ],
+      "Six years in cybersecurity at Cisco, now building automotive expedition brands, travel ventures, and digital systems.",
+    seo: {
+      _type: "seo",
+      metaTitle: "Uddip Ranjan Das — Founder, Builder, Operator",
+      metaDescription:
+        "Co-Founder of IndieRoam, Founder of BeforeMaps, CTO at MSPaulTherapies. Building automotive expeditions, travel ventures, and digital operating systems. Ex-Cisco.",
     },
-    {
-      slug: "discipline-as-an-operating-system",
-      title: "Discipline as an Operating System",
-      category: "Philosophy",
-      excerpt:
-        "Stoicism isn't philosophy for academics. It's firmware for anyone trying to build something real while the world demands you stay comfortable.",
-      publishedAt: "2026-02-02T09:00:00Z",
-      body: [
-        "Motivation is a feeling. Discipline is a system. One depends on your mood; the other runs regardless of it. If you want to build anything that lasts, you cannot afford to outsource your consistency to how you happen to feel on a Tuesday morning.",
-        "I think of discipline the way I think of infrastructure: you set it up once, deliberately, and then it carries the load without you having to decide again every day. The decisions are made in advance. Showing up is no longer a negotiation.",
-        "This is what the Stoics understood. Freedom isn't the absence of constraint — it's choosing your constraints so well that you stop being jerked around by everything else. Discipline, done right, is the most freedom you'll ever feel.",
-      ],
-    },
-    {
-      slug: "building-systems-for-life",
-      title: "Building Systems for Life",
-      category: "Systems Thinking",
-      excerpt:
-        "The same principles that make good infrastructure — redundancy, observability, graceful degradation — apply to how you design a life.",
-      publishedAt: "2026-02-20T09:00:00Z",
-      body: [
-        "Good infrastructure has a few properties: it's observable, so you can see what's happening; it's redundant, so one failure doesn't take everything down; and it degrades gracefully, so when something breaks, it bends instead of shattering.",
-        "It turns out these are good properties for a life, too. Observability is knowing your own patterns honestly. Redundancy is not staking your entire identity on one outcome. Graceful degradation is having enough slack that a bad week doesn't become a bad year.",
-        "Most people design their lives by accident, one default at a time. The alternative is to treat it like a system you're responsible for — and to build it on purpose.",
-      ],
-    },
-  ];
-  for (const [i, post] of blogPosts.entries()) {
-    console.log(`  → Blog: ${post.title}`);
-    await client.createOrReplace({
-      _id: `blog-${post.slug}`,
-      _type: "blogPost",
-      title: post.title,
-      slug: { _type: "slug", current: post.slug },
-      category: post.category,
-      excerpt: post.excerpt,
-      publishedAt: post.publishedAt,
-      body: toBlocks(post.body),
-    });
-  }
+  }).commit();
 
-  // ─── Products ───
-  const products = [
-    { slug: "ai-workflow-field-manual", title: "AI Workflow Field Manual", shortDescription: "A practical field manual for orchestrating AI in real work — 100+ prompts, automation patterns, and security-aware use cases.", format: "PDF · Field manual", brand: "harp6x", productType: "manual", themes: ["ai", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹1,499", gumroadUrl: "https://harp6x.gumroad.com/l/ai-workflow-field-manual", featured: true },
-    { slug: "cybersecurity-starter-kit", title: "Cybersecurity Starter Kit", shortDescription: "A personal security stack, annual audit checklist, and setup guides — the complete starting point for digital safety.", format: "PDF + checklists", brand: "harp6x", productType: "toolkit", themes: ["cybersecurity", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹799", gumroadUrl: "https://harp6x.gumroad.com/l/cybersecurity-starter-kit", featured: true },
-    { slug: "linkedin-playbook-technical", title: "The LinkedIn Playbook for Technical People", shortDescription: "Build a credible LinkedIn presence as an engineer or security professional — without the performative self-promotion.", format: "PDF · Guide", brand: "harp6x", productType: "manual", themes: ["career", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹999", gumroadUrl: "https://harp6x.gumroad.com/l/linkedin-playbook-technical", featured: true },
-    { slug: "freelancers-notion-os", title: "The Freelancer's Notion OS", shortDescription: "A complete Notion operating system for solo client work — CRM, projects, pipeline, and financial tracking in one workspace.", format: "Notion template", brand: "harp6x", productType: "template", themes: ["business", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹4,999", gumroadUrl: "https://harp6x.gumroad.com/l/freelancers-notion-os" },
-    { slug: "one-person-business-planner", title: "The One-Person Business Annual Planner", shortDescription: "A relational Notion planning system that flows from annual purpose down to weekly tasks — built for solo operators.", format: "Notion template", brand: "harp6x", productType: "template", themes: ["business", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹2,999", gumroadUrl: "https://harp6x.gumroad.com/l/one-person-business-planner" },
-    { slug: "creator-os-bundle", title: "The Creator OS Bundle", shortDescription: "Content OS, Signal OS, and the AI Workflow Field Manual together — a complete solo creator operating system.", format: "Bundle · 3 products", brand: "harp6x", productType: "bundle", themes: ["systems", "ai"], showOn: ["professional", "personal"], priceType: "bundle", price: "₹3,999", gumroadUrl: "https://harp6x.gumroad.com/l/creator-os-bundle" },
-    { slug: "signal-club", title: "Signal Club — Monthly Subscription", shortDescription: "A monthly membership: one premium systems deep-dive, the full back catalogue, a live Q&A, and early access to everything new.", format: "Subscription · monthly", brand: "harp6x", productType: "subscription", themes: ["systems", "ai"], showOn: ["professional", "personal"], priceType: "paid", price: "₹499/mo", gumroadUrl: "https://harp6x.gumroad.com/l/signal-club" },
-    { slug: "90-day-creator-sprint", title: "The 90-Day Creator Sprint", shortDescription: "A cohort program where you build your content system, first product, and first 500 subscribers — with weekly live calls and a private community.", format: "Cohort · 90 days", brand: "harp6x", productType: "course", themes: ["systems", "business"], showOn: ["professional", "personal"], priceType: "paid", price: "₹9,999", gumroadUrl: "https://harp6x.gumroad.com/l/90-day-creator-sprint" },
-    { slug: "notion-template-shop-bundle", title: "The Notion Template Shop Bundle", shortDescription: "Ten focused Notion micro-templates — task manager, weekly review, content calendar, goal tracker, and more — in one collection.", format: "Bundle · 10 templates", brand: "harp6x", productType: "bundle", themes: ["systems"], showOn: ["professional", "personal"], priceType: "bundle", price: "₹1,499", gumroadUrl: "https://harp6x.gumroad.com/l/notion-template-shop-bundle" },
-    { slug: "creator-research-playbook", title: "The Creator Research Playbook", shortDescription: "The complete research system for creators — finding what your audience needs, what's working in your niche, and where the content gaps are.", format: "PDF · Guide", brand: "harp6x", productType: "manual", themes: ["systems", "business"], showOn: ["professional", "personal"], priceType: "paid", price: "₹1,499", gumroadUrl: "https://harp6x.gumroad.com/l/creator-research-playbook" },
-    { slug: "india-train-bible", title: "The India Train Bible", shortDescription: "The complete guide to booking, riding, and navigating India's railways as a solo traveller — IRCTC, Tatkal, and 30 essential routes.", format: "PDF · 50–70 pages", brand: "tgu", productType: "manual", themes: ["travel"], showOn: ["personal"], priceType: "paid", price: "₹499", gumroadUrl: "https://theregoesuddip.gumroad.com/l/india-train-bible", featured: true },
-    { slug: "northeast-india-fieldguide", title: "The Northeast India Fieldguide", shortDescription: "All 8 states, the permit systems, routes, and culture — the most comprehensive solo traveller guide to Northeast India.", format: "PDF · 60–80 pages", brand: "tgu", productType: "manual", themes: ["travel", "trekking"], showOn: ["personal"], priceType: "paid", price: "₹799", gumroadUrl: "https://theregoesuddip.gumroad.com/l/northeast-india-fieldguide", featured: true },
-    { slug: "letters-from-india", title: "Letters from India", shortDescription: "A curated collection of 25 long-form travel essays — India experienced through honest writing, read like a book.", format: "eBook · PDF", brand: "tgu", productType: "essay", themes: ["writing", "travel"], showOn: ["personal"], priceType: "paid", price: "₹399", gumroadUrl: "https://theregoesuddip.gumroad.com/l/letters-from-india", featured: true },
-    { slug: "solo-travel-safety-protocol", title: "The Solo Travel Safety Protocol", shortDescription: "A practical, non-fear-based safety system for solo travel in India — threat model, check-ins, and what to do when things go wrong.", format: "PDF + checklist", brand: "tgu", productType: "toolkit", themes: ["travel"], showOn: ["personal"], priceType: "paid", price: "₹299", gumroadUrl: "https://theregoesuddip.gumroad.com/l/solo-travel-safety-protocol" },
-    { slug: "annual-india-trip-planner", title: "The Annual India Solo Trip Planner", shortDescription: "A Notion system for India solo travel — filterable destination database, itinerary builder, budget and permit trackers.", format: "Notion template", brand: "tgu", productType: "template", themes: ["travel", "systems"], showOn: ["personal"], priceType: "paid", price: "₹999", gumroadUrl: "https://theregoesuddip.gumroad.com/l/annual-india-trip-planner" },
-    { slug: "himalayan-trek-permit-guide", title: "The Himalayan Trek Permit Guide", shortDescription: "The bureaucratic layer of Himalayan trekking decoded — which permits exist, who needs them, and how to get them for Spiti, Ladakh, Sikkim and more.", format: "PDF · 30–40 pages", brand: "tgu", productType: "manual", themes: ["trekking", "travel"], showOn: ["personal"], priceType: "paid", price: "₹299", gumroadUrl: "https://theregoesuddip.gumroad.com/l/himalayan-trek-permit-guide" },
-    { slug: "india-off-season-calendar", title: "The India Off-Season Travel Calendar", shortDescription: "A 12-month visual calendar of every Indian destination — the best, worst, and shoulder months, plus a filterable Notion version.", format: "PDF + Notion", brand: "tgu", productType: "template", themes: ["travel"], showOn: ["personal"], priceType: "paid", price: "₹399", gumroadUrl: "https://theregoesuddip.gumroad.com/l/india-off-season-calendar" },
-    { slug: "responsible-traveller-guide", title: "The Responsible Traveller's India Guide", shortDescription: "Practical, specific guidance for ethical travel in India — local economies, homestays, photography ethics, and what your tourism spending supports.", format: "PDF · 25–35 pages", brand: "tgu", productType: "manual", themes: ["travel"], showOn: ["personal"], priceType: "paid", price: "₹299", gumroadUrl: "https://theregoesuddip.gumroad.com/l/responsible-traveller-guide" },
-    { slug: "monsoon-india-photo-guide", title: "The Monsoon India Photo Guide", shortDescription: "A photography guide for India in the monsoon — gear, compositions for rain light, the best locations, and 15 case-study images with breakdowns.", format: "PDF · 25–35 pages", brand: "tgu", productType: "manual", themes: ["photography", "travel"], showOn: ["personal"], priceType: "paid", price: "₹399", gumroadUrl: "https://theregoesuddip.gumroad.com/l/monsoon-india-photo-guide" },
-    { slug: "48-hour-city-guide-bundle", title: "The 48-Hour City Guide Bundle", shortDescription: "Ten honest 48-hour guides to India's cities — where to base yourself, the few things worth doing, and the best meals at three price points.", format: "Bundle · 10 city guides", brand: "tgu", productType: "bundle", themes: ["travel"], showOn: ["personal"], priceType: "bundle", price: "₹799", gumroadUrl: "https://theregoesuddip.gumroad.com/l/48-hour-city-guide-bundle" },
-    { slug: "lifeos-meaningful-ambition", title: "LifeOS — The Meaningful Ambition System", shortDescription: "A 12-module system for building an ambitious life that still feels human — purpose, attention, freedom, and meaningful work.", format: "12 modules", brand: "crossover", productType: "course", themes: ["mindset", "systems"], showOn: ["professional", "personal"], priceType: "paid", price: "₹4,999", gumroadUrl: "https://harp6x.gumroad.com/l/lifeos-meaningful-ambition", featured: true },
-    { slug: "modern-manuals-series", title: "The Modern Manuals Series", shortDescription: "Eight short books of practical philosophy — thinking clearly, attention, freedom, solitude, AI, anti-burnout, and meaningful work.", format: "Bundle · 8 manuals", brand: "crossover", productType: "bundle", themes: ["mindset", "writing"], showOn: ["professional", "personal"], priceType: "bundle", price: "₹2,499", gumroadUrl: "https://harp6x.gumroad.com/l/modern-manuals-series" },
-    { slug: "state-based-products-suite", title: "The State-Based Products Suite", shortDescription: "Tools organised by the state you're in — stuck, overwhelmed, drifting, rebuilding — rather than by topic. Find the one that recognises you.", format: "Suite · in development", brand: "crossover", productType: "bundle", themes: ["mindset", "systems"], showOn: ["professional", "personal"], priceType: "coming-soon", ctaLabel: "Join the waitlist", gumroadUrl: "https://harp6x.gumroad.com/l/state-based-products-suite" },
-  ];
-  for (const [i, p] of products.entries()) {
-    console.log(`  → Product: ${p.title}`);
-    await client.createOrReplace({
-      _id: `product-${p.slug}`,
-      _type: "product",
-      title: p.title,
-      slug: { _type: "slug", current: p.slug },
-      shortDescription: p.shortDescription,
-      format: p.format,
-      brand: p.brand,
-      productType: p.productType,
-      themes: p.themes,
-      showOn: p.showOn,
-      priceType: p.priceType,
-      ...(p.price ? { price: p.price } : {}),
-      ...(p.gumroadUrl ? { gumroadUrl: p.gumroadUrl } : {}),
-      ...(p.ctaLabel ? { ctaLabel: p.ctaLabel } : {}),
-      featured: p.featured ?? false,
-      published: true,
-      order: i + 1,
-    });
-  }
-
-  console.log("\n✅ Seeding complete! All content is now in Sanity CMS.");
-  console.log("   Open /studio to edit any content.");
+  console.log("\n✅ Master seed complete! All content is synced with the clarified portfolio scope.");
 }
 
 seed().catch((err) => {
-  console.error("❌ Seed failed:", err);
+  console.error("❌ Master seed failed:", err.message);
   process.exit(1);
 });

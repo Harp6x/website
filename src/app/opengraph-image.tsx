@@ -73,11 +73,11 @@ export default async function Image() {
             letterSpacing: "0.05em",
           }}
         >
-          <span style={{ color: "#d97706" }}>Before Maps</span>
+          <span style={{ color: "#d97706" }}>IndieRoam</span>
           <span>·</span>
-          <span style={{ color: "#d97706" }}>Ms Paul Therapies</span>
+          <span style={{ color: "#d97706" }}>BeforeMaps</span>
           <span>·</span>
-          <span style={{ color: "#d97706" }}>Hobie</span>
+          <span style={{ color: "#d97706" }}>MSPaulTherapies</span>
           <span>·</span>
           <span style={{ color: "#71717a" }}>uddipranjas.com</span>
         </div>

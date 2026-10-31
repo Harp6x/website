@@ -6,6 +6,7 @@ import skillsFallback from "../skills";
 import beyondFallback from "../beyond";
 import journalFallback from "../journal";
 import productsFallback from "../products";
+import venturesFallback from "../ventures";
 
 describe("Profile fallback data", () => {
   it("has required fields", () => {
@@ -150,6 +151,33 @@ describe("Products fallback data", () => {
 
   it("all product slugs are unique", () => {
     const slugs = productsFallback.map((p) => p.slug);
+    expect(new Set(slugs).size).toBe(slugs.length);
+  });
+});
+
+describe("Ventures fallback data", () => {
+  it("has at least one venture", () => {
+    expect(venturesFallback.length).toBeGreaterThan(0);
+  });
+
+  it("every venture has required fields", () => {
+    venturesFallback.forEach((v) => {
+      expect(v.slug).toBeTruthy();
+      expect(v.title).toBeTruthy();
+      expect(v.tagline).toBeTruthy();
+      expect(v.role).toBeTruthy();
+      expect(["active", "building", "paused"]).toContain(v.status);
+    });
+  });
+
+  it("includes IndieRoam and excludes Hobie", () => {
+    const slugs = venturesFallback.map((v) => v.slug);
+    expect(slugs).toContain("indieroam");
+    expect(slugs).not.toContain("hobie");
+  });
+
+  it("all venture slugs are unique", () => {
+    const slugs = venturesFallback.map((v) => v.slug);
     expect(new Set(slugs).size).toBe(slugs.length);
   });
 });

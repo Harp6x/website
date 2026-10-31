@@ -28,6 +28,7 @@ export interface Profile {
   subtitleLine1: string;
   subtitleLine2: string;
   heroKeywords: string;
+  landingIntro?: string;
   bio: string[];
   bioClosing: string;
   stats: Stat[];

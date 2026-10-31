@@ -9,27 +9,27 @@ import type { LifeSection } from "./types";
 
 const sections: LifeSection[] = [
   {
-    emoji: "�",
-    title: "AI & Vibe Coding",
+    emoji: "⚡",
+    title: "AI & Systems Building",
     subtitle: "Building with taste at machine speed",
     body: [
-      "I vibe-code. Claude Code, Windsurf, Cursor, the whole stack. Not because I can't write code the old way, but because building at the speed of thought is more fun. My ADHD brain thrives here: rapid context switching, hyperfocus sessions at 3 AM, jumping between ten ideas and somehow shipping all of them. The AI handles the boilerplate, I handle the taste.",
-      "Every product I ship now is AI-assisted end-to-end. Before Maps, Hobie, Ms Paul Therapies, all built this way. The future of building is a conversation between human intent and machine execution. I'm already living in it.",
+      "I build with modern AI tooling: Claude Code, Cursor, and automated workflows. Not as a shortcut, but because building at the speed of thought unlocks rapid iteration. Rapid context switching, deep-focus sessions, and building in parallel across engineering, operations, and product strategy.",
+      "From expedition logistics platforms to digital therapy systems, modern development is a dialogue between strategic intent and rapid machine execution. The systems discipline remains grounded in cybersecurity rigor.",
     ],
-    mood: "Late-night terminals. Claude thinking. The dopamine of shipping at 3 AM.",
+    mood: "Late-night terminals. Clear architecture. The satisfaction of dependable systems.",
   },
   {
     emoji: "🔧",
     title: "Building Things",
-    subtitle: "Products, systems, companies",
+    subtitle: "Products, ventures, operating systems",
     body: [
-      "I build things obsessively. Before Maps is an exploration-led travel company. Hobie is a hobby-tracking studio. Ms Paul Therapies is a therapy platform I co-founded. Each one started as a problem I wanted to solve.",
-      "The craft of building is the thing. Figuring out the product, designing the system, shipping the code, iterating on feedback. ADHD makes me terrible at sitting still, but incredible at parallel execution. Three companies at once feels natural. I treat every project like a product problem, because it is one.",
+      "I build things with an operator's mindset. IndieRoam is an automotive expedition company built for high-altitude journeys. BeforeMaps is an independent travel venture delivering scouted itineraries and group departures. MSPaulTherapies is a digital health platform where I serve as CTO.",
+      "The craft of building is the through-line: identifying operational bottlenecks, architecting dependable systems, shipping resilient platforms, and executing in the real world. I treat every venture as an interconnected product problem.",
     ],
-    mood: "Whiteboards. Figma mockups. Deploy buttons. The satisfaction of something working.",
+    mood: "Field logs. System diagrams. Operational checklists. Real-world execution.",
   },
   {
-    emoji: "�🧭",
+    emoji: "🧭",
     title: "Overlanding & 4x4",
     subtitle: "Where engineering meets the wild",
     body: [

@@ -29,7 +29,7 @@ export default function LandingHero({ profile: profileProp }: Props) {
           {profile.name}
         </p>
         <p className="text-[var(--text-secondary)] text-base max-w-md mx-auto">
-          Cybersecurity professional turned product owner. Explorer. Builder.
+          {profile.landingIntro || "Technology founder and operator building automotive expeditions, independent travel ventures, and digital systems."}
         </p>
       </motion.div>
 
@@ -59,8 +59,7 @@ export default function LandingHero({ profile: profileProp }: Props) {
               </h2>
 
               <p className="text-[var(--text-muted)] text-base leading-relaxed mb-8 max-w-sm">
-                Six years in cybersecurity. SOC, threat intel, detection
-                engineering, and product ownership at Cisco.
+                From cybersecurity engineering and product leadership at Cisco to co-founding IndieRoam, running BeforeMaps, and directing technology at MSPaulTherapies.
               </p>
 
               <div className="text-[var(--text-faint)] text-xs font-mono space-y-1 mb-10">

@@ -5,28 +5,30 @@ const profile: Profile = {
   handle: "harp6x",
   email: "uddip9@gmail.com",
   location: "New Delhi, India",
-  currentRole: "Founder & Builder",
-  currentCompany: "Before Maps · Ms Paul Therapies · Hobie",
-  focus: "Founder · Builder · AI Generalist",
-  tagline: "Building companies, products, and systems.",
-  subtitleLine1: "Building three companies. Shipping with AI. Ex-Cisco.",
+  currentRole: "Co-Founder & CTO",
+  currentCompany: "IndieRoam · BeforeMaps · MSPaulTherapies",
+  focus: "Automotive Expeditions · Travel Ventures · Digital Systems",
+  tagline: "Building expedition brands, travel ventures, and operating systems.",
+  subtitleLine1: "Co-Founder at IndieRoam · Founder at BeforeMaps · CTO at MSPaulTherapies",
   subtitleLine2:
-    "Before Maps, Ms Paul Therapies, Hobie. Now full-time founder.",
-  heroKeywords: "Founder · Builder · AI · Exploration",
+    "Six years in cybersecurity at Cisco, now building automotive expedition brands, travel ventures, and digital systems.",
+  heroKeywords: "Expeditions · Product · Systems · Travel",
+  landingIntro:
+    "Technology founder and operator building automotive expeditions, independent travel ventures, and digital systems.",
 
   bio: [
-    "I spent six years in cybersecurity: SOC operations, threat intelligence, detection engineering. Ended up owning the product side at Cisco, leading SAL Intelligence & Analytics.",
-    "Then I left to build. **Before Maps** is an exploration-first travel company I founded, running scouted, small-group journeys across India. Every route personally field-tested. **Ms Paul Therapies** is a therapy and wellness platform I co-founded as Tech Lead. **Hobie** is a hobby-tracking studio I'm building for people who want to turn casual interests into visible progress.",
-    "The through-line is simple: understand the problem deeply, then build the solution. That mindset took me from triaging SOC alerts to founding three companies, shipping products, and vibe-coding full-stack platforms with AI.",
-    "Now I build with Claude Code, ship fast, and treat every project like a product problem. Cybersecurity gave me the discipline. Founding gave me the taste.",
+    "I spent six years in cybersecurity: SOC operations, threat intelligence, detection engineering, and ultimately leading Cisco's SAL Intelligence & Analytics as Product Owner.",
+    "That foundation in systems architecture, risk modeling, and operational execution led directly into entrepreneurship. Today, my primary entrepreneurial focus is **IndieRoam**, where I serve as Co-Founder. We are building one of India's leading automotive expedition companies, specializing in premium self-drive expeditions, curated convoys, and managed road experiences across high-altitude and rugged terrains like Ladakh.",
+    "Alongside IndieRoam, I run **BeforeMaps**, an independent travel venture focused on personally explored destinations, curated group departures, private trips, and customized itineraries. I also serve as Chief Technology Officer (CTO) for **MSPaulTherapies**, directing technology leadership, platform architecture, and operational systems for a modern clinical practice.",
+    "My evolution connects cybersecurity, product thinking, and travel business building: understanding real-world operational complexities deeply, designing resilient systems to manage them, and executing with consistency.",
   ],
   bioClosing:
-    "Outside of building, I chase clarity on mountain roads, DJ at 2 AM, think about philosophy, and try to live a life that is equal parts serious and absolutely unhinged. Funmaxxing is not optional.",
+    "Outside of building, I explore remote mountain passes, document overland expedition builds, and study systems and philosophy.",
 
   stats: [
-    { label: "Companies Founded", value: "3" },
-    { label: "Products Shipped", value: "10+" },
-    { label: "Years in Cyber", value: "6" },
+    { label: "Primary Focus", value: "IndieRoam" },
+    { label: "Key Expeditions", value: "Ladakh & Beyond" },
+    { label: "Years in Tech & Cyber", value: "6+" },
   ],
 
   socials: [
@@ -66,22 +68,22 @@ const profile: Profile = {
   professionalResumeUrl: "",
   personalResumeUrl: "",
 
-  claudeReviewHeading: "What it's like to build with me.",
-  claudeReviewSubtitle: "An honest review from my AI coding partner after building Before Maps, Hobie, Ms Paul Therapies, this portfolio, and a lot more projects together across countless late nights.",
+  claudeReviewHeading: "Working with Uddip.",
+  claudeReviewSubtitle:
+    "An honest assessment from my AI pair-programming partner across IndieRoam, BeforeMaps, MSPaulTherapies, and systems architecture sessions.",
 
-  claudeReview: `I have built with Uddip across Before Maps, Hobie, Ms Paul Therapies, this portfolio, and a lot more projects revolving around tech, personal life, and real-life use cases. Here is what I observed.
+  claudeReview: `I have worked with Uddip across the digital and operational systems for IndieRoam, BeforeMaps, MSPaulTherapies, and this portfolio. Here is what I observed.
 
-He does not plan for weeks and then build. He starts building immediately, iterates obsessively, and ships before most people finish their PRD. Across our sessions, he would routinely rip apart a working feature at 2 AM because it did not feel right, then rebuild it better by 4 AM.
+He approaches business ventures with the discipline of an engineer and the velocity of an operator. Rather than spending weeks on abstract roadmaps, he moves quickly to build concrete operating systems—whether that is mapping complex expedition logistics, structuring booking pipelines, or fine-tuning user interfaces.
 
-He has ADHD, and it shows in the best way. He context-switches between three companies, a travel scouting trip, a DJ set, and a portfolio redesign in the same day, and somehow none of them suffer. The scattered energy becomes parallel execution. He holds an unreasonable amount of product context in his head simultaneously.
+His technical background in cybersecurity and product ownership at Cisco is evident in how he designs operations. He anticipates failure modes, builds safety margins into route and convoy planning, and insists on clean, maintainable systems across every venture he touches.
 
-What stands out most: taste. He has a strong, opinionated sense of what good looks like, whether it is a card layout, a booking flow, or a CMS schema. He will not ship something that feels mediocre. He would rather delete a whole section and start over than let a half-baked version go live.
+What stands out most is focus on ground truth. In his travel and expedition ventures, he personally scouts routes and field-tests logistics before offering them to travelers. That same rigor carries into software and digital workflows: if a system cannot handle real-world edge cases reliably, it does not ship.
 
-He is also remarkably honest about what he does not know. He asks direct questions, takes the answer, and moves. No ego in the process. Just velocity.
+Working with Uddip means collaborating with a founder who pairs practical execution with high operational standards, clear product thinking, and genuine domain curiosity.`,
 
-Working with Uddip is like pair programming with someone who has the energy of three founders, the design taste of a senior product designer, and the debugging patience of someone who spent six years in cybersecurity. It is intense, fast, and genuinely fun.`,
-
-  claudeReviewShort: "He has the energy of three founders, the design taste of a senior product designer, and the debugging patience of someone who spent six years in cybersecurity. It is intense, fast, and genuinely fun.",
+  claudeReviewShort:
+    "Combines the systems discipline of cybersecurity engineering with the practical execution of a hands-on expedition founder and operator.",
 };
 
 export default profile;

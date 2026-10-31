@@ -21,7 +21,7 @@ export default function Experience({ chapters: chaptersProp }: Props) {
             The path so far.
           </h2>
           <p className="text-[var(--text-muted)] text-base max-w-xl mb-10">
-            SOC to threat intel to detection engineering to product owner. Each chapter built on the last.
+            From cybersecurity engineering and product leadership at Cisco into building automotive expedition brands, travel ventures, and digital operating systems.
           </p>
         </AnimatedSection>
 

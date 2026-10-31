@@ -3,13 +3,42 @@ import type { Project } from "./types";
 // ───────────────────────────────────────────────────
 // HOW TO UPDATE:
 //   • New project? → Add a new object anywhere in the array.
-//   • Link optional. omit `link` for projects without a URL.
+//   • Link optional: omit `link` for projects without a URL.
 // ───────────────────────────────────────────────────
 
 const projects: Project[] = [
   {
+    title: "IndieRoam — Automotive Expeditions",
+    category: "Co-Founder & Operator",
+    description:
+      "Building one of India's leading automotive expedition companies, specializing in premium self-drive expeditions, curated convoys, and managed road experiences across Ladakh and challenging Himalayan routes.",
+    thinking:
+      "Automotive expeditions demand precision operations. We engineer convoy management, communications, safety margins, and route intelligence as a cohesive operating system.",
+    tags: ["Expedition Planning", "Operations", "Automotive", "Product Strategy", "Growth"],
+  },
+  {
+    title: "BeforeMaps",
+    category: "Founder",
+    description:
+      "Independent travel venture delivering curated group departures, private trips, customized itineraries, and travel experiences built entirely from firsthand exploration.",
+    thinking:
+      "Travel is a product problem. The real value lies in ground-truth scouting, thoughtful route design, and dependable logistics rather than generic aggregators.",
+    tags: ["Travel Operations", "Itinerary Design", "Exploration", "Next.js", "Sanity CMS"],
+    link: "https://beforemaps.com",
+  },
+  {
+    title: "MSPaulTherapies",
+    category: "Chief Technology Officer (CTO)",
+    description:
+      "Digital infrastructure and systems architecture for a clinical psychology and wellness platform, featuring automated scheduling, client intake, and publishing pipelines.",
+    thinking:
+      "Clinical technology must eliminate friction so therapists can focus entirely on care. The digital touchpoints must build immediate confidence and trust.",
+    tags: ["Platform Architecture", "Next.js", "Sanity CMS", "Digital Systems", "CTO"],
+    link: "https://mspaultherapies.in",
+  },
+  {
     title: "Cisco SAL Intelligence & Analytics",
-    category: "Product (ex-Cisco)",
+    category: "Enterprise Product (ex-Cisco)",
     description:
       "Built the intelligence layer for Cisco's firewall ecosystem. Transformed raw syslog data, network telemetry, and security signals into proactive threat detection.",
     thinking:
@@ -17,20 +46,10 @@ const projects: Project[] = [
     tags: ["Product Ownership", "Cisco Security", "Syslog", "Automation"],
   },
   {
-    title: "Hobie",
-    category: "Creator & Builder",
-    description:
-      "A cozy hobby-tracking studio. Roadmaps, quests, and focus timers that turn casual interest into real, visible progress. Vibe-coded end-to-end with Claude Code.",
-    thinking:
-      "Most hobby apps are either rigid course platforms or empty timers. Hobie sits in between: just enough structure to keep momentum, never enough to kill the joy.",
-    tags: ["React 19", "Supabase", "TypeScript", "Tailwind v4", "PWA", "Vibe Coding"],
-    link: "https://hobie-deploy.vercel.app",
-  },
-  {
     title: "The CTI Dispatch",
-    category: "Publication",
+    category: "Publication & Research",
     description:
-      "A weekly publication of curated cyber threat intelligence. analysis, not just headlines. Special bulletins for high-impact events reaching security professionals.",
+      "A weekly publication of curated cyber threat intelligence: analysis, not just headlines. Special bulletins for high-impact events reaching security professionals.",
     thinking:
       "Most threat intel is noise. The goal: signal over volume, clarity over comprehensiveness.",
     tags: ["CTI", "Writing", "OSINT", "Analysis"],
@@ -55,32 +74,12 @@ const projects: Project[] = [
     tags: ["APT", "Threat Hunting", "IOC Analysis", "Intelligence"],
   },
   {
-    title: "Before Maps",
-    category: "Founder & CEO",
+    title: "Expedition Vehicle Preparation & Build",
+    category: "Automotive Systems",
     description:
-      "Founded and run Before Maps, an exploration-first travel company building scouted, small-group journeys across India. Built the full-stack platform, product catalog, digital product line, and operations system from scratch. Every route personally field-tested before it opens.",
+      "Documenting the build and field preparation of a Suzuki Jimny for high-altitude overland expeditions: recovery systems, electrical redundancy, and payload management.",
     thinking:
-      "Travel is a product problem. Most operators sell destinations. Before Maps sells a standard of preparation: the route, the logistics, the safety margin, the story. We don't just show you where to go, we show you how to experience it.",
-    tags: ["Next.js", "Sanity CMS", "Product Design", "Operations", "Founder"],
-    link: "https://beforemaps.com",
-  },
-  {
-    title: "Ms Paul Therapies",
-    category: "Co-founder & Tech Lead",
-    description:
-      "Co-founded a therapy and wellness platform. Built the entire tech stack: Next.js, Sanity CMS, booking pipeline, content system. Designed the brand, client experience, and digital operations from scratch.",
-    thinking:
-      "Good therapy deserves good design. The trust a client feels starts before they walk in. It starts with how professional and human the digital experience feels.",
-    tags: ["Next.js", "Sanity CMS", "Product Design", "Full-Stack", "Co-Founder"],
-    link: "https://mspaultherapies.in",
-  },
-  {
-    title: "Jimny Build Documentation",
-    category: "Personal / Hobby",
-    description:
-      "Documenting the build process of a Suzuki Jimny. reliability mods, recovery systems, expedition preparation. Where engineering meets adventure.",
-    thinking:
-      "A vehicle is a system. You modify it the same way you harden a network. assess risks, build redundancy, test under pressure.",
+      "A vehicle is a system. You modify it the same way you harden a network: assess risks, build redundancy, test under pressure.",
     tags: ["Overlanding", "4x4", "Documentation", "Systems Thinking"],
   },
 ];

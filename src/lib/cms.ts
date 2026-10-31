@@ -1,5 +1,5 @@
 import { getProfile, getExperiences, getProjects, getSkills, getBeyondWork, getPhilosophies, getJournalTopics, getPersonalAbout, getLifePillars, getProducts, getVentures, getVenture, getSiteSettings } from "@/sanity/queries";
-import type { SanityProfile, SanityExperience, SanityProject, SanitySkills, SanityBeyondWork, SanityPhilosophy, SanityJournalTopic, SanityPersonalAbout, SanityLifePillar, SanityProductDoc, SanityVenture, SanitySettings } from "@/sanity/queries";
+import type { SanityExperience, SanityProject, SanityBeyondWork, SanityPhilosophy, SanityJournalTopic, SanityPersonalAbout, SanityLifePillar, SanityProductDoc, SanityVenture } from "@/sanity/queries";
 import type { Profile, Chapter, Project, Skills, LifeSection, JournalTopic, Product, ProductBrand, ProductType, PriceType, ProductSurface, Venture } from "@/data/types";
 
 import profileFallback from "@/data/profile";
@@ -9,6 +9,7 @@ import skillsFallback from "@/data/skills";
 import beyondFallback from "@/data/beyond";
 import journalFallback from "@/data/journal";
 import productsFallback from "@/data/products";
+import venturesFallback from "@/data/ventures";
 
 function safe<T>(fn: () => Promise<T>): Promise<T | null> {
   return fn().catch(() => null);
@@ -38,6 +39,7 @@ export async function fetchProfile(): Promise<Profile> {
     subtitleLine1: cms.subtitleLine1 ?? profileFallback.subtitleLine1,
     subtitleLine2: cms.subtitleLine2 ?? profileFallback.subtitleLine2,
     heroKeywords: cms.heroKeywords ?? profileFallback.heroKeywords,
+    landingIntro: cms.landingIntro ?? profileFallback.landingIntro,
     bio: cms.bio?.length ? cms.bio : profileFallback.bio,
     bioClosing: cms.bioClosing ?? profileFallback.bioClosing,
     stats: cms.stats?.length ? cms.stats : profileFallback.stats,
@@ -148,24 +150,37 @@ export async function fetchLifePillars(): Promise<{ brand: string; key: string; 
 
 export async function fetchVentures(): Promise<Venture[]> {
   const cms = await safe(getVentures);
-  if (!cms?.length) return [];
-  return cms.map((v: SanityVenture) => ({
-    slug: v.slug?.current ?? v._id,
-    title: v.title,
-    tagline: v.tagline ?? "",
-    role: v.role ?? "",
-    url: v.url,
-    coverImage: v.coverImageUrl,
-    philosophy: v.philosophy,
-    highlights: v.highlights ?? [],
-    techStack: v.techStack ?? [],
-    status: (v.status as Venture["status"]) ?? "active",
-  }));
+  if (cms?.length) {
+    const list: Venture[] = cms
+      .filter((v: SanityVenture) => (v.slug?.current ?? v._id) !== "hobie")
+      .map((v: SanityVenture) => ({
+        slug: v.slug?.current ?? v._id,
+        title: v.title,
+        tagline: v.tagline ?? "",
+        role: v.role ?? "",
+        url: v.url,
+        coverImage: v.coverImageUrl,
+        philosophy: v.philosophy,
+        highlights: v.highlights ?? [],
+        techStack: v.techStack ?? [],
+        status: (v.status as Venture["status"]) ?? "active",
+      }));
+    if (!list.some((v) => v.slug === "indieroam")) {
+      const indieFallback = venturesFallback.find((v) => v.slug === "indieroam");
+      if (indieFallback) list.unshift(indieFallback);
+    }
+    return list;
+  }
+  return venturesFallback;
 }
 
 export async function fetchVenture(slug: string): Promise<(Venture & { body?: unknown[] }) | null> {
+  if (slug === "hobie") return null;
   const cms = await safe(() => getVenture(slug));
-  if (!cms) return null;
+  if (!cms) {
+    const fallback = venturesFallback.find((v) => v.slug === slug);
+    return fallback ? { ...fallback } : null;
+  }
   return {
     slug: cms.slug?.current ?? cms._id,
     title: cms.title,

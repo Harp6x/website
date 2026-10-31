@@ -88,7 +88,7 @@ src/
 │   └── studio.config.ts         # Sanity Studio config
 scripts/
 ├── seed-sanity.mjs              # Seed CMS with fallback data
-├── seed-hobie.mjs               # Seed Hobie-specific data
+├── seed-indieroam.mjs           # Seed IndieRoam-specific data
 └── upload-resumes.mjs           # Upload resume PDFs to Sanity
 ```
 
