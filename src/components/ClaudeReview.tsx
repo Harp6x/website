@@ -10,7 +10,10 @@ interface Props {
 
 export default function ClaudeReview({ profile: profileProp }: Props) {
   const profile = profileProp ?? profileFallback;
-  const heading = profile.claudeReviewHeading ?? profileFallback.claudeReviewHeading ?? "What it's like to build with me.";
+  const heading =
+    profile.claudeReviewHeading ??
+    profileFallback.claudeReviewHeading ??
+    "What it's like to build with me.";
   const subtitle = profile.claudeReviewSubtitle ?? profileFallback.claudeReviewSubtitle ?? "";
   const review = profile.claudeReview ?? profileFallback.claudeReview;
 
@@ -54,7 +57,9 @@ export default function ClaudeReview({ profile: profileProp }: Props) {
               </div>
               <div>
                 <p className="text-[var(--text-primary)] text-sm font-medium">Claude Code</p>
-                <p className="text-[var(--text-muted)] text-xs font-mono">Anthropic &middot; AI coding partner</p>
+                <p className="text-[var(--text-muted)] text-xs font-mono">
+                  Anthropic &middot; AI coding partner
+                </p>
               </div>
             </div>
           </div>

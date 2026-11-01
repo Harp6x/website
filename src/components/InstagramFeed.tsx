@@ -23,8 +23,8 @@ export default function InstagramFeed({ posts }: Props) {
               From the field.
             </h2>
             <p className="text-[var(--text-muted)] max-w-2xl mb-10 leading-relaxed">
-              Follow the journey on Instagram. travel, builds, philosophy, and
-              everything in between.
+              Follow the journey on Instagram. travel, builds, philosophy, and everything in
+              between.
             </p>
             <div className="flex flex-wrap gap-4">
               {["@harp6x", "@theregoesuddip", "@jimnyruns"].map((handle) => (
@@ -59,8 +59,7 @@ export default function InstagramFeed({ posts }: Props) {
             From the field.
           </h2>
           <p className="text-[var(--text-muted)] max-w-2xl mb-16 leading-relaxed">
-            Latest from Instagram. travel, builds, philosophy, and everything
-            in between.
+            Latest from Instagram. travel, builds, philosophy, and everything in between.
           </p>
         </AnimatedSection>
 
@@ -92,9 +91,7 @@ export default function InstagramFeed({ posts }: Props) {
                     <p className="text-[var(--text-primary)] text-[10px] leading-relaxed line-clamp-3">
                       {post.caption}
                     </p>
-                    <p className="text-[#d97706] text-[9px] font-mono mt-1">
-                      @{post.username}
-                    </p>
+                    <p className="text-[#d97706] text-[9px] font-mono mt-1">@{post.username}</p>
                   </div>
                 </div>
               </a>
@@ -111,8 +108,7 @@ export default function InstagramFeed({ posts }: Props) {
               rel="noopener noreferrer"
               className="group inline-flex items-center gap-2 text-xs font-mono text-[var(--text-muted)] hover:text-[#d97706] transition-colors"
             >
-              <SiInstagram className="w-3 h-3" />
-              @{handle}
+              <SiInstagram className="w-3 h-3" />@{handle}
               <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
             </a>
           ))}

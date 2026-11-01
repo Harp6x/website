@@ -79,8 +79,8 @@ export default function LifePillars({ pillarsData }: Props) {
             Four pillars. One person.
           </h2>
           <p className="text-[var(--text-muted)] text-base max-w-2xl mb-8 leading-relaxed">
-            Each brand represents a different dimension of the same life: technology,
-            travel, exploration, and machines.
+            Each brand represents a different dimension of the same life: technology, travel,
+            exploration, and machines.
           </p>
         </AnimatedSection>
 
@@ -100,22 +100,42 @@ export default function LifePillars({ pillarsData }: Props) {
 
                 <div className="flex flex-wrap gap-2 mt-auto">
                   {pillar.website && (
-                    <a href={pillar.website} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                    <a
+                      href={pillar.website}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={linkClass}
+                    >
                       <ArrowUpRight className="w-3 h-3" /> Site
                     </a>
                   )}
                   {pillar.instagram && (
-                    <a href={pillar.instagram} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                    <a
+                      href={pillar.instagram}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={linkClass}
+                    >
                       <SiInstagram className="w-3 h-3" /> IG
                     </a>
                   )}
                   {pillar.youtube && (
-                    <a href={pillar.youtube} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                    <a
+                      href={pillar.youtube}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={linkClass}
+                    >
                       <SiYoutube className="w-3 h-3" /> YT
                     </a>
                   )}
                   {pillar.substack && (
-                    <a href={pillar.substack} target="_blank" rel="noopener noreferrer" className={linkClass}>
+                    <a
+                      href={pillar.substack}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={linkClass}
+                    >
                       <SiSubstack className="w-3 h-3" /> Blog
                     </a>
                   )}

@@ -22,8 +22,8 @@ export default function Projects({ projects: projectsProp }: Props) {
             Selected projects.
           </h2>
           <p className="text-[var(--text-muted)] text-base max-w-xl mb-10">
-            Things I&apos;ve built, led, or am building. where the thinking matters
-            as much as the outcome.
+            Things I&apos;ve built, led, or am building. where the thinking matters as much as the
+            outcome.
           </p>
         </AnimatedSection>
 

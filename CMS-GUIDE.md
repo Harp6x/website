@@ -14,28 +14,30 @@ Everything on your site is editable through Sanity Studio — no code changes ne
 
 ## What You Can Edit
 
-| CMS Document       | What It Controls                                    |
-| ------------------- | --------------------------------------------------- |
-| **Profile**         | Name, handle, tagline, bio, stats, socials, emails  |
-| **Experience**      | Career chapters (title, company, era, narrative)     |
-| **Project**         | Selected projects (title, description, tags, link)   |
-| **Skill**           | Technical, soft, tools, credentials lists            |
-| **Beyond Work**     | Personal sections (emoji, title, body, mood line)    |
-| **Philosophy**      | Philosophy entries (title, summary, tags)             |
-| **Journal Topic**   | Journal entries (title, preview, category, Substack URL) |
-| **Personal About**  | Headline, accent text, paragraphs, pillars           |
-| **Life Pillar**     | Content brands (brand name, theme, description, pillars) |
+| CMS Document       | What It Controls                                         |
+| ------------------ | -------------------------------------------------------- |
+| **Profile**        | Name, handle, tagline, bio, stats, socials, emails       |
+| **Experience**     | Career chapters (title, company, era, narrative)         |
+| **Project**        | Selected projects (title, description, tags, link)       |
+| **Skill**          | Technical, soft, tools, credentials lists                |
+| **Beyond Work**    | Personal sections (emoji, title, body, mood line)        |
+| **Philosophy**     | Philosophy entries (title, summary, tags)                |
+| **Journal Topic**  | Journal entries (title, preview, category, Substack URL) |
+| **Personal About** | Headline, accent text, paragraphs, pillars               |
+| **Life Pillar**    | Content brands (brand name, theme, description, pillars) |
 
 ---
 
 ## Common Tasks
 
 ### Change your job title or bio
+
 1. Open **Profile** in Studio
 2. Edit `currentRole`, `currentCompany`, `bio` paragraphs, etc.
 3. Publish
 
 ### Add a new career chapter
+
 1. Click **+ Create** → **Experience**
 2. Fill in: era, period, title, company, narrative, highlights
 3. Set `order` to control sort position (lower = higher on page)
@@ -43,18 +45,21 @@ Everything on your site is editable through Sanity Studio — no code changes ne
 5. Publish
 
 ### Add a new project
+
 1. Click **+ Create** → **Project**
 2. Fill in: title, category, description, thinking, tags, link
 3. Set `order`
 4. Publish
 
 ### Update Beyond Work sections
+
 1. Open a **Beyond Work** document
 2. **Emoji**: Paste any emoji character (e.g. 🏔️ 🎸 🧘)
 3. Edit title, subtitle, body paragraphs, mood line
 4. Publish
 
 ### Add a journal topic with Substack link
+
 1. Click **+ Create** → **Journal Topic**
 2. Fill in: title, preview, category
 3. **Substack URL**: Paste the full URL to your Substack article
@@ -62,16 +67,19 @@ Everything on your site is editable through Sanity Studio — no code changes ne
 5. Publish
 
 ### Update philosophies
+
 1. Open a **Philosophy** document
 2. Edit title, summary, tags
 3. Publish
 
 ### Update personal about section
+
 1. Open **Personal About** (singleton)
 2. Edit headline, headline accent, paragraphs, pillars
 3. Publish
 
 ### Update life pillars / content brands
+
 1. Open a **Life Pillar** document
 2. Edit brand, key, theme, description, content pillars
 3. Publish
@@ -79,6 +87,7 @@ Everything on your site is editable through Sanity Studio — no code changes ne
 ---
 
 ## Adding New Skills / Credentials
+
 1. Open the **Skill** document (there's only one — it's a singleton)
 2. Add items to the `technical`, `soft`, `tools`, or `credentials` arrays
 3. Publish
@@ -92,16 +101,16 @@ Every component has **hardcoded fallback data** in `src/data/`. If the CMS is un
 - The site **never breaks** even if CMS goes offline
 - To update fallback data, edit the files in `src/data/` and redeploy
 
-| Fallback File             | Used By           |
-| ------------------------- | ----------------- |
-| `src/data/profile.ts`     | Hero, About, Contact, Footer |
-| `src/data/experience.ts`  | Experience        |
-| `src/data/projects.ts`    | Projects          |
-| `src/data/skills.ts`      | Skills            |
-| `src/data/beyond.ts`      | Beyond Work       |
-| `src/data/philosophy.ts`  | Philosophy        |
-| `src/data/journal.ts`     | Journal           |
-| `src/data/creator.ts`     | Life Pillars      |
+| Fallback File            | Used By                      |
+| ------------------------ | ---------------------------- |
+| `src/data/profile.ts`    | Hero, About, Contact, Footer |
+| `src/data/experience.ts` | Experience                   |
+| `src/data/projects.ts`   | Projects                     |
+| `src/data/skills.ts`     | Skills                       |
+| `src/data/beyond.ts`     | Beyond Work                  |
+| `src/data/philosophy.ts` | Philosophy                   |
+| `src/data/journal.ts`    | Journal                      |
+| `src/data/creator.ts`    | Life Pillars                 |
 
 ---
 

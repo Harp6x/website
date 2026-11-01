@@ -58,16 +58,13 @@ export default async function ProductsPage() {
             The Library.
           </h1>
           <p className="text-[var(--text-secondary)] text-lg leading-relaxed">
-            Systems, field guides, manuals, and tools built across Harp6x and
-            There Goes Uddip. Filter by brand, type, theme, or price. Every
-            link takes you to its page on Gumroad.
+            Systems, field guides, manuals, and tools built across Harp6x and There Goes Uddip.
+            Filter by brand, type, theme, or price. Every link takes you to its page on Gumroad.
           </p>
         </div>
 
         {products.length === 0 ? (
-          <p className="mt-16 text-[var(--text-muted)]">
-            Products are coming soon.
-          </p>
+          <p className="mt-16 text-[var(--text-muted)]">Products are coming soon.</p>
         ) : (
           <ProductCatalog products={products} />
         )}

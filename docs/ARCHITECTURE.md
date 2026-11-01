@@ -91,6 +91,7 @@ Mapping: lib/cms.ts (one function per content type)
 ## Component Hierarchy
 
 ### Professional Page
+
 ```
 Navbar (variant="professional")
 CrossPageNudge (variant="professional")
@@ -105,6 +106,7 @@ Footer
 ```
 
 ### Personal Page
+
 ```
 Navbar (variant="personal")
 CrossPageNudge (variant="personal")
@@ -123,15 +125,15 @@ Footer
 
 ## External Integrations
 
-| Service | File | Purpose | Failure Mode |
-|---|---|---|---|
-| Sanity CMS | `sanity/queries.ts` | All content | Falls back to `data/*.ts` |
-| YouTube API | `lib/youtube.ts` | Video feeds | Empty array |
-| Instagram API | `lib/instagram.ts` | Photo feeds | Empty array |
-| Substack RSS | `lib/substack.ts` | Newsletter feed | Empty array |
-| Vercel Analytics | Layout | Page analytics | Silent |
-| Vercel Speed Insights | Layout | Web vitals | Silent |
+| Service               | File                | Purpose         | Failure Mode              |
+| --------------------- | ------------------- | --------------- | ------------------------- |
+| Sanity CMS            | `sanity/queries.ts` | All content     | Falls back to `data/*.ts` |
+| YouTube API           | `lib/youtube.ts`    | Video feeds     | Empty array               |
+| Instagram API         | `lib/instagram.ts`  | Photo feeds     | Empty array               |
+| Substack RSS          | `lib/substack.ts`   | Newsletter feed | Empty array               |
+| Vercel Analytics      | Layout              | Page analytics  | Silent                    |
+| Vercel Speed Insights | Layout              | Web vitals      | Silent                    |
 
 ---
 
-*For complete AI agent context, see `AGENTS.md`. For CMS self-service guide, see `CMS-GUIDE.md`.*
+_For complete AI agent context, see `AGENTS.md`. For CMS self-service guide, see `CMS-GUIDE.md`._

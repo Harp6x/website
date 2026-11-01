@@ -1,7 +1,9 @@
 <!-- BEGIN:nextjs-agent-rules -->
+
 # This is NOT the Next.js you know
 
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
+
 <!-- END:nextjs-agent-rules -->
 
 # Portfolio — AI Agent Context File
@@ -15,6 +17,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 **Personal portfolio site** for Uddip Ranjan Das (handle: **harp6x**). Cybersecurity engineer, product thinker, explorer.
 
 **Two distinct experiences on one site:**
+
 - `/professional` — Career, skills, projects, experience (amber accent `#d97706`)
 - `/personal` — Philosophy, beyond-work, journal, life pillars (terracotta `#c2703a` + teal `#2d8a7c`)
 - `/` — Landing page (gateway between the two)
@@ -29,18 +32,18 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## Tech Stack
 
-| Layer | Tech | Version |
-|---|---|---|
-| Framework | Next.js (App Router) | 16.2.6 |
-| Language | TypeScript | 5 |
-| UI | React | 19.2.4 |
-| Styling | Tailwind CSS | v4 |
-| CMS | Sanity | v5.26 (next-sanity 13) |
-| Animation | Framer Motion | 12.39 |
-| Icons | Lucide React + React Icons | |
-| Analytics | Vercel Analytics + Speed Insights | |
-| Fonts | Geist, Geist Mono, Lora | next/font/google |
-| Hosting | Vercel | Auto-deploy from main |
+| Layer     | Tech                              | Version                |
+| --------- | --------------------------------- | ---------------------- |
+| Framework | Next.js (App Router)              | 16.2.6                 |
+| Language  | TypeScript                        | 5                      |
+| UI        | React                             | 19.2.4                 |
+| Styling   | Tailwind CSS                      | v4                     |
+| CMS       | Sanity                            | v5.26 (next-sanity 13) |
+| Animation | Framer Motion                     | 12.39                  |
+| Icons     | Lucide React + React Icons        |                        |
+| Analytics | Vercel Analytics + Speed Insights |                        |
+| Fonts     | Geist, Geist Mono, Lora           | next/font/google       |
+| Hosting   | Vercel                            | Auto-deploy from main  |
 
 ---
 
@@ -107,47 +110,50 @@ Page request
 
 **Every CMS fetch has a fallback.** The site never breaks even if Sanity is down.
 
-| CMS Document | Fallback File | Used By |
-|---|---|---|
-| `profile` | `data/profile.ts` | Hero, About, Contact, Footer, Navbar |
-| `experience` | `data/experience.ts` | Experience |
-| `project` | `data/projects.ts` | Projects |
-| `skill` | `data/skills.ts` | Skills |
-| `beyondWork` | `data/beyond.ts` | BeyondWork |
-| `philosophy` | (empty array) | Philosophy |
-| `journalTopic` | `data/journal.ts` | Journal |
-| `personalAbout` | (null) | PersonalAbout |
-| `lifePillar` | (empty array) | LifePillars |
-| `product` | `data/products.ts` | ProductShowcase, ProductCatalog |
-| `blogPost` | (none) | Blog |
+| CMS Document    | Fallback File        | Used By                              |
+| --------------- | -------------------- | ------------------------------------ |
+| `profile`       | `data/profile.ts`    | Hero, About, Contact, Footer, Navbar |
+| `experience`    | `data/experience.ts` | Experience                           |
+| `project`       | `data/projects.ts`   | Projects                             |
+| `skill`         | `data/skills.ts`     | Skills                               |
+| `beyondWork`    | `data/beyond.ts`     | BeyondWork                           |
+| `philosophy`    | (empty array)        | Philosophy                           |
+| `journalTopic`  | `data/journal.ts`    | Journal                              |
+| `personalAbout` | (null)               | PersonalAbout                        |
+| `lifePillar`    | (empty array)        | LifePillars                          |
+| `product`       | `data/products.ts`   | ProductShowcase, ProductCatalog      |
+| `blogPost`      | (none)               | Blog                                 |
 
 ---
 
 ## Sanity Schemas (13 document types + 2 object types)
 
 ### Object Types (reusable)
-| Schema | Purpose |
-|---|---|
-| `seo` | metaTitle, metaDescription, ogImage, noIndex — reusable SEO block |
+
+| Schema         | Purpose                                                               |
+| -------------- | --------------------------------------------------------------------- |
+| `seo`          | metaTitle, metaDescription, ogImage, noIndex — reusable SEO block     |
 | `portableText` | Rich text with headings, bold, italic, links, images with alt+caption |
 
 ### Document Types
-| Schema | Type | Key Fields | Visibility |
-|---|---|---|---|
-| `siteSettings` | singleton | currentRole, tagline, navigation[], socialLinks, footerText, seo, page toggles, dropdown options | — |
-| `profile` | singleton | name, handle, email, tagline, bio[], stats[], socials[] | — |
-| `skill` | singleton | technical[], soft[], tools[], credentials[] | — |
-| `personalAbout` | singleton | headline, headlineAccent, paragraphs[], pillars[] | — |
-| `experience` | document | era, title, company, period, narrative, highlights[], current | `published` |
-| `project` | document | title, category, description, thinking, tags[], coverImage, link | `published` |
-| `beyondWork` | document | emoji, title, subtitle, body[], mood | `published` |
-| `philosophy` | document | title, summary, tags[] | `published` |
-| `journalTopic` | document | title, preview, category, substackUrl | `published` |
-| `lifePillar` | document | brand, key, theme, description, contentPillars[] | — |
-| `product` | document | title, slug, brand, productType, priceType, price, coverImage | `published` |
-| `blogPost` | document | title, slug, category, excerpt, publishedAt, body (portableText), seo | `published` |
+
+| Schema          | Type      | Key Fields                                                                                       | Visibility  |
+| --------------- | --------- | ------------------------------------------------------------------------------------------------ | ----------- |
+| `siteSettings`  | singleton | currentRole, tagline, navigation[], socialLinks, footerText, seo, page toggles, dropdown options | —           |
+| `profile`       | singleton | name, handle, email, tagline, bio[], stats[], socials[]                                          | —           |
+| `skill`         | singleton | technical[], soft[], tools[], credentials[]                                                      | —           |
+| `personalAbout` | singleton | headline, headlineAccent, paragraphs[], pillars[]                                                | —           |
+| `experience`    | document  | era, title, company, period, narrative, highlights[], current                                    | `published` |
+| `project`       | document  | title, category, description, thinking, tags[], coverImage, link                                 | `published` |
+| `beyondWork`    | document  | emoji, title, subtitle, body[], mood                                                             | `published` |
+| `philosophy`    | document  | title, summary, tags[]                                                                           | `published` |
+| `journalTopic`  | document  | title, preview, category, substackUrl                                                            | `published` |
+| `lifePillar`    | document  | brand, key, theme, description, contentPillars[]                                                 | —           |
+| `product`       | document  | title, slug, brand, productType, priceType, price, coverImage                                    | `published` |
+| `blogPost`      | document  | title, slug, category, excerpt, publishedAt, body (portableText), seo                            | `published` |
 
 ### Desk Structure Patterns (from Before Maps)
+
 - **Published/Draft folders:** Content types with `published` toggle get Published / Drafts / All sub-folders in Studio
 - **Page visibility toggles:** `enableProfessionalPage`, `enablePersonalPage`, `enableProductsPage`, `enableBlogPage` in siteSettings
 - **CMS-editable dropdowns:** Categories for blog, projects, journal topics, and product themes/types are managed in Site Settings → Dropdown Options (not hardcoded in schemas)
@@ -168,15 +174,15 @@ Two independent color systems controlled by CSS variables in `globals.css`:
 
 ## Rendering Strategy
 
-| Route | Strategy | Revalidation |
-|---|---|---|
-| `/` | SSG + ISR | 60s |
-| `/professional` | SSG + ISR | 60s |
-| `/personal` | SSG + ISR | 60s |
-| `/products` | SSG + ISR | 60s |
-| `/products/[slug]` | SSG + ISR | 60s |
-| `/blog/[slug]` | SSG + ISR | 60s |
-| `/studio/**` | Client-side | N/A |
+| Route              | Strategy    | Revalidation |
+| ------------------ | ----------- | ------------ |
+| `/`                | SSG + ISR   | 60s          |
+| `/professional`    | SSG + ISR   | 60s          |
+| `/personal`        | SSG + ISR   | 60s          |
+| `/products`        | SSG + ISR   | 60s          |
+| `/products/[slug]` | SSG + ISR   | 60s          |
+| `/blog/[slug]`     | SSG + ISR   | 60s          |
+| `/studio/**`       | Client-side | N/A          |
 
 ---
 

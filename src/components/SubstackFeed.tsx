@@ -23,8 +23,8 @@ export default function SubstackFeed({ posts }: Props) {
             Recent dispatches.
           </h2>
           <p className="text-[var(--text-muted)] max-w-2xl mb-16 leading-relaxed">
-            Latest from Substack. cybersecurity analysis, travel reflections,
-            and the ongoing documentation of building something intentional.
+            Latest from Substack. cybersecurity analysis, travel reflections, and the ongoing
+            documentation of building something intentional.
           </p>
         </AnimatedSection>
 

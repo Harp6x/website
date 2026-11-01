@@ -21,12 +21,12 @@ export default function BeyondWork({ sections: sectionsProp }: Props) {
             The human layer.
           </h2>
           <p className="text-[var(--text-secondary)] text-base max-w-2xl mb-3 leading-relaxed">
-            The portfolio shows what I do. This part shows who I am, technically
-            skilled, emotionally aware, creatively ambitious, drawn toward exploration.
+            The portfolio shows what I do. This part shows who I am, technically skilled,
+            emotionally aware, creatively ambitious, drawn toward exploration.
           </p>
           <p className="text-[var(--text-muted)] text-base max-w-2xl mb-10 leading-relaxed">
-            Not a finished story. A documented transition toward a life where work,
-            travel, creativity, and meaning are integrated instead of compartmentalized.
+            Not a finished story. A documented transition toward a life where work, travel,
+            creativity, and meaning are integrated instead of compartmentalized.
           </p>
         </AnimatedSection>
 
@@ -69,8 +69,8 @@ export default function BeyondWork({ sections: sectionsProp }: Props) {
         <AnimatedSection delay={0.2} className="mt-12">
           <div className="max-w-2xl mx-auto text-center">
             <p className="font-serif-heading text-[var(--text-muted)] text-xl leading-relaxed italic">
-              &ldquo;The strongest thing about this story is that it&apos;s still
-              being written. Still in the middle of becoming. and honest about it.&rdquo;
+              &ldquo;The strongest thing about this story is that it&apos;s still being written.
+              Still in the middle of becoming. and honest about it.&rdquo;
             </p>
           </div>
         </AnimatedSection>

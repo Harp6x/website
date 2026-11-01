@@ -37,12 +37,7 @@ export default function About({ profile: profileProp }: Props) {
                     /\*\*(.+?)\*\*/g,
                     '<span class="text-[var(--text-primary)]">$1</span>'
                   );
-                  return (
-                    <p
-                      key={i}
-                      dangerouslySetInnerHTML={{ __html: html }}
-                    />
-                  );
+                  return <p key={i} dangerouslySetInnerHTML={{ __html: html }} />;
                 })}
                 <p className="text-[var(--text-muted)]">{profile.bioClosing}</p>
               </div>

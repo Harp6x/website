@@ -39,7 +39,8 @@ async function fetchChannelVideos(channelId: string, maxResults = 6): Promise<Yo
         id: resourceId?.videoId || "",
         title: (snippet.title as string) || "",
         description: ((snippet.description as string) || "").slice(0, 200),
-        thumbnail: thumbnails?.maxres?.url || thumbnails?.high?.url || thumbnails?.medium?.url || "",
+        thumbnail:
+          thumbnails?.maxres?.url || thumbnails?.high?.url || thumbnails?.medium?.url || "",
         publishedAt: (snippet.publishedAt as string) || "",
         channelTitle: (snippet.channelTitle as string) || "",
       };
@@ -54,8 +55,12 @@ export async function getYouTubeVideos(): Promise<YouTubeVideo[]> {
   const jimnyrunsId = process.env.YOUTUBE_CHANNEL_JIMNYRUNS;
 
   const results = await Promise.all([
-    harsh6xId && harsh6xId !== "placeholder" ? fetchChannelVideos(harsh6xId, 4) : Promise.resolve([]),
-    jimnyrunsId && jimnyrunsId !== "placeholder" ? fetchChannelVideos(jimnyrunsId, 4) : Promise.resolve([]),
+    harsh6xId && harsh6xId !== "placeholder"
+      ? fetchChannelVideos(harsh6xId, 4)
+      : Promise.resolve([]),
+    jimnyrunsId && jimnyrunsId !== "placeholder"
+      ? fetchChannelVideos(jimnyrunsId, 4)
+      : Promise.resolve([]),
   ]);
 
   // Merge and sort by date

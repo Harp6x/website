@@ -206,18 +206,33 @@ body {
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes slow-pulse {
-  0%, 100% { opacity: 0.4; }
-  50% { opacity: 0.8; }
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
 }
 
 @keyframes line-expand {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 /* ─── Personal page warm & organic wrapper ─── */
@@ -241,7 +256,7 @@ body {
 
 /* Serif heading for personal pages */
 .font-serif-heading {
-  font-family: var(--font-lora), Georgia, 'Times New Roman', serif;
+  font-family: var(--font-lora), Georgia, "Times New Roman", serif;
 }
 
 /* Warm organic card */

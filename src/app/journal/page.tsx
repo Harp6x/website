@@ -37,9 +37,9 @@ export default async function JournalPage() {
               Thinking out loud.
             </h1>
             <p className="text-[var(--text-muted)] text-base max-w-2xl mb-16 leading-relaxed">
-              Long-form writing and reflections. Lessons from cybersecurity,
-              travel journals, philosophy, systems thinking, and the honest
-              process of building a life that holds up under pressure.
+              Long-form writing and reflections. Lessons from cybersecurity, travel journals,
+              philosophy, systems thinking, and the honest process of building a life that holds up
+              under pressure.
             </p>
           </AnimatedSection>
 

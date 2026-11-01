@@ -10,7 +10,17 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CrossPageNudge from "@/components/CrossPageNudge";
 import VenturesSection from "@/components/VenturesSection";
-import { fetchProfile, fetchBeyondWork, fetchPhilosophies, fetchJournalTopics, fetchPersonalAbout, fetchLifePillars, fetchProducts, fetchVentures, fetchSiteSettings } from "@/lib/cms";
+import {
+  fetchProfile,
+  fetchBeyondWork,
+  fetchPhilosophies,
+  fetchJournalTopics,
+  fetchPersonalAbout,
+  fetchLifePillars,
+  fetchProducts,
+  fetchVentures,
+  fetchSiteSettings,
+} from "@/lib/cms";
 
 export const revalidate = 60;
 
@@ -21,7 +31,17 @@ export const metadata = {
 };
 
 export default async function PersonalPage() {
-  const [profile, beyondWork, philosophies, journalTopics, personalAbout, lifePillars, products, ventures, settings] = await Promise.all([
+  const [
+    profile,
+    beyondWork,
+    philosophies,
+    journalTopics,
+    personalAbout,
+    lifePillars,
+    products,
+    ventures,
+    settings,
+  ] = await Promise.all([
     fetchProfile(),
     fetchBeyondWork(),
     fetchPhilosophies(),

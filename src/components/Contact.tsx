@@ -20,14 +20,26 @@ export default function Contact({ variant = "professional", profile: profileProp
     <section id="contact" className="section-padding px-6 md:px-10">
       <div className="max-w-5xl mx-auto">
         <AnimatedSection>
-          <div className={`font-mono text-[11px] tracking-[0.3em] uppercase mb-6 ${isPro ? 'text-[#d97706]' : 'text-[var(--personal-teal)]'}`}>
+          <div
+            className={`font-mono text-[11px] tracking-[0.3em] uppercase mb-6 ${isPro ? "text-[#d97706]" : "text-[var(--personal-teal)]"}`}
+          >
             Contact
           </div>
-          <h2 className={`text-4xl md:text-5xl lg:text-6xl text-[var(--text-primary)] mb-6 leading-tight ${isPro ? 'font-bold' : 'font-serif-heading font-semibold'}`}>
+          <h2
+            className={`text-4xl md:text-5xl lg:text-6xl text-[var(--text-primary)] mb-6 leading-tight ${isPro ? "font-bold" : "font-serif-heading font-semibold"}`}
+          >
             {isPro ? (
-              <>Let&apos;s build<br /><span className="text-[var(--text-secondary)]">something together.</span></>
+              <>
+                Let&apos;s build
+                <br />
+                <span className="text-[var(--text-secondary)]">something together.</span>
+              </>
             ) : (
-              <>Let&apos;s start<br /><span className="text-[var(--text-secondary)]">a conversation worth having.</span></>
+              <>
+                Let&apos;s start
+                <br />
+                <span className="text-[var(--text-secondary)]">a conversation worth having.</span>
+              </>
             )}
           </h2>
           <p className="text-[var(--text-muted)] text-base max-w-xl mb-16 leading-relaxed">
@@ -69,7 +81,14 @@ export default function Contact({ variant = "professional", profile: profileProp
               <div className="space-y-4">
                 <p className="text-[var(--text-muted)] text-sm mb-6">Find me elsewhere</p>
                 {profile.socials.map(({ label, href }) => {
-                  const Icon = label === "LinkedIn" ? FaLinkedinIn : label === "GitHub" ? SiGithub : label === "YouTube" ? SiYoutube : SiSubstack;
+                  const Icon =
+                    label === "LinkedIn"
+                      ? FaLinkedinIn
+                      : label === "GitHub"
+                        ? SiGithub
+                        : label === "YouTube"
+                          ? SiYoutube
+                          : SiSubstack;
                   return (
                     <a
                       key={label}
@@ -95,31 +114,53 @@ export default function Contact({ variant = "professional", profile: profileProp
               <AnimatedSection key={brand} delay={i * 0.08}>
                 <div className="warm-card p-8">
                   <h3 className="font-serif-heading text-lg font-semibold text-[var(--personal-accent)] mb-6">
-                    {brand === "theregoesuddip" ? "There Goes Uddip" : brand === "harp6x" ? "Harp6x" : "Jimny Runs"}
+                    {brand === "theregoesuddip"
+                      ? "There Goes Uddip"
+                      : brand === "harp6x"
+                        ? "Harp6x"
+                        : "Jimny Runs"}
                   </h3>
                   <div className="flex flex-wrap gap-4">
                     {links.instagram && (
-                      <a href={links.instagram} target="_blank" rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-border-subtle)] text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/30 hover:text-[var(--text-primary)] transition-all">
-                        <SiInstagram className="w-4 h-4" /> Instagram <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <a
+                        href={links.instagram}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-border-subtle)] text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/30 hover:text-[var(--text-primary)] transition-all"
+                      >
+                        <SiInstagram className="w-4 h-4" /> Instagram{" "}
+                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     )}
                     {links.youtube && (
-                      <a href={links.youtube} target="_blank" rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-border-subtle)] text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/30 hover:text-[var(--text-primary)] transition-all">
-                        <SiYoutube className="w-4 h-4" /> YouTube <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <a
+                        href={links.youtube}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-border-subtle)] text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/30 hover:text-[var(--text-primary)] transition-all"
+                      >
+                        <SiYoutube className="w-4 h-4" /> YouTube{" "}
+                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     )}
                     {links.substack && (
-                      <a href={links.substack} target="_blank" rel="noopener noreferrer"
-                        className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-border-subtle)] text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/30 hover:text-[var(--text-primary)] transition-all">
-                        <SiSubstack className="w-4 h-4" /> Substack <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <a
+                        href={links.substack}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-border-subtle)] text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/30 hover:text-[var(--text-primary)] transition-all"
+                      >
+                        <SiSubstack className="w-4 h-4" /> Substack{" "}
+                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     )}
                     {links.email && (
-                      <a href={`mailto:${links.email}`}
-                        className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-accent)]/20 text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/40 hover:text-[var(--text-primary)] transition-all">
-                        <SiGmail className="w-4 h-4" /> {links.email} <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
+                      <a
+                        href={`mailto:${links.email}`}
+                        className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-full border border-[var(--personal-accent)]/20 text-[var(--text-secondary)] text-sm hover:border-[var(--personal-accent)]/40 hover:text-[var(--text-primary)] transition-all"
+                      >
+                        <SiGmail className="w-4 h-4" /> {links.email}{" "}
+                        <ArrowUpRight className="w-3 h-3 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </a>
                     )}
                   </div>

@@ -19,14 +19,20 @@ async function parseRSSFeed(url: string, source: string): Promise<SubstackPost[]
 
     for (const itemXml of itemMatches.slice(0, 10)) {
       const getTag = (tag: string) => {
-        const match = itemXml.match(new RegExp(`<${tag}[^>]*><!\\[CDATA\\[([\\s\\S]*?)\\]\\]><\\/${tag}>|<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`));
+        const match = itemXml.match(
+          new RegExp(
+            `<${tag}[^>]*><!\\[CDATA\\[([\\s\\S]*?)\\]\\]><\\/${tag}>|<${tag}[^>]*>([\\s\\S]*?)<\\/${tag}>`
+          )
+        );
         return (match?.[1] || match?.[2] || "").trim();
       };
 
       items.push({
         title: getTag("title"),
         link: getTag("link"),
-        description: getTag("description").replace(/<[^>]+>/g, "").slice(0, 250),
+        description: getTag("description")
+          .replace(/<[^>]+>/g, "")
+          .slice(0, 250),
         pubDate: getTag("pubDate"),
         creator: getTag("dc:creator"),
         source,

@@ -23,9 +23,8 @@ export default function YouTubeFeed({ videos }: Props) {
             Long-form visual stories.
           </h2>
           <p className="text-[var(--text-muted)] max-w-2xl mb-6 leading-relaxed">
-            Travel films, trekking documentaries, vehicle builds, and
-            philosophy-driven reflections. a long-term archive of experiences
-            and storytelling.
+            Travel films, trekking documentaries, vehicle builds, and philosophy-driven reflections.
+            a long-term archive of experiences and storytelling.
           </p>
           <p className="text-[var(--text-faint)] text-sm font-mono italic mb-16">
             The behind-the-scenes of becoming.

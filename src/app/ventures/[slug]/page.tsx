@@ -7,7 +7,10 @@ import Link from "next/link";
 
 export const revalidate = 60;
 
-const VENTURE_STORIES: Record<string, { story: string[]; learned: string[]; statusDetail: string }> = {
+const VENTURE_STORIES: Record<
+  string,
+  { story: string[]; learned: string[]; statusDetail: string }
+> = {
   indieroam: {
     story: [
       "IndieRoam was co-founded to build one of India's leading automotive expedition companies. The self-drive overland market in India has long been polarized between rigid sightseeing tourist buses and hardcore off-road rallies with minimal hospitality. IndieRoam bridges that divide with premium self-drive expeditions, curated convoys, and end-to-end managed road experiences.",
@@ -19,7 +22,8 @@ const VENTURE_STORIES: Record<string, { story: string[]; learned: string[]; stat
       "The traveler experience is dictated by convoy discipline. Clear radio protocols, defined roles, and calm contingency management make high-altitude travel accessible and safe.",
       "Building a premium adventure brand requires absolute operational integrity. Trust is earned on the mountain passes, not in marketing copy.",
     ],
-    statusDetail: "Actively operating premium self-drive convoys across Ladakh and Himalayan corridors while scaling expedition technology and operations.",
+    statusDetail:
+      "Actively operating premium self-drive convoys across Ladakh and Himalayan corridors while scaling expedition technology and operations.",
   },
   "before-maps": {
     story: [
@@ -32,7 +36,8 @@ const VENTURE_STORIES: Record<string, { story: string[]; learned: string[]; stat
       "Bespoke itinerary design requires disciplined logistics: acclimatization timing, transit buffers, and local relationships define the journey's quality.",
       "Independent travel ventures succeed by earning deep trust through transparent preparation and personalized care.",
     ],
-    statusDetail: "Curating group departures, private journeys, and custom itineraries across India based on ongoing firsthand field scouting.",
+    statusDetail:
+      "Curating group departures, private journeys, and custom itineraries across India based on ongoing firsthand field scouting.",
   },
   "ms-paul-therapies": {
     story: [
@@ -45,7 +50,8 @@ const VENTURE_STORIES: Record<string, { story: string[]; learned: string[]; stat
       "Technology leadership in clinical settings means building systems that empower non-technical practitioners without creating dependencies.",
       "Reliable digital systems—from automated intake to secure payment processing—are the backbone of sustainable clinical practice growth.",
     ],
-    statusDetail: "Live platform serving clients with automated booking, payment workflows, and expanding clinical workshops.",
+    statusDetail:
+      "Live platform serving clients with automated booking, payment workflows, and expanding clinical workshops.",
   },
 };
 
@@ -66,10 +72,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
 export default async function VentureDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const [venture, profile] = await Promise.all([
-    fetchVenture(slug),
-    fetchProfile(),
-  ]);
+  const [venture, profile] = await Promise.all([fetchVenture(slug), fetchProfile()]);
 
   if (!venture) notFound();
 
@@ -143,7 +146,9 @@ export default async function VentureDetailPage({ params }: { params: Promise<{ 
               </h2>
               <div className="space-y-4">
                 {extra.story.map((p, i) => (
-                  <p key={i} className="text-[var(--text-secondary)] text-base leading-[1.8]">{p}</p>
+                  <p key={i} className="text-[var(--text-secondary)] text-base leading-[1.8]">
+                    {p}
+                  </p>
                 ))}
               </div>
             </div>
@@ -157,7 +162,10 @@ export default async function VentureDetailPage({ params }: { params: Promise<{ 
               </h2>
               <ul className="space-y-2">
                 {venture.highlights.map((h) => (
-                  <li key={h} className="flex items-start gap-3 text-[var(--text-secondary)] text-sm leading-relaxed">
+                  <li
+                    key={h}
+                    className="flex items-start gap-3 text-[var(--text-secondary)] text-sm leading-relaxed"
+                  >
                     <span className="text-[var(--personal-accent)] mt-1">→</span> {h}
                   </li>
                 ))}
@@ -173,7 +181,9 @@ export default async function VentureDetailPage({ params }: { params: Promise<{ 
               </h2>
               <div className="space-y-4">
                 {extra.learned.map((p, i) => (
-                  <p key={i} className="text-[var(--text-secondary)] text-base leading-[1.8]">{p}</p>
+                  <p key={i} className="text-[var(--text-secondary)] text-base leading-[1.8]">
+                    {p}
+                  </p>
                 ))}
               </div>
             </div>
@@ -187,7 +197,10 @@ export default async function VentureDetailPage({ params }: { params: Promise<{ 
               </h2>
               <div className="flex flex-wrap gap-2">
                 {venture.techStack.map((t) => (
-                  <span key={t} className="text-xs font-mono text-[var(--text-secondary)] px-3 py-1 rounded-full border border-[var(--personal-border-subtle)]">
+                  <span
+                    key={t}
+                    className="text-xs font-mono text-[var(--text-secondary)] px-3 py-1 rounded-full border border-[var(--personal-border-subtle)]"
+                  >
                     {t}
                   </span>
                 ))}

@@ -4,7 +4,8 @@ const ventures: Venture[] = [
   {
     slug: "indieroam",
     title: "IndieRoam",
-    tagline: "Premium self-drive expeditions, curated convoys, and managed road experiences across India.",
+    tagline:
+      "Premium self-drive expeditions, curated convoys, and managed road experiences across India.",
     role: "Co-Founder",
     philosophy:
       "Building one of India's leading automotive expedition companies. We combine precision route reconnaissance, managed convoys, and rugged hospitality to deliver transformative road experiences in high-altitude terrain.",
@@ -15,13 +16,20 @@ const ventures: Venture[] = [
       "Field-tested automotive expedition execution across Ladakh and high-altitude mountain corridors",
       "Long-term ambition to establish a trusted, recognizable overland expedition brand in India",
     ],
-    techStack: ["Expedition Operations", "Convoy Management", "Fleet Logistics", "Digital Booking", "Growth Strategy"],
+    techStack: [
+      "Expedition Operations",
+      "Convoy Management",
+      "Fleet Logistics",
+      "Digital Booking",
+      "Growth Strategy",
+    ],
     status: "active",
   },
   {
     slug: "before-maps",
     title: "BeforeMaps",
-    tagline: "Independent travel venture: personally explored destinations, group departures, and custom itineraries.",
+    tagline:
+      "Independent travel venture: personally explored destinations, group departures, and custom itineraries.",
     role: "Founder",
     url: "https://beforemaps.com",
     philosophy:
@@ -38,7 +46,8 @@ const ventures: Venture[] = [
   {
     slug: "ms-paul-therapies",
     title: "MSPaulTherapies",
-    tagline: "Digital systems, technology leadership, and platform architecture for modern clinical wellness.",
+    tagline:
+      "Digital systems, technology leadership, and platform architecture for modern clinical wellness.",
     role: "Chief Technology Officer (CTO)",
     url: "https://mspaultherapies.in",
     philosophy:
@@ -54,4 +63,3 @@ const ventures: Venture[] = [
 ];
 
 export default ventures;
-

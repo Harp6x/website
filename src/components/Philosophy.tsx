@@ -8,42 +8,50 @@ import { motion, AnimatePresence } from "framer-motion";
 const defaultPhilosophies = [
   {
     title: "Systems over motivation",
-    summary: "Motivation fades. Systems compound. Build the infrastructure for the life you want, and let it work even when you don't feel like it.",
+    summary:
+      "Motivation fades. Systems compound. Build the infrastructure for the life you want, and let it work even when you don't feel like it.",
     tags: ["discipline", "systems thinking"],
   },
   {
     title: "Slow compounding",
-    summary: "The most meaningful things in life take time. Relationships, skills, trust, understanding. all of it compounds slowly if you stay consistent.",
+    summary:
+      "The most meaningful things in life take time. Relationships, skills, trust, understanding. all of it compounds slowly if you stay consistent.",
     tags: ["patience", "long-term"],
   },
   {
     title: "Signal over noise",
-    summary: "Most information is noise. Most opinions are noise. Most trends are noise. Curate ruthlessly. in content, in relationships, in how you spend attention.",
+    summary:
+      "Most information is noise. Most opinions are noise. Most trends are noise. Curate ruthlessly. in content, in relationships, in how you spend attention.",
     tags: ["attention", "clarity"],
   },
   {
     title: "Build once, use forever",
-    summary: "Whether it's a system, a habit, a skill, or a piece of infrastructure. invest upfront so it serves you indefinitely. Front-load the work.",
+    summary:
+      "Whether it's a system, a habit, a skill, or a piece of infrastructure. invest upfront so it serves you indefinitely. Front-load the work.",
     tags: ["leverage", "efficiency"],
   },
   {
     title: "Freedom with structure",
-    summary: "Real freedom isn't the absence of rules. It's having enough structure that you can be spontaneous without chaos. Discipline creates space.",
+    summary:
+      "Real freedom isn't the absence of rules. It's having enough structure that you can be spontaneous without chaos. Discipline creates space.",
     tags: ["freedom", "discipline"],
   },
   {
     title: "Document, don't perform",
-    summary: "The difference between personal branding and documentation is intent. One seeks validation. The other seeks clarity. Always choose documentation.",
+    summary:
+      "The difference between personal branding and documentation is intent. One seeks validation. The other seeks clarity. Always choose documentation.",
     tags: ["authenticity", "self-awareness"],
   },
   {
     title: "Anti-average by default",
-    summary: "Not contrarian for the sake of it. but questioning defaults. The average life is designed by committee. An intentional one is designed by you.",
+    summary:
+      "Not contrarian for the sake of it. but questioning defaults. The average life is designed by committee. An intentional one is designed by you.",
     tags: ["intentionality", "identity"],
   },
   {
     title: "Human-first automation",
-    summary: "Technology should amplify human capability, not replace human judgment. Automate the mundane so you can focus on what actually matters.",
+    summary:
+      "Technology should amplify human capability, not replace human judgment. Automate the mundane so you can focus on what actually matters.",
     tags: ["technology", "humanity"],
   },
 ];
@@ -82,7 +90,10 @@ export default function Philosophy({ philosophies: philosophiesProp }: Props) {
                     </h3>
                     <div className="flex gap-2 mt-1">
                       {p.tags.map((tag) => (
-                        <span key={tag} className="text-[8px] font-mono text-[var(--text-faint)] tracking-wider uppercase">
+                        <span
+                          key={tag}
+                          className="text-[8px] font-mono text-[var(--text-faint)] tracking-wider uppercase"
+                        >
                           {tag}
                         </span>
                       ))}

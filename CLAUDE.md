@@ -7,6 +7,7 @@
 **What this is:** Dual-persona portfolio site — `/professional` (career, amber accent) and `/personal` (philosophy, terracotta/teal accent). Landing page at `/` lets user choose.
 
 ## Quick Rules
+
 - Sanity project ID: `55vwwzpf` · Dataset: `production` · Studio at `/studio`
 - Dual-source data: Sanity CMS primary, static fallback in `src/data/*.ts`
 - All fetches via `lib/cms.ts` — never call Sanity directly from components
@@ -19,6 +20,7 @@
 - **Read `docs/lessons/` before every session**
 
 ## Key Locations
+
 - Data layer: `src/lib/cms.ts` (CMS → fallback for every fetch)
 - Types: `src/data/types.ts` (app) + `src/sanity/queries.ts` (CMS)
 - Themes: `src/app/globals.css` (CSS variables, light/dark × professional/personal)
@@ -26,6 +28,7 @@
 - Fallback data: `src/data/` (profile, experience, projects, skills, etc.)
 
 ## Docs Index
+
 - `AGENTS.md` — Full AI agent context (detailed)
 - `CMS-GUIDE.md` — Self-service CMS maintenance guide
 - `docs/ARCHITECTURE.md` — System architecture and data flow

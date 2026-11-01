@@ -4,12 +4,7 @@ import { useMemo, useState } from "react";
 import { Search, X } from "lucide-react";
 import type { Product } from "@/data/types";
 import ProductCard from "@/components/ProductCard";
-import {
-  BRAND_LABELS,
-  PRODUCT_TYPE_LABELS,
-  THEME_LABELS,
-  PRICE_TYPE_LABELS,
-} from "@/lib/products";
+import { BRAND_LABELS, PRODUCT_TYPE_LABELS, THEME_LABELS, PRICE_TYPE_LABELS } from "@/lib/products";
 
 type Filters = {
   brand: string | null;
@@ -24,18 +19,9 @@ const EMPTY: Filters = { brand: null, type: null, price: null, themes: [], q: ""
 export default function ProductCatalog({ products }: { products: Product[] }) {
   const [f, setF] = useState<Filters>(EMPTY);
 
-  const brands = useMemo(
-    () => Array.from(new Set(products.map((p) => p.brand))),
-    [products]
-  );
-  const types = useMemo(
-    () => Array.from(new Set(products.map((p) => p.productType))),
-    [products]
-  );
-  const prices = useMemo(
-    () => Array.from(new Set(products.map((p) => p.priceType))),
-    [products]
-  );
+  const brands = useMemo(() => Array.from(new Set(products.map((p) => p.brand))), [products]);
+  const types = useMemo(() => Array.from(new Set(products.map((p) => p.productType))), [products]);
+  const prices = useMemo(() => Array.from(new Set(products.map((p) => p.priceType))), [products]);
   const themes = useMemo(() => {
     const set = new Set<string>();
     products.forEach((p) => p.themes.forEach((t) => set.add(t)));
@@ -47,8 +33,7 @@ export default function ProductCatalog({ products }: { products: Product[] }) {
       if (f.brand && p.brand !== f.brand) return false;
       if (f.type && p.productType !== f.type) return false;
       if (f.price && p.priceType !== f.price) return false;
-      if (f.themes.length && !f.themes.every((t) => p.themes.includes(t)))
-        return false;
+      if (f.themes.length && !f.themes.every((t) => p.themes.includes(t))) return false;
       if (f.q) {
         const hay = `${p.title} ${p.shortDescription}`.toLowerCase();
         if (!hay.includes(f.q.toLowerCase())) return false;
@@ -60,13 +45,10 @@ export default function ProductCatalog({ products }: { products: Product[] }) {
   const toggleTheme = (v: string) =>
     setF((s) => ({
       ...s,
-      themes: s.themes.includes(v)
-        ? s.themes.filter((x) => x !== v)
-        : [...s.themes, v],
+      themes: s.themes.includes(v) ? s.themes.filter((x) => x !== v) : [...s.themes, v],
     }));
 
-  const active =
-    f.brand || f.type || f.price || f.themes.length > 0 || f.q.length > 0;
+  const active = f.brand || f.type || f.price || f.themes.length > 0 || f.q.length > 0;
 
   return (
     <div className="mt-12 grid gap-10 lg:grid-cols-[260px_1fr]">
@@ -187,13 +169,7 @@ function Pill({
   );
 }
 
-function FilterGroup({
-  title,
-  children,
-}: {
-  title: string;
-  children: React.ReactNode;
-}) {
+function FilterGroup({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <div>
       <h3 className="text-xs font-mono uppercase tracking-[0.2em] text-[var(--text-muted)] mb-3">

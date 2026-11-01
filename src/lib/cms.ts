@@ -1,6 +1,43 @@
-import { getProfile, getExperiences, getProjects, getSkills, getBeyondWork, getPhilosophies, getJournalTopics, getPersonalAbout, getLifePillars, getProducts, getVentures, getVenture, getSiteSettings } from "@/sanity/queries";
-import type { SanityExperience, SanityProject, SanityBeyondWork, SanityPhilosophy, SanityJournalTopic, SanityPersonalAbout, SanityLifePillar, SanityProductDoc, SanityVenture } from "@/sanity/queries";
-import type { Profile, Chapter, Project, Skills, LifeSection, JournalTopic, Product, ProductBrand, ProductType, PriceType, ProductSurface, Venture } from "@/data/types";
+import {
+  getProfile,
+  getExperiences,
+  getProjects,
+  getSkills,
+  getBeyondWork,
+  getPhilosophies,
+  getJournalTopics,
+  getPersonalAbout,
+  getLifePillars,
+  getProducts,
+  getVentures,
+  getVenture,
+  getSiteSettings,
+} from "@/sanity/queries";
+import type {
+  SanityExperience,
+  SanityProject,
+  SanityBeyondWork,
+  SanityPhilosophy,
+  SanityJournalTopic,
+  SanityPersonalAbout,
+  SanityLifePillar,
+  SanityProductDoc,
+  SanityVenture,
+} from "@/sanity/queries";
+import type {
+  Profile,
+  Chapter,
+  Project,
+  Skills,
+  LifeSection,
+  JournalTopic,
+  Product,
+  ProductBrand,
+  ProductType,
+  PriceType,
+  ProductSurface,
+  Venture,
+} from "@/data/types";
 
 import profileFallback from "@/data/profile";
 import experienceFallback from "@/data/experience";
@@ -19,10 +56,18 @@ export async function fetchProfile(): Promise<Profile> {
   const cms = await safe(getProfile);
   if (!cms) return profileFallback;
 
-  const personalBrands: Record<string, { instagram?: string; youtube?: string; substack?: string; email?: string }> = {};
+  const personalBrands: Record<
+    string,
+    { instagram?: string; youtube?: string; substack?: string; email?: string }
+  > = {};
   if (cms.personalBrands) {
     for (const b of cms.personalBrands) {
-      personalBrands[b.key] = { instagram: b.instagram, youtube: b.youtube, substack: b.substack, email: b.email };
+      personalBrands[b.key] = {
+        instagram: b.instagram,
+        youtube: b.youtube,
+        substack: b.substack,
+        email: b.email,
+      };
     }
   }
 
@@ -44,8 +89,12 @@ export async function fetchProfile(): Promise<Profile> {
     bioClosing: cms.bioClosing ?? profileFallback.bioClosing,
     stats: cms.stats?.length ? cms.stats : profileFallback.stats,
     socials: cms.socials?.length ? cms.socials : profileFallback.socials,
-    professionalEmails: cms.professionalEmails?.length ? cms.professionalEmails : profileFallback.professionalEmails,
-    personalBrands: Object.keys(personalBrands).length ? personalBrands : profileFallback.personalBrands,
+    professionalEmails: cms.professionalEmails?.length
+      ? cms.professionalEmails
+      : profileFallback.professionalEmails,
+    personalBrands: Object.keys(personalBrands).length
+      ? personalBrands
+      : profileFallback.personalBrands,
     professionalResumeUrl: cms.professionalResumeUrl ?? profileFallback.professionalResumeUrl,
     personalResumeUrl: cms.personalResumeUrl ?? profileFallback.personalResumeUrl,
     claudeReviewHeading: cms.claudeReviewHeading ?? profileFallback.claudeReviewHeading,
@@ -105,7 +154,9 @@ export async function fetchBeyondWork(): Promise<LifeSection[]> {
   }));
 }
 
-export async function fetchPhilosophies(): Promise<{ title: string; summary: string; tags: string[] }[]> {
+export async function fetchPhilosophies(): Promise<
+  { title: string; summary: string; tags: string[] }[]
+> {
   const cms = await safe(getPhilosophies);
   if (!cms?.length) return [];
   return cms.map((p: SanityPhilosophy) => ({
@@ -130,7 +181,21 @@ export async function fetchPersonalAbout(): Promise<SanityPersonalAbout | null> 
   return safe(getPersonalAbout);
 }
 
-export async function fetchLifePillars(): Promise<{ brand: string; key: string; theme: string; description: string; contentPillars: string[]; bio?: string; website?: string; instagram?: string; youtube?: string; substack?: string; email?: string }[]> {
+export async function fetchLifePillars(): Promise<
+  {
+    brand: string;
+    key: string;
+    theme: string;
+    description: string;
+    contentPillars: string[];
+    bio?: string;
+    website?: string;
+    instagram?: string;
+    youtube?: string;
+    substack?: string;
+    email?: string;
+  }[]
+> {
   const cms = await safe(getLifePillars);
   if (!cms?.length) return [];
   return cms.map((l: SanityLifePillar) => ({

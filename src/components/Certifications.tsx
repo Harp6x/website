@@ -37,14 +37,10 @@ export default function Certifications() {
           <AnimatedSection delay={0}>
             <div className="p-6 rounded-xl bg-[#111118] border border-[#1e1e2e] h-full">
               <GraduationCap className="w-8 h-8 text-[#10b981] mb-4" />
-              <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-4">
-                Education
-              </h3>
+              <h3 className="text-[var(--text-primary)] font-semibold text-lg mb-4">Education</h3>
               <div className="space-y-3">
                 <div>
-                  <p className="text-[var(--text-primary)] text-sm font-medium">
-                    Bachelor of Arts
-                  </p>
+                  <p className="text-[var(--text-primary)] text-sm font-medium">Bachelor of Arts</p>
                   <p className="text-[#71717a] text-xs">
                     Subharti University, New Delhi · 2020–2023
                   </p>
@@ -70,10 +66,7 @@ export default function Certifications() {
               </h3>
               <ul className="space-y-2">
                 {certs.map((cert) => (
-                  <li
-                    key={cert}
-                    className="text-[#71717a] text-sm flex items-start gap-2"
-                  >
+                  <li key={cert} className="text-[#71717a] text-sm flex items-start gap-2">
                     <span className="text-[#10b981] mt-0.5 shrink-0">✓</span>
                     {cert}
                   </li>
@@ -91,10 +84,7 @@ export default function Certifications() {
               </h3>
               <ul className="space-y-2">
                 {achievements.map((a) => (
-                  <li
-                    key={a}
-                    className="text-[#71717a] text-sm flex items-start gap-2"
-                  >
+                  <li key={a} className="text-[#71717a] text-sm flex items-start gap-2">
                     <span className="text-[#10b981] mt-0.5 shrink-0">›</span>
                     {a}
                   </li>

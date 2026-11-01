@@ -24,12 +24,13 @@ export default function ProductCard({ product, variant = "professional" }: Props
   const cardClass = isPersonal
     ? "warm-card"
     : "bg-[var(--bg-secondary)] border border-[var(--border-subtle)] rounded-lg hover:border-[var(--border)] transition-all duration-500";
-  const borderSubtle = isPersonal
-    ? "var(--personal-border-subtle)"
-    : "var(--border-subtle)";
+  const borderSubtle = isPersonal ? "var(--personal-border-subtle)" : "var(--border-subtle)";
 
   return (
-    <Link href={`/products/${product.slug}`} className={`group flex flex-col h-full p-7 ${cardClass}`}>
+    <Link
+      href={`/products/${product.slug}`}
+      className={`group flex flex-col h-full p-7 ${cardClass}`}
+    >
       {/* Cover (only if provided) */}
       {product.coverImage && (
         <div className="relative aspect-[16/9] -mx-7 -mt-7 mb-6 overflow-hidden rounded-t-lg bg-black/5">
@@ -61,9 +62,7 @@ export default function ProductCard({ product, variant = "professional" }: Props
       </h3>
 
       {product.format && (
-        <p className="text-[11px] font-mono text-[var(--text-faint)] mb-3">
-          {product.format}
-        </p>
+        <p className="text-[11px] font-mono text-[var(--text-faint)] mb-3">{product.format}</p>
       )}
 
       <p className="text-[var(--text-secondary)] text-[15px] leading-relaxed mb-6 flex-1">
@@ -86,9 +85,7 @@ export default function ProductCard({ product, variant = "professional" }: Props
 
         <div className="flex items-center gap-4">
           {cta.disabled ? (
-            <span className="text-sm font-medium text-[var(--text-faint)]">
-              {cta.label}
-            </span>
+            <span className="text-sm font-medium text-[var(--text-faint)]">{cta.label}</span>
           ) : (
             <a
               href={cta.href}

@@ -14,9 +14,7 @@ export default function Newsletter({ variant = "personal" }: Props) {
         <AnimatedSection>
           <SiSubstack className="w-6 h-6 text-[#d97706] mx-auto mb-6" />
           <h2 className="text-2xl md:text-3xl font-bold text-[var(--text-primary)] mb-4">
-            {variant === "professional"
-              ? "Stay in the loop."
-              : "Follow the journey."}
+            {variant === "professional" ? "Stay in the loop." : "Follow the journey."}
           </h2>
           <p className="text-[var(--text-muted)] max-w-lg mx-auto mb-10 leading-relaxed">
             {variant === "professional"

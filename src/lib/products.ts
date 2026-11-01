@@ -38,10 +38,7 @@ export const PRICE_TYPE_LABELS: Record<string, string> = {
 };
 
 /** Products visible on a given surface ("professional" | "personal"). */
-export function productsForSurface(
-  products: Product[],
-  surface: ProductSurface
-): Product[] {
+export function productsForSurface(products: Product[], surface: ProductSurface): Product[] {
   return products.filter((p) => p.showOn.includes(surface));
 }
 

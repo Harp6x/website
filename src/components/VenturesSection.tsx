@@ -48,7 +48,9 @@ export default function VenturesSection({ ventures }: Props) {
                     <h3 className="font-serif-heading text-[var(--text-primary)] text-lg font-semibold group-hover:text-[var(--personal-accent)] transition-colors">
                       {v.title}
                     </h3>
-                    <span className={`text-[9px] font-mono tracking-wider uppercase px-2 py-0.5 rounded-full border ${STATUS_BADGE[v.status] ?? STATUS_BADGE.active}`}>
+                    <span
+                      className={`text-[9px] font-mono tracking-wider uppercase px-2 py-0.5 rounded-full border ${STATUS_BADGE[v.status] ?? STATUS_BADGE.active}`}
+                    >
                       {v.status}
                     </span>
                   </div>
@@ -64,7 +66,10 @@ export default function VenturesSection({ ventures }: Props) {
                   {v.techStack.length > 0 && (
                     <div className="flex flex-wrap gap-1.5 mb-4">
                       {v.techStack.slice(0, 5).map((t) => (
-                        <span key={t} className="text-[9px] font-mono text-[var(--text-faint)] tracking-wider px-2 py-0.5 rounded-full border border-[var(--personal-border-subtle)]">
+                        <span
+                          key={t}
+                          className="text-[9px] font-mono text-[var(--text-faint)] tracking-wider px-2 py-0.5 rounded-full border border-[var(--personal-border-subtle)]"
+                        >
                           {t}
                         </span>
                       ))}

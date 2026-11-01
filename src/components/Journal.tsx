@@ -30,9 +30,9 @@ export default function Journal({ topics: topicsProp }: Props) {
             Thinking out loud.
           </h2>
           <p className="text-[var(--text-muted)] text-base max-w-2xl mb-16 leading-relaxed">
-            Long-form writing and reflections. lessons from cybersecurity,
-            travel journals, philosophy, systems thinking, and the honest
-            process of building a life that holds up under pressure.
+            Long-form writing and reflections. lessons from cybersecurity, travel journals,
+            philosophy, systems thinking, and the honest process of building a life that holds up
+            under pressure.
           </p>
         </AnimatedSection>
 
@@ -81,7 +81,9 @@ export default function Journal({ topics: topicsProp }: Props) {
               className="inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[var(--personal-border)] text-sm text-[var(--text-secondary)] hover:border-[var(--personal-accent)]/40 hover:text-[var(--text-primary)] transition-all duration-300"
             >
               {expanded ? "Show less" : `Show all ${topics.length} entries`}
-              <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`} />
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-300 ${expanded ? "rotate-180" : ""}`}
+              />
             </button>
           </AnimatedSection>
         )}
@@ -99,9 +101,8 @@ export default function Journal({ topics: topicsProp }: Props) {
         <AnimatedSection delay={0.3} className="mt-16">
           <div className="max-w-xl">
             <p className="text-[var(--text-faint)] text-sm italic font-serif-heading leading-relaxed">
-              Writing is thinking made visible. These are the topics I keep
-              coming back to. some published, some still forming. The style:
-              thoughtful, observant, reflective, human.
+              Writing is thinking made visible. These are the topics I keep coming back to. some
+              published, some still forming. The style: thoughtful, observant, reflective, human.
             </p>
           </div>
         </AnimatedSection>

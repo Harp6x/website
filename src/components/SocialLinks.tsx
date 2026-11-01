@@ -13,7 +13,7 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   LinkedIn: FaLinkedinIn,
   GitHub: SiGithub,
   "Twitter / X": SiX,
-  "Blog": SiSubstack,
+  Blog: SiSubstack,
 };
 
 export default function SocialLinks() {

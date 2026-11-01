@@ -14,15 +14,23 @@ export default function Hero({ variant = "professional", profile: profileProp }:
   const profile = profileProp ?? profileFallback;
   const isPro = variant === "professional";
 
-  const taglineParts = (isPro ? profile.tagline : "Building and exploring everything.").replace(/\.$/, "").split(" ");
+  const taglineParts = (isPro ? profile.tagline : "Building and exploring everything.")
+    .replace(/\.$/, "")
+    .split(" ");
   const lastWord = taglineParts.pop();
   const firstWords = taglineParts.join(" ");
 
   return (
-    <section className={`relative min-h-screen flex items-center justify-center overflow-hidden ${isPro ? 'topo-grid' : 'warm-topo-grid'}`}>
+    <section
+      className={`relative min-h-screen flex items-center justify-center overflow-hidden ${isPro ? "topo-grid" : "warm-topo-grid"}`}
+    >
       {/* Ambient radial glow */}
-      <div className={`absolute inset-0 ${isPro ? 'bg-[radial-gradient(ellipse_at_top,rgba(217,119,6,0.06)_0%,transparent_50%)]' : 'bg-[radial-gradient(ellipse_at_top,var(--personal-glow)_0%,transparent_50%)]'}`} />
-      <div className={`absolute inset-0 ${isPro ? 'bg-[radial-gradient(ellipse_at_bottom_right,rgba(217,119,6,0.03)_0%,transparent_40%)]' : 'bg-[radial-gradient(ellipse_at_bottom_right,var(--personal-teal-glow)_0%,transparent_40%)]'}`} />
+      <div
+        className={`absolute inset-0 ${isPro ? "bg-[radial-gradient(ellipse_at_top,rgba(217,119,6,0.06)_0%,transparent_50%)]" : "bg-[radial-gradient(ellipse_at_top,var(--personal-glow)_0%,transparent_50%)]"}`}
+      />
+      <div
+        className={`absolute inset-0 ${isPro ? "bg-[radial-gradient(ellipse_at_bottom_right,rgba(217,119,6,0.03)_0%,transparent_40%)]" : "bg-[radial-gradient(ellipse_at_bottom_right,var(--personal-teal-glow)_0%,transparent_40%)]"}`}
+      />
 
       {/* Horizontal accent line */}
       <motion.div
@@ -50,11 +58,13 @@ export default function Hero({ variant = "professional", profile: profileProp }:
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 1.3, duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-              className={`text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-tight mb-8 ${isPro ? 'font-bold' : 'font-serif-heading font-semibold'}`}
+              className={`text-5xl sm:text-6xl md:text-7xl lg:text-[5.5rem] leading-[0.95] tracking-tight mb-8 ${isPro ? "font-bold" : "font-serif-heading font-semibold"}`}
             >
               <span className="text-[var(--text-primary)]">{firstWords}</span>
               <br />
-              <span className={isPro ? 'text-[#d97706]' : 'text-[var(--personal-accent)]'}>{lastWord}.</span>
+              <span className={isPro ? "text-[#d97706]" : "text-[var(--personal-accent)]"}>
+                {lastWord}.
+              </span>
             </motion.h1>
 
             <motion.p
@@ -80,13 +90,22 @@ export default function Hero({ variant = "professional", profile: profileProp }:
             >
               {isPro ? (
                 <>
-                  <a href="#experience" className="px-6 py-3 text-base font-medium bg-[#d97706] text-[var(--btn-text)] rounded hover:bg-[#b45309] transition-all duration-300 hover:shadow-[0_0_30px_rgba(217,119,6,0.2)]">
+                  <a
+                    href="#experience"
+                    className="px-6 py-3 text-base font-medium bg-[#d97706] text-[var(--btn-text)] rounded hover:bg-[#b45309] transition-all duration-300 hover:shadow-[0_0_30px_rgba(217,119,6,0.2)]"
+                  >
                     View Work
                   </a>
-                  <a href="#skills" className="px-6 py-3 text-base font-medium border border-[var(--border)] text-[var(--text-secondary)] rounded hover:border-[#d97706]/30 hover:text-[var(--text-primary)] transition-all duration-300">
+                  <a
+                    href="#skills"
+                    className="px-6 py-3 text-base font-medium border border-[var(--border)] text-[var(--text-secondary)] rounded hover:border-[#d97706]/30 hover:text-[var(--text-primary)] transition-all duration-300"
+                  >
                     Skills &amp; Tools
                   </a>
-                  <a href="#contact" className="px-6 py-3 text-base font-medium text-[var(--text-muted)] hover:text-[#d97706] transition-colors duration-300">
+                  <a
+                    href="#contact"
+                    className="px-6 py-3 text-base font-medium text-[var(--text-muted)] hover:text-[#d97706] transition-colors duration-300"
+                  >
                     Contact
                   </a>
                   {profile.professionalResumeUrl && (
@@ -102,13 +121,22 @@ export default function Hero({ variant = "professional", profile: profileProp }:
                 </>
               ) : (
                 <>
-                  <a href="#philosophy" className="px-7 py-3.5 text-base font-medium bg-[var(--personal-accent)] text-white rounded-full hover:bg-[var(--personal-accent-soft)] transition-all duration-300 hover:shadow-[0_4px_24px_var(--personal-glow)]">
+                  <a
+                    href="#philosophy"
+                    className="px-7 py-3.5 text-base font-medium bg-[var(--personal-accent)] text-white rounded-full hover:bg-[var(--personal-accent-soft)] transition-all duration-300 hover:shadow-[0_4px_24px_var(--personal-glow)]"
+                  >
                     Philosophy
                   </a>
-                  <a href="#pillars" className="px-7 py-3.5 text-base font-medium border border-[var(--personal-border)] text-[var(--text-secondary)] rounded-full hover:border-[var(--personal-accent)]/40 hover:text-[var(--text-primary)] transition-all duration-300">
+                  <a
+                    href="#pillars"
+                    className="px-7 py-3.5 text-base font-medium border border-[var(--personal-border)] text-[var(--text-secondary)] rounded-full hover:border-[var(--personal-accent)]/40 hover:text-[var(--text-primary)] transition-all duration-300"
+                  >
                     Life Pillars
                   </a>
-                  <a href="#contact" className="px-7 py-3.5 text-base font-medium text-[var(--text-muted)] hover:text-[var(--personal-accent)] transition-colors duration-300">
+                  <a
+                    href="#contact"
+                    className="px-7 py-3.5 text-base font-medium text-[var(--text-muted)] hover:text-[var(--personal-accent)] transition-colors duration-300"
+                  >
                     Contact
                   </a>
                   {profile.personalResumeUrl && (
@@ -142,23 +170,37 @@ export default function Hero({ variant = "professional", profile: profileProp }:
             {isPro ? (
               <>
                 <div>
-                  <p className="font-mono text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase mb-1">Currently</p>
-                  <p className="text-[var(--text-secondary)] text-sm">{profile.currentRole} {profile.currentCompany}</p>
+                  <p className="font-mono text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase mb-1">
+                    Currently
+                  </p>
+                  <p className="text-[var(--text-secondary)] text-sm">
+                    {profile.currentRole} {profile.currentCompany}
+                  </p>
                 </div>
                 <div>
-                  <p className="font-mono text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase mb-1">Focus</p>
+                  <p className="font-mono text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase mb-1">
+                    Focus
+                  </p>
                   <p className="text-[var(--text-secondary)] text-sm">{profile.focus}</p>
                 </div>
               </>
             ) : (
               <>
                 <div>
-                  <p className="font-mono text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase mb-1">Brands</p>
-                  <p className="text-[var(--text-secondary)] text-sm">Harp6x · Before Maps · There Goes Uddip · Jimny Runs</p>
+                  <p className="font-mono text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase mb-1">
+                    Brands
+                  </p>
+                  <p className="text-[var(--text-secondary)] text-sm">
+                    Harp6x · Before Maps · There Goes Uddip · Jimny Runs
+                  </p>
                 </div>
                 <div>
-                  <p className="font-mono text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase mb-1">Platforms</p>
-                  <p className="text-[var(--text-secondary)] text-sm">YouTube · Instagram · Substack</p>
+                  <p className="font-mono text-[10px] text-[var(--text-muted)] tracking-[0.2em] uppercase mb-1">
+                    Platforms
+                  </p>
+                  <p className="text-[var(--text-secondary)] text-sm">
+                    YouTube · Instagram · Substack
+                  </p>
                 </div>
               </>
             )}

@@ -21,7 +21,8 @@ export default function Experience({ chapters: chaptersProp }: Props) {
             The path so far.
           </h2>
           <p className="text-[var(--text-muted)] text-base max-w-xl mb-10">
-            From cybersecurity engineering and product leadership at Cisco into building automotive expedition brands, travel ventures, and digital operating systems.
+            From cybersecurity engineering and product leadership at Cisco into building automotive
+            expedition brands, travel ventures, and digital operating systems.
           </p>
         </AnimatedSection>
 
@@ -52,9 +53,7 @@ export default function Experience({ chapters: chaptersProp }: Props) {
                 {/* Content */}
                 <div>
                   <div className="mb-3">
-                    <h3 className="text-[var(--text-primary)] font-semibold text-xl">
-                      {ch.title}
-                    </h3>
+                    <h3 className="text-[var(--text-primary)] font-semibold text-xl">{ch.title}</h3>
                     <p
                       className={`text-base font-medium ${
                         ch.current ? "text-[#d97706]" : "text-[var(--text-muted)]"

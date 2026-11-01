@@ -38,10 +38,7 @@ const profile: Profile = {
     { label: "Substack", href: "https://substack.com/@harp6x" },
   ],
 
-  professionalEmails: [
-    "uddip9@gmail.com",
-    "uddipbuilds@gmail.com",
-  ],
+  professionalEmails: ["uddip9@gmail.com", "uddipbuilds@gmail.com"],
 
   personalBrands: {
     harp6x: {

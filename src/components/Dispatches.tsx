@@ -16,9 +16,9 @@ export default function Dispatches() {
             Stories from the road.
           </h2>
           <p className="text-[var(--text-muted)] max-w-2xl mb-6 leading-relaxed">
-            Not influencer content. A long-term documentation project of
-            building a non-average life. travel, exploration, philosophy,
-            vehicle building, and the pursuit of something more intentional.
+            Not influencer content. A long-term documentation project of building a non-average
+            life. travel, exploration, philosophy, vehicle building, and the pursuit of something
+            more intentional.
           </p>
           <p className="text-[var(--text-faint)] text-sm font-mono italic mb-20">
             An active pursuit. A documented transition. A real journey in progress.
@@ -36,9 +36,7 @@ export default function Dispatches() {
                     <h3 className="text-[var(--text-primary)] text-2xl font-bold mb-1">
                       {brand.name}
                     </h3>
-                    <p className="text-[#d97706] font-mono text-sm mb-4">
-                      {brand.handle}
-                    </p>
+                    <p className="text-[#d97706] font-mono text-sm mb-4">{brand.handle}</p>
                     <p className="text-[var(--text-secondary)] text-sm leading-relaxed mb-6">
                       {brand.description}
                     </p>

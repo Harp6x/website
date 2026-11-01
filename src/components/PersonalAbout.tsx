@@ -41,7 +41,9 @@ export default function PersonalAbout({ data }: Props) {
           <AnimatedSection delay={0.05}>
             <p className="font-serif-heading text-[var(--text-primary)] text-2xl md:text-3xl leading-relaxed font-normal italic">
               {headline}{" "}
-              <span className="text-[var(--personal-accent)] not-italic font-medium">{headlineAccent}</span>
+              <span className="text-[var(--personal-accent)] not-italic font-medium">
+                {headlineAccent}
+              </span>
             </p>
           </AnimatedSection>
 
@@ -54,11 +56,16 @@ export default function PersonalAbout({ data }: Props) {
           <AnimatedSection delay={0.2}>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 mt-12 pt-12 border-t border-[var(--personal-border-subtle)]">
               {pillars.map((pillar) => (
-                <div key={pillar.label} className="p-5 rounded-xl bg-[var(--personal-bg-card)] border border-[var(--personal-border-subtle)]">
+                <div
+                  key={pillar.label}
+                  className="p-5 rounded-xl bg-[var(--personal-bg-card)] border border-[var(--personal-border-subtle)]"
+                >
                   <p className="font-mono text-[10px] text-[var(--personal-accent)] tracking-[0.2em] uppercase mb-2">
                     {pillar.label}
                   </p>
-                  <p className="text-[var(--text-secondary)] text-sm font-serif-heading">{pillar.value}</p>
+                  <p className="text-[var(--text-secondary)] text-sm font-serif-heading">
+                    {pillar.value}
+                  </p>
                 </div>
               ))}
             </div>

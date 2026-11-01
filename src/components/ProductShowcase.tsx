@@ -88,11 +88,7 @@ export default function ProductShowcase({ products, variant }: Props) {
         </AnimatedSection>
       </div>
 
-      <div
-        className={`${
-          isPersonal ? "warm-divider" : "divider"
-        } max-w-5xl mx-auto mt-32`}
-      />
+      <div className={`${isPersonal ? "warm-divider" : "divider"} max-w-5xl mx-auto mt-32`} />
     </section>
   );
 }

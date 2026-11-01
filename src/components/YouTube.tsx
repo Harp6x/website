@@ -16,9 +16,9 @@ export default function YouTube() {
             Long-form visual stories.
           </h2>
           <p className="text-[var(--text-muted)] max-w-2xl mb-6 leading-relaxed">
-            Not content for algorithms. A long-term archive of experiences,
-            growth, experimentation, and storytelling. travel films, trekking
-            documentaries, vehicle builds, and philosophy-driven reflections.
+            Not content for algorithms. A long-term archive of experiences, growth, experimentation,
+            and storytelling. travel films, trekking documentaries, vehicle builds, and
+            philosophy-driven reflections.
           </p>
           <p className="text-[var(--text-faint)] text-sm font-mono italic mb-16">
             The behind-the-scenes of becoming.

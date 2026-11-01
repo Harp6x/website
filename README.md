@@ -4,14 +4,14 @@ Dual-persona portfolio site with CMS-driven content and static fallbacks. Profes
 
 ## Tech Stack
 
-| Layer | Tech |
-|---|---|
-| Framework | Next.js 16 (App Router), TypeScript, React 19 |
-| CMS | Sanity v5 (13 schemas, embedded Studio at `/studio`) |
-| Styling | Tailwind CSS v4 (CSS custom properties, light/dark) |
-| Animation | Framer Motion |
-| Analytics | Vercel Analytics + Speed Insights |
-| Hosting | Vercel (auto-deploy from main) |
+| Layer     | Tech                                                 |
+| --------- | ---------------------------------------------------- |
+| Framework | Next.js 16 (App Router), TypeScript, React 19        |
+| CMS       | Sanity v5 (13 schemas, embedded Studio at `/studio`) |
+| Styling   | Tailwind CSS v4 (CSS custom properties, light/dark)  |
+| Animation | Framer Motion                                        |
+| Analytics | Vercel Analytics + Speed Insights                    |
+| Hosting   | Vercel (auto-deploy from main)                       |
 
 ## Setup
 
@@ -23,14 +23,14 @@ npm run dev                   # → http://localhost:3000
 
 ## Scripts
 
-| Command | Purpose |
-|---|---|
-| `npm run dev` | Next.js dev server |
-| `npm run build` | Production build |
-| `npm run lint` | ESLint check |
-| `npm run typecheck` | TypeScript check |
-| `npm test` | Vitest tests |
-| `npm run format` | Prettier format |
+| Command             | Purpose            |
+| ------------------- | ------------------ |
+| `npm run dev`       | Next.js dev server |
+| `npm run build`     | Production build   |
+| `npm run lint`      | ESLint check       |
+| `npm run typecheck` | TypeScript check   |
+| `npm test`          | Vitest tests       |
+| `npm run format`    | Prettier format    |
 
 ## Architecture
 
@@ -42,12 +42,12 @@ npm run dev                   # → http://localhost:3000
 
 ## Documentation
 
-| File | Purpose |
-|---|---|
-| `AGENTS.md` | Full AI agent context |
-| `CLAUDE.md` | Claude-specific quick context |
-| `CMS-GUIDE.md` | Self-service CMS guide |
+| File                   | Purpose                           |
+| ---------------------- | --------------------------------- |
+| `AGENTS.md`            | Full AI agent context             |
+| `CLAUDE.md`            | Claude-specific quick context     |
+| `CMS-GUIDE.md`         | Self-service CMS guide            |
 | `docs/ARCHITECTURE.md` | System architecture and data flow |
-| `docs/HANDBOOK.md` | Maintenance guide |
-| `docs/HOW-IT-WORKS.md` | Founder-friendly explainer |
-| `docs/lessons/` | Hard-learned rules |
+| `docs/HANDBOOK.md`     | Maintenance guide                 |
+| `docs/HOW-IT-WORKS.md` | Founder-friendly explainer        |
+| `docs/lessons/`        | Hard-learned rules                |

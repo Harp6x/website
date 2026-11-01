@@ -23,6 +23,7 @@ const lora = Lora({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://uddipranjandas.vercel.app"),
   title: "Uddip Ranjan Das — Founder, Builder, Explorer",
   description:
     "Co-Founder of IndieRoam, Founder of BeforeMaps, CTO at MSPaulTherapies. Building automotive expeditions, travel ventures, and digital operating systems. Ex-Cisco.",

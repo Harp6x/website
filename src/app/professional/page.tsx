@@ -9,7 +9,14 @@ import ClaudeReview from "@/components/ClaudeReview";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import CrossPageNudge from "@/components/CrossPageNudge";
-import { fetchProfile, fetchExperiences, fetchProjects, fetchSkills, fetchProducts, fetchSiteSettings } from "@/lib/cms";
+import {
+  fetchProfile,
+  fetchExperiences,
+  fetchProjects,
+  fetchSkills,
+  fetchProducts,
+  fetchSiteSettings,
+} from "@/lib/cms";
 
 export const revalidate = 60;
 
@@ -38,7 +45,9 @@ export default async function ProfessionalPage() {
         <Experience chapters={experiences} />
         <Skills skills={skills} />
         <Projects projects={projects} />
-        {settings.enableProductsPage && <ProductShowcase products={products} variant="professional" />}
+        {settings.enableProductsPage && (
+          <ProductShowcase products={products} variant="professional" />
+        )}
         <ClaudeReview profile={profile} />
         <Contact variant="professional" profile={profile} />
       </main>

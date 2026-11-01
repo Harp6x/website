@@ -11,7 +11,13 @@ export default defineType({
       type: "string",
       description: "Paste any emoji, e.g. 🧭 ⛰️ 🎵 📖",
     }),
-    defineField({ name: "published", title: "Published", type: "boolean", initialValue: true, description: "Toggle to show/hide this section" }),
+    defineField({
+      name: "published",
+      title: "Published",
+      type: "boolean",
+      initialValue: true,
+      description: "Toggle to show/hide this section",
+    }),
     defineField({ name: "title", title: "Title", type: "string", validation: (r) => r.required() }),
     defineField({ name: "subtitle", title: "Subtitle", type: "string" }),
     defineField({

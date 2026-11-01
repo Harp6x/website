@@ -398,7 +398,8 @@ Working with Uddip means collaborating with a founder who pairs practical execut
       title: "IndieRoam",
       slug: { _type: "slug", current: "indieroam" },
       role: "Co-Founder",
-      tagline: "Premium self-drive expeditions, curated convoys, and managed road experiences across India.",
+      tagline:
+        "Premium self-drive expeditions, curated convoys, and managed road experiences across India.",
       status: "active",
       published: true,
       order: 1,
@@ -411,7 +412,13 @@ Working with Uddip means collaborating with a founder who pairs practical execut
         "Field-tested automotive expedition execution across Ladakh and high-altitude corridors",
         "Long-term ambition to establish a trusted, recognizable overland expedition brand",
       ],
-      techStack: ["Expedition Operations", "Convoy Management", "Fleet Logistics", "Digital Booking", "Growth Strategy"],
+      techStack: [
+        "Expedition Operations",
+        "Convoy Management",
+        "Fleet Logistics",
+        "Digital Booking",
+        "Growth Strategy",
+      ],
     },
     {
       _id: "venture-beforemaps",
@@ -419,7 +426,8 @@ Working with Uddip means collaborating with a founder who pairs practical execut
       title: "BeforeMaps",
       slug: { _type: "slug", current: "before-maps" },
       role: "Founder",
-      tagline: "Independent travel venture: personally explored destinations, group departures, and custom itineraries.",
+      tagline:
+        "Independent travel venture: personally explored destinations, group departures, and custom itineraries.",
       status: "active",
       published: true,
       order: 2,
@@ -439,7 +447,8 @@ Working with Uddip means collaborating with a founder who pairs practical execut
       title: "MSPaulTherapies",
       slug: { _type: "slug", current: "ms-paul-therapies" },
       role: "Chief Technology Officer (CTO)",
-      tagline: "Digital systems, technology leadership, and platform architecture for modern clinical wellness.",
+      tagline:
+        "Digital systems, technology leadership, and platform architecture for modern clinical wellness.",
       status: "active",
       published: true,
       order: 3,
@@ -610,24 +619,29 @@ Working with Uddip means collaborating with a founder who pairs practical execut
 
   // ─── Site Settings (singleton) ───
   console.log("  → Site Settings");
-  await client.patch("siteSettings").set({
-    currentRole: "Co-Founder & CTO",
-    currentCompany: "IndieRoam · BeforeMaps · MSPaulTherapies",
-    location: "New Delhi, India",
-    focus: "Automotive Expeditions · Travel Ventures · Digital Systems",
-    tagline: "Building expedition brands, travel ventures, and operating systems.",
-    subtitleLine1: "Co-Founder at IndieRoam · Founder at BeforeMaps · CTO at MSPaulTherapies",
-    subtitleLine2:
-      "Six years in cybersecurity at Cisco, now building automotive expedition brands, travel ventures, and digital systems.",
-    seo: {
-      _type: "seo",
-      metaTitle: "Uddip Ranjan Das — Founder, Builder, Operator",
-      metaDescription:
-        "Co-Founder of IndieRoam, Founder of BeforeMaps, CTO at MSPaulTherapies. Building automotive expeditions, travel ventures, and digital operating systems. Ex-Cisco.",
-    },
-  }).commit();
+  await client
+    .patch("siteSettings")
+    .set({
+      currentRole: "Co-Founder & CTO",
+      currentCompany: "IndieRoam · BeforeMaps · MSPaulTherapies",
+      location: "New Delhi, India",
+      focus: "Automotive Expeditions · Travel Ventures · Digital Systems",
+      tagline: "Building expedition brands, travel ventures, and operating systems.",
+      subtitleLine1: "Co-Founder at IndieRoam · Founder at BeforeMaps · CTO at MSPaulTherapies",
+      subtitleLine2:
+        "Six years in cybersecurity at Cisco, now building automotive expedition brands, travel ventures, and digital systems.",
+      seo: {
+        _type: "seo",
+        metaTitle: "Uddip Ranjan Das — Founder, Builder, Operator",
+        metaDescription:
+          "Co-Founder of IndieRoam, Founder of BeforeMaps, CTO at MSPaulTherapies. Building automotive expeditions, travel ventures, and digital operating systems. Ex-Cisco.",
+      },
+    })
+    .commit();
 
-  console.log("\n✅ Master seed complete! All content is synced with the clarified portfolio scope.");
+  console.log(
+    "\n✅ Master seed complete! All content is synced with the clarified portfolio scope."
+  );
 }
 
 seed().catch((err) => {

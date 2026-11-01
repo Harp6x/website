@@ -49,7 +49,13 @@ export interface SanityProfile {
   stats?: { label: string; value: string }[];
   socials?: { label: string; href: string }[];
   professionalEmails?: string[];
-  personalBrands?: { key: string; instagram?: string; youtube?: string; substack?: string; email?: string }[];
+  personalBrands?: {
+    key: string;
+    instagram?: string;
+    youtube?: string;
+    substack?: string;
+    email?: string;
+  }[];
   professionalResumeUrl?: string;
   personalResumeUrl?: string;
   claudeReviewHeading?: string;
@@ -269,7 +275,14 @@ export interface SanitySettings {
   subtitleLine1?: string;
   subtitleLine2?: string;
   navigation?: { label: string; href: string }[];
-  socialLinks?: { github?: string; linkedin?: string; instagram?: string; youtube?: string; substack?: string; email?: string };
+  socialLinks?: {
+    github?: string;
+    linkedin?: string;
+    instagram?: string;
+    youtube?: string;
+    substack?: string;
+    email?: string;
+  };
   footerText?: string;
   enableProfessionalPage?: boolean;
   enablePersonalPage?: boolean;

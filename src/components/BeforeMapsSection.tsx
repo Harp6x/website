@@ -38,8 +38,7 @@ export default function BeforeMapsSection() {
             Before Maps.
           </h2>
           <p className="text-[var(--text-secondary)] text-lg leading-relaxed max-w-3xl mb-4">
-            A company I founded to turn personal exploration into something
-            other people can trust.
+            A company I founded to turn personal exploration into something other people can trust.
           </p>
           <a
             href="https://beforemaps.com"
@@ -70,8 +69,8 @@ export default function BeforeMapsSection() {
         <AnimatedSection delay={0.3} className="mt-16">
           <div className="max-w-2xl mx-auto text-center">
             <p className="font-serif-heading text-[var(--text-muted)] text-xl leading-relaxed italic">
-              &ldquo;We don&apos;t just show you where to go. We show you how
-              to experience it.&rdquo;
+              &ldquo;We don&apos;t just show you where to go. We show you how to experience
+              it.&rdquo;
             </p>
           </div>
         </AnimatedSection>

@@ -5,7 +5,12 @@ export default defineType({
   title: "Profile",
   type: "document",
   fields: [
-    defineField({ name: "name", title: "Full Name", type: "string", validation: (r) => r.required() }),
+    defineField({
+      name: "name",
+      title: "Full Name",
+      type: "string",
+      validation: (r) => r.required(),
+    }),
     defineField({ name: "handle", title: "Handle", type: "string" }),
     defineField({ name: "email", title: "Primary Email", type: "string" }),
     defineField({ name: "location", title: "Location", type: "string" }),
@@ -15,8 +20,18 @@ export default defineType({
     defineField({ name: "tagline", title: "Tagline", type: "string" }),
     defineField({ name: "subtitleLine1", title: "Hero Subtitle Line 1", type: "string" }),
     defineField({ name: "subtitleLine2", title: "Hero Subtitle Line 2", type: "text", rows: 2 }),
-    defineField({ name: "heroKeywords", title: "Hero Keywords", type: "string", description: "e.g. Security · Product · Systems" }),
-    defineField({ name: "landingIntro", title: "Landing Page Intro", type: "string", description: "One-liner on the split landing page" }),
+    defineField({
+      name: "heroKeywords",
+      title: "Hero Keywords",
+      type: "string",
+      description: "e.g. Security · Product · Systems",
+    }),
+    defineField({
+      name: "landingIntro",
+      title: "Landing Page Intro",
+      type: "string",
+      description: "One-liner on the split landing page",
+    }),
     defineField({
       name: "bio",
       title: "Bio Paragraphs",
@@ -28,26 +43,30 @@ export default defineType({
       name: "stats",
       title: "Stats",
       type: "array",
-      of: [{
-        type: "object",
-        name: "stat",
-        fields: [
-          defineField({ name: "label", title: "Label", type: "string" }),
-          defineField({ name: "value", title: "Value", type: "string" }),
-        ],
-      }],
+      of: [
+        {
+          type: "object",
+          name: "stat",
+          fields: [
+            defineField({ name: "label", title: "Label", type: "string" }),
+            defineField({ name: "value", title: "Value", type: "string" }),
+          ],
+        },
+      ],
     }),
     defineField({
       name: "socials",
       title: "Social Links",
       type: "array",
-      of: [{
-        type: "object",
-        fields: [
-          defineField({ name: "label", title: "Label", type: "string" }),
-          defineField({ name: "href", title: "URL", type: "url" }),
-        ],
-      }],
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "label", title: "Label", type: "string" }),
+            defineField({ name: "href", title: "URL", type: "url" }),
+          ],
+        },
+      ],
     }),
     defineField({
       name: "professionalEmails",
@@ -59,21 +78,47 @@ export default defineType({
       name: "personalBrands",
       title: "Personal Brands",
       type: "array",
-      of: [{
-        type: "object",
-        fields: [
-          defineField({ name: "key", title: "Key (e.g. harp6x)", type: "string" }),
-          defineField({ name: "instagram", title: "Instagram URL", type: "url" }),
-          defineField({ name: "youtube", title: "YouTube URL", type: "url" }),
-          defineField({ name: "substack", title: "Substack URL", type: "url" }),
-          defineField({ name: "email", title: "Email", type: "string" }),
-        ],
-      }],
+      of: [
+        {
+          type: "object",
+          fields: [
+            defineField({ name: "key", title: "Key (e.g. harp6x)", type: "string" }),
+            defineField({ name: "instagram", title: "Instagram URL", type: "url" }),
+            defineField({ name: "youtube", title: "YouTube URL", type: "url" }),
+            defineField({ name: "substack", title: "Substack URL", type: "url" }),
+            defineField({ name: "email", title: "Email", type: "string" }),
+          ],
+        },
+      ],
     }),
-    defineField({ name: "claudeReviewHeading", title: "Claude Review Heading", type: "string", description: "e.g. What it's like to build with me." }),
-    defineField({ name: "claudeReviewSubtitle", title: "Claude Review Subtitle", type: "text", rows: 2, description: "Subtitle below heading inside the review card." }),
-    defineField({ name: "claudeReview", title: "Claude Code Review (full)", type: "text", rows: 10, description: "Full review of working with you, written in Claude's voice. Shown on professional page." }),
-    defineField({ name: "claudeReviewShort", title: "Claude Code Review (short quote)", type: "text", rows: 3, description: "Short endorsement quote shown in the About section." }),
+    defineField({
+      name: "claudeReviewHeading",
+      title: "Claude Review Heading",
+      type: "string",
+      description: "e.g. What it's like to build with me.",
+    }),
+    defineField({
+      name: "claudeReviewSubtitle",
+      title: "Claude Review Subtitle",
+      type: "text",
+      rows: 2,
+      description: "Subtitle below heading inside the review card.",
+    }),
+    defineField({
+      name: "claudeReview",
+      title: "Claude Code Review (full)",
+      type: "text",
+      rows: 10,
+      description:
+        "Full review of working with you, written in Claude's voice. Shown on professional page.",
+    }),
+    defineField({
+      name: "claudeReviewShort",
+      title: "Claude Code Review (short quote)",
+      type: "text",
+      rows: 3,
+      description: "Short endorsement quote shown in the About section.",
+    }),
     defineField({
       name: "professionalResume",
       title: "Professional / Career Resume",

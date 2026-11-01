@@ -56,17 +56,13 @@ export default function CrossPageNudge({ variant }: Props) {
         {isPro ? (
           <ArrowRight
             className={`w-4 h-4 transition-all duration-300 ${
-              hovered
-                ? "text-[#c2703a] translate-x-1"
-                : "text-[var(--text-faint)]"
+              hovered ? "text-[#c2703a] translate-x-1" : "text-[var(--text-faint)]"
             }`}
           />
         ) : (
           <ArrowLeft
             className={`w-4 h-4 transition-all duration-300 ${
-              hovered
-                ? "text-[#dc2626] -translate-x-1"
-                : "text-[var(--text-faint)]"
+              hovered ? "text-[#dc2626] -translate-x-1" : "text-[var(--text-faint)]"
             }`}
           />
         )}

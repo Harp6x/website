@@ -37,11 +37,7 @@ export async function generateMetadata({
   };
 }
 
-export default async function ProductDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function ProductDetailPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const [profile, products, settings] = await Promise.all([
     fetchProfile(),
@@ -120,9 +116,7 @@ export default async function ProductDetailPage({
           {/* Price + CTA */}
           <div className="flex flex-wrap items-center gap-4 mt-10">
             {product.price && (
-              <span className="text-2xl font-bold text-[var(--text-primary)]">
-                {product.price}
-              </span>
+              <span className="text-2xl font-bold text-[var(--text-primary)]">{product.price}</span>
             )}
             {product.gumroadUrl && (
               <a
@@ -171,9 +165,7 @@ export default async function ProductDetailPage({
                 >
                   <CheckCircle2 className="w-5 h-5 text-[#d97706] mt-0.5 flex-shrink-0" />
                   <div>
-                    <h3 className="font-semibold text-[var(--text-primary)] mb-1">
-                      {item.title}
-                    </h3>
+                    <h3 className="font-semibold text-[var(--text-primary)] mb-1">{item.title}</h3>
                     <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
                       {item.description}
                     </p>
@@ -189,9 +181,7 @@ export default async function ProductDetailPage({
           <section className="mb-20">
             <div className="bg-[var(--border-subtle)]/10 border border-[var(--border-subtle)] rounded-lg p-8 text-center">
               <Package className="w-8 h-8 text-[#d97706] mx-auto mb-4" />
-              <p className="text-[var(--text-secondary)] text-lg">
-                {detail.closingPitch}
-              </p>
+              <p className="text-[var(--text-secondary)] text-lg">{detail.closingPitch}</p>
             </div>
           </section>
         )}
@@ -200,9 +190,7 @@ export default async function ProductDetailPage({
         <section className="text-center py-12 border-t border-[var(--border-subtle)]">
           <div className="flex flex-wrap items-center justify-center gap-4">
             {product.price && (
-              <span className="text-xl font-bold text-[var(--text-primary)]">
-                {product.price}
-              </span>
+              <span className="text-xl font-bold text-[var(--text-primary)]">{product.price}</span>
             )}
             {product.gumroadUrl && (
               <a
