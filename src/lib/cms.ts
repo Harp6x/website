@@ -12,6 +12,7 @@ import {
   getVentures,
   getVenture,
   getSiteSettings,
+  getBlogPosts,
 } from "@/sanity/queries";
 import type {
   SanityExperience,
@@ -23,6 +24,7 @@ import type {
   SanityLifePillar,
   SanityProductDoc,
   SanityVenture,
+  SanityBlogPost,
 } from "@/sanity/queries";
 import type {
   Profile,
@@ -306,4 +308,9 @@ export async function fetchSiteSettings(): Promise<SiteSettings> {
     enableProfessionalPage: cms.enableProfessionalPage ?? defaultSettings.enableProfessionalPage,
     enablePersonalPage: cms.enablePersonalPage ?? defaultSettings.enablePersonalPage,
   };
+}
+
+export async function fetchBlogPosts(): Promise<SanityBlogPost[]> {
+  const posts = await safe(getBlogPosts);
+  return posts || [];
 }

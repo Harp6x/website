@@ -11,7 +11,7 @@ jobs:
     name: Quality checks
     runs-on: ubuntu-latest
     env:
-      NEXT_PUBLIC_SANITY_PROJECT_ID: placeholder
+      NEXT_PUBLIC_SANITY_PROJECT_ID: 55vwwzpf
       NEXT_PUBLIC_SANITY_DATASET: production
     steps:
       - uses: actions/checkout@v4

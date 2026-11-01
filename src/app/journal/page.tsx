@@ -3,8 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
-import { fetchProfile, fetchSiteSettings } from "@/lib/cms";
-import { getBlogPosts } from "@/sanity/queries";
+import { fetchProfile, fetchSiteSettings, fetchBlogPosts } from "@/lib/cms";
 import { notFound } from "next/navigation";
 
 export const revalidate = 60;
@@ -18,7 +17,7 @@ export const metadata = {
 export default async function JournalPage() {
   const [profile, posts, settings] = await Promise.all([
     fetchProfile(),
-    getBlogPosts(),
+    fetchBlogPosts(),
     fetchSiteSettings(),
   ]);
 
